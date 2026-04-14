@@ -1,0 +1,31 @@
+# =========================================================
+# BoseRV .gitignore
+# =========================================================
+
+# Verilator generated files
+obj_dir/
+*.vcd
+*.fst
+*.hier
+
+# iVerilog generated files (if you ever use it again)
+alu_sim
+fetch_sim
+top_sim
+decoder_sim
+
+# Toolchain compilation outputs
+*.o
+*.out
+*.bin
+*.elf
+*.hex
+
+# However, we DO want to keep our specific test hex files!
+!tests/instr_mem.hex
+
+# Misc local files
+.DS_Store
+*.log
+*.swp
+*~
