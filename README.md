@@ -27,12 +27,12 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
   - Implement 32-bit arithmetic and logic operations.
   - Completed! (`make alu_sim` passes).
 
-- [ ] **Assignment A2 — Decoder** (`src/decoder.v`)  *(<-- YOU ARE HERE)*
+- [x] **Assignment A2 — Decoder** (`src/decoder.v`)
   - Decode `rs1`, `rs2`, `rd`, and sign-extend the 5 types of immediates.
   - Translate the 7-bit `opcode` into control signals for the rest of the processor.
-  - To test: `make decoder_sim`
+  - Completed! (`make decoder_sim` passes).
 
-- [ ] **Assignment A3 — Fetch Unit** (`src/fetch.v`)
+- [ ] **Assignment A3 — Fetch Unit** (`src/fetch.v`)  *(<-- YOU ARE HERE)*
   - Construct the Program Counter (PC) flip-flops.
   - Send the address to the Instruction Memory, handle branches.
   - To test: `make fetch_sim`

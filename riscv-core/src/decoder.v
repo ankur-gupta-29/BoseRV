@@ -49,8 +49,8 @@ module decoder (
     // TODO: Generate the 5 immediate types (I, S, B, U, J) by slicing and sign-extending
     wire [31:0] imm_i = {{20{instr[31]}},instr[31:20]};
     wire [31:0] imm_s = {{20{instr[31]}},instr[31:25],instr[11:7]};
-    wire [31:0] imm_b = {{19{instr[31]}},instr[31],instr[7],instr[11:8],1'b0};
-    wire [31:0] imm_u = {{12{instr[31]}},instr[31:12],1'b0};
+    wire [31:0] imm_b = {{19{instr[31]}},instr[31],instr[7],instr[30:25],instr[11:8],1'b0};
+    wire [31:0] imm_u = {instr[31:12],12'b0};
     wire [31:0] imm_j = {{11{instr[31]}},instr[31],instr[19:12],instr[20],instr[30:21],1'b0};
 
     localparam OP_LOAD   = 7'b0000011; //lw
@@ -58,6 +58,7 @@ module decoder (
     localparam OP_IMM    = 7'b0010011; //addi
     localparam OP_REG    = 7'b0110011; //add, sub, and, or, xor, sll, srl, sra, slt, sltu
     localparam OP_BRANCH = 7'b1100011; //beq, bne, blt, bge, bltu, bgeu
+    localparam OP_LUI    = 7'b0110111; //lui
     
     always @(*) begin
         // Default values to prevent latches
@@ -74,7 +75,61 @@ module decoder (
 
         case (opcode)
             // TODO: Decode specific opcodes like OP_IMM, OP_REG, OP_LOAD, OP_STORE, OP_BRANCH
-            
+            OP_IMM : begin
+                imm       = imm_i;
+                reg_write = 1'b1;
+                alu_src   = 1'b1;
+                wb_sel    = 2'b00;
+                case(funct3)
+                    3'b000: alu_op = 4'b0000;
+                    default: alu_op = 4'b0000;
+                endcase
+            end
+            OP_REG : begin
+                imm       = 32'b0;
+                reg_write = 1'b1;
+                alu_src   = 1'b0;
+                wb_sel    = 2'b00;
+                case(funct3)
+                    3'b000: alu_op   = 4'b0000;
+                    default: alu_op = 4'b0000;
+                endcase
+            end
+            OP_LOAD : begin
+                imm       = imm_i;
+                reg_write = 1'b1;
+                mem_read  = 1'b1;
+                wb_sel    = 2'b01;
+                alu_src   = 1'b1;
+                alu_op    = 4'b0000;
+            end
+            OP_STORE : begin
+                imm       = imm_s;
+                reg_write = 1'b0;
+                mem_write = 1'b1;
+                wb_sel    = 2'b00;
+                alu_src   = 1'b1;
+                alu_op    = 4'b0000;
+            end
+            OP_BRANCH : begin
+                imm       = imm_b;
+                branch    = 1'b1;
+                reg_write = 1'b0;
+                alu_src   = 1'b0;
+                case(funct3)
+                    3'b000: alu_op = 4'b0001;
+                    3'b001: alu_op = 4'b0001;
+                    default: alu_op = 4'b0001;
+                endcase
+                
+            end
+            OP_LUI: begin
+                imm = imm_u;
+                reg_write = 1'b1;
+                wb_sel  = 1'b00;
+                alu_src = 1'b1;
+                alu_op = 4'b0101;
+            end
             default: begin
                 // Unknown opcode
             end
