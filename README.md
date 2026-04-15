@@ -41,3 +41,76 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
   - Wire all the pieces together into a functioning datapath!
   - Drive the `wb_sel` (Writeback MUX) to complete the final stage.
   - To test: `make top_sim`
+
+---
+
+## Module 2 — Verilator Integration
+*(Locked until Module 1 is finished)*
+- [ ] Assignment B1 — C++ Wrapper (`tb_top.cpp`)
+- [ ] Assignment B2 — VCD Waveform dumping and analysis
+- [ ] Assignment B3 — Automated Test Vectors via Memory Hex files
+
+---
+
+## Module 3 — 5-Stage Pipeline
+*(Locked until Module 2 is finished)*
+- [ ] Assignment C1 — IF/ID Pipeline Register
+- [ ] Assignment C2 — ID/EX Pipeline Register
+- [ ] Assignment C3 — EX/MEM and MEM/WB Registers
+- [ ] Assignment C4 — Pipeline Control Logic
+
+---
+
+## Module 4 — Hazard Handling
+*(Locked until Module 3 is finished)*
+- [ ] Assignment D1 — Data Forwarding Unit (Bypassing)
+- [ ] Assignment D2 — Hazard Detection Unit (Stalls / Bubbles)
+- [ ] Assignment D3 — Control Hazards (Branch Flushing)
+
+---
+
+## Module 5 — M-Extension
+*(Locked until Module 4 is finished)*
+- [ ] Assignment E1 — Multiplier Unit (Hardware Multiplication)
+- [ ] Assignment E2 — Divider Unit (State Machine Division)
+- [ ] Assignment E3 — Decoder Updates
+
+---
+
+## Module 6 — Memory Subsystem
+*(Locked until Module 5 is finished)*
+- [ ] Assignment F1 — L1 Instruction Cache
+- [ ] Assignment F2 — L1 Data Cache
+- [ ] Assignment F3 — Cache Controller / Memory interface
+
+---
+
+## Module 7 — Privileged ISA & CSRs
+*(Locked until Module 6 is finished)*
+- [ ] Assignment G1 — Control & Status Registers (CSRs)
+- [ ] Assignment G2 — Trap & Exception Handler logic
+- [ ] Assignment G3 — Machine Mode instructions (`mret`, `ecall`)
+
+---
+
+## Module 8 — Core Peripherals
+*(Locked until Module 7 is finished)*
+- [ ] Assignment H1 — Memory-Mapped I/O (MMIO) Router
+- [ ] Assignment H2 — CLINT (Core Local Interruptor / Timers)
+- [ ] Assignment H3 — Simple UART & Boot ROM
+
+---
+
+## Module 9 — Supervisor Mode (MMU)
+*(Locked until Module 8 is finished)*
+- [ ] Assignment I1 — Supervisor Mode CSRs
+- [ ] Assignment I2 — Sv32 Page Table Walker (Virtual Memory)
+- [ ] Assignment I3 — TLB (Translation Lookaside Buffer)
+
+---
+
+## Module 10 — Linux Boot on BoseRV
+*(Locked until Module 9 is finished)*
+- [ ] Assignment J1 — OpenSBI Integration
+- [ ] Assignment J2 — Device Tree Blob (DTB) Configuration
+- [ ] Assignment J3 — Booting Buildroot Linux via C++ Verilator Wrapper!
