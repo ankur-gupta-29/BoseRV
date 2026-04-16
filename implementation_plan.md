@@ -139,17 +139,18 @@ Wire all modules together:
 
 ---
 
-## Module 2 — Verilator + C++ Testbenches
+## Module 2 — Advanced Verification with Cocotb
 
 ### Theory
-- Verilator compiles Verilog to C++ for **cycle-accurate simulation** (10-100x faster than iverilog)
-- You write a C++ `main()` that drives clock, resets, and checks outputs
-- Outputs: VCD waveforms, pass/fail assertions, coverage
+- Writing C++ wrappers is incredibly tedious. Instead, we use **Cocotb** to write verification testbenches purely in Python!
+- Cocotb compiles Verilog to C++ via Verilator behind the scenes, and injects python tests dynamically.
+- Outputs: VCD waveforms, rich Python pass/fail assertions.
 
 ### Assignments
-- **B1**: Install Verilator, convert `tb_alu.v` to a C++ testbench
-- **B2**: Write a self-checking C++ testbench for the full single-cycle core
-  - Load 50 RISC-V instructions, compare register file state to a golden reference
+- **B1**: Setup Cocotb and Python Environment
+- **B2**: Write a Python Testbench for the ALU (`test_alu.py`)
+- **B3**: Full Core Verification with memory vectors in Python
+- **B4**: Complete the RV32I Decoder (TDD all remaining instructions!)
 
 ---
 
@@ -187,7 +188,8 @@ Instr3:           IF → ID → EX → MEM→ WB
 - **D1**: Implement forwarding unit
 - **D2**: Implement hazard detection unit (stall insertion)
 - **D3**: Implement branch flush (predict not-taken)
-- **D4**: Run compliance test suite with `riscv-tests`
+- **D4**: Implement 2-bit Branch Predictor (BHT)
+- **D5**: Run compliance test suite with `riscv-tests`
 
 ---
 
@@ -204,12 +206,13 @@ Instr3:           IF → ID → EX → MEM→ WB
 
 ---
 
-## Module 6 — Cache & Memory
+## Module 6 — Cache & Memory Subsystem
 
 ### Theory
 - Direct-mapped I-Cache (4KB, 64B lines)
 - Direct-mapped D-Cache (4KB, write-through)
 - Cache miss → stall pipeline
+- *(Note: Virtual memory/TLB concepts are deferred entirely to Module 9)*
 
 ### Assignments
 - **F1**: Implement I-Cache with hit/miss logic
