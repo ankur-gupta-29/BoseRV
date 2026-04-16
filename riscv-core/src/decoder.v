@@ -81,8 +81,9 @@ module decoder (
                 alu_src   = 1'b1;
                 wb_sel    = 2'b00;
                 case(funct3)
-                    3'b000: alu_op = 4'b0000;
-                    default: alu_op = 4'b0000;
+                    3'b000:       alu_op = 4'b0000;
+                    // TODO (Assignment B4): Add missing OP_IMM funct3 cases (ANDI, ORI, XORI, SLLI, etc.)
+                    default:      alu_op = 4'b0000;
                 endcase
             end
             OP_REG : begin
@@ -91,8 +92,9 @@ module decoder (
                 alu_src   = 1'b0;
                 wb_sel    = 2'b00;
                 case(funct3)
-                    3'b000: alu_op   = 4'b0000;
-                    default: alu_op = 4'b0000;
+                    3'b000:       alu_op = funct7[5] ? 4'b0001 : 4'b0000; // SUB vs ADD uses funct7 bit 5!
+                    // TODO (Assignment B4): Add missing OP_REG funct3 cases (AND, OR, XOR, etc.)
+                    default:      alu_op = 4'b0000;
                 endcase
             end
             OP_LOAD : begin
@@ -117,9 +119,10 @@ module decoder (
                 reg_write = 1'b0;
                 alu_src   = 1'b0;
                 case(funct3)
-                    3'b000: alu_op = 4'b0001;
-                    3'b001: alu_op = 4'b0001;
-                    default: alu_op = 4'b0001;
+                    3'b000:       alu_op = 4'b0001; // BEQ uses subtraction
+                    3'b001:       alu_op = 4'b0001; // BNE
+                    // TODO (Assignment B4): Add missing OP_BRANCH funct3 cases (BLT, BGE, etc.)
+                    default:      alu_op = 4'b0001;
                 endcase
                 
             end
