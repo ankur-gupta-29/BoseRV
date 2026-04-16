@@ -24,8 +24,8 @@ module tb_top;
     // (needs to match hierarchy in top.v)
     wire [31:0] pc     = dut.pc;
     wire [31:0] instr  = dut.instr;
-    wire [4:0]  rd     = dut.rd_addr;
-    wire [31:0] wdata  = dut.wb_data;
+    wire [4:0]  rd     = dut.rd;
+    wire [31:0] wdata  = dut.writeback_data;
     wire        we     = dut.reg_write;
 
     always #5 clk = ~clk;
@@ -53,20 +53,20 @@ module tb_top;
 
         // Check register values via hierarchical access
         $display("\n=== Register File Contents ===");
-        $display("x1 = %0d (expected  5)", dut.u_regfile.regs[1]);
-        $display("x2 = %0d (expected 20)", dut.u_regfile.regs[2]);
-        $display("x3 = %0d (expected 25)", dut.u_regfile.regs[3]);
-        $display("x5 = %0d (expected 25)", dut.u_regfile.regs[5]);
-        $display("x6 = %0d (expected  0, branch skipped)", dut.u_regfile.regs[6]);
-        $display("x7 = %0d (expected  0, branch skipped)", dut.u_regfile.regs[7]);
+        $display("x1 = %0d (expected  5)", dut.regfile_inst.regs[1]);
+        $display("x2 = %0d (expected 20)", dut.regfile_inst.regs[2]);
+        $display("x3 = %0d (expected 25)", dut.regfile_inst.regs[3]);
+        $display("x5 = %0d (expected 25)", dut.regfile_inst.regs[5]);
+        $display("x6 = %0d (expected  0, branch skipped)", dut.regfile_inst.regs[6]);
+        $display("x7 = %0d (expected  0, branch skipped)", dut.regfile_inst.regs[7]);
 
         // Automated checks
-        if (dut.u_regfile.regs[1] !== 32'd5)  begin $display("FAIL: x1"); errors=errors+1; end
-        if (dut.u_regfile.regs[2] !== 32'd20) begin $display("FAIL: x2"); errors=errors+1; end
-        if (dut.u_regfile.regs[3] !== 32'd25) begin $display("FAIL: x3"); errors=errors+1; end
-        if (dut.u_regfile.regs[5] !== 32'd25) begin $display("FAIL: x5"); errors=errors+1; end
-        if (dut.u_regfile.regs[6] !== 32'd0)  begin $display("FAIL: x6 (branch not taken!)"); errors=errors+1; end
-        if (dut.u_regfile.regs[7] !== 32'd0)  begin $display("FAIL: x7 (branch not taken!)"); errors=errors+1; end
+        if (dut.regfile_inst.regs[1] !== 32'd5)  begin $display("FAIL: x1"); errors=errors+1; end
+        if (dut.regfile_inst.regs[2] !== 32'd20) begin $display("FAIL: x2"); errors=errors+1; end
+        if (dut.regfile_inst.regs[3] !== 32'd25) begin $display("FAIL: x3"); errors=errors+1; end
+        if (dut.regfile_inst.regs[5] !== 32'd25) begin $display("FAIL: x5"); errors=errors+1; end
+        if (dut.regfile_inst.regs[6] !== 32'd0)  begin $display("FAIL: x6 (branch not taken!)"); errors=errors+1; end
+        if (dut.regfile_inst.regs[7] !== 32'd0)  begin $display("FAIL: x7 (branch not taken!)"); errors=errors+1; end
 
         $display("\n=== Result: %0d errors ===", errors);
         if (errors == 0) $display("BoseRV SINGLE-CYCLE CORE: ALL TESTS PASSED!");

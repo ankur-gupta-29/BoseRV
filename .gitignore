@@ -29,3 +29,9 @@ decoder_sim
 *.log
 *.swp
 *~
+
+# Python Virtual Environments & Caches
+.venv/
+venv/
+__pycache__/
+.pytest_cache/

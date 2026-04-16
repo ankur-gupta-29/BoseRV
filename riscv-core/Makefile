@@ -28,6 +28,8 @@ help:
 	@echo "  make decoder_sim- Simulate Decoder using Verilator"
 	@echo "  make fetch_sim  - Simulate Fetch stage using Verilator"
 	@echo "  make top_sim    - Simulate full single-cycle core using Verilator"
+	@echo "  make py_alu     - Simulate ALU using Python (Cocotb)"
+	@echo "  make py_top     - Simulate full core using Python (Cocotb)"
 	@echo "  make wave       - Open VCD waveforms in GTKWave"
 	@echo "  make clean      - Clean Verilator obj_dir and waveforms"
 
@@ -53,6 +55,12 @@ fetch_sim: $(SRC)/imem.v $(SRC)/fetch.v $(SIM)/tb_fetch.v
 top_sim: $(CORE_SRC) $(SIM)/tb_top.v
 	verilator $(VFLAGS) -Wno-DECLFILENAME --top-module tb_top $^
 	./obj_dir/Vtb_top
+
+py_alu:
+	../.venv/bin/pytest -v $(SIM)/test_alu.py -s
+
+py_top:
+	../.venv/bin/pytest -v $(SIM)/test_top.py -s
 
 # ---- View Waveforms ----
 wave:

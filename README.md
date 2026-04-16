@@ -32,23 +32,22 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
   - Translate the 7-bit `opcode` into control signals for the rest of the processor.
   - Completed! (`make decoder_sim` passes).
 
-- [ ] **Assignment A3 — Fetch Unit** (`src/fetch.v`)  *(<-- YOU ARE HERE)*
+- [x] **Assignment A3 — Fetch Unit** (`src/fetch.v`)
   - Construct the Program Counter (PC) flip-flops.
   - Send the address to the Instruction Memory, handle branches.
-  - To test: `make fetch_sim`
+  - Completed! (`make fetch_sim` passes).
 
-- [ ] **Assignment A4 — Top-Level Integration** (`src/top.v`)
+- [x] **Assignment A4 — Top-Level Integration** (`src/top.v`)
   - Wire all the pieces together into a functioning datapath!
   - Drive the `wb_sel` (Writeback MUX) to complete the final stage.
-  - To test: `make top_sim`
+  - Completed! (`make top_sim` passes).
 
 ---
 
-## Module 2 — Verilator Integration
-*(Locked until Module 1 is finished)*
-- [ ] Assignment B1 — C++ Wrapper (`tb_top.cpp`)
-- [ ] Assignment B2 — VCD Waveform dumping and analysis
-- [ ] Assignment B3 — Automated Test Vectors via Memory Hex files
+## Module 2 — Advanced Verification with Cocotb
+- [x] Assignment B1 — Setup Cocotb and Python Python Environment 
+- [x] Assignment B2 — Write a Python Testbench for the ALU (`test_alu.py`)
+- [ ] Assignment B3 — Full Core Verification with memory vectors in Python *(<-- YOU ARE HERE)*
 
 ---
 
