@@ -29,6 +29,7 @@ decoder_sim
 *.log
 *.swp
 *~
+*.xml
 
 # Python Virtual Environments & Caches
 .venv/
