@@ -63,11 +63,12 @@ async def test_top_fibonacci(dut):
     check_reg(22, -3, "LW/SW")
     
     check_reg(23, 4096, "LUI")
-    check_reg(24, 4188, "AUIPC")
+    check_reg(24, 4192, "AUIPC")
     
-    check_reg(25, 1, "Branches (BEQ,BNE,BLT,BGE,BLTU,BGEU)")
+    check_reg(25, 1, "Branch Section Marker")
+    check_reg(28, 0, "Branch Error Code (0=all passed, 1=BEQ,2=BNE,3=BLT,4=BGE,5=BLTU,6=BGEU failed)")
     
-    check_reg(26, 152, "JAL Link")
+    check_reg(26, 156, "JAL Link")
     check_reg(27, 1, "JAL Jump")
     
     check_reg(31, 100, "Program Completion")

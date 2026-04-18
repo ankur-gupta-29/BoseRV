@@ -34,7 +34,10 @@ module decoder (
     // PC control
     output reg        branch,    // is this a branch instruction?
     output reg        jump,      // is this JAL/JALR?
-    output reg        jalr       // specifically JALR (target = rs1+imm)
+    output reg        jalr,      // specifically JALR (target = rs1+imm)
+
+    //AUIPC
+    output reg        auipc
 );
 
     // TODO: Extract rs1, rs2, and rd directly from the instruction bits
@@ -59,6 +62,9 @@ module decoder (
     localparam OP_REG    = 7'b0110011; //add, sub, and, or, xor, sll, srl, sra, slt, sltu
     localparam OP_BRANCH = 7'b1100011; //beq, bne, blt, bge, bltu, bgeu
     localparam OP_LUI    = 7'b0110111; //lui
+    localparam OP_AUIPC  = 7'b0010111; //auipc
+    localparam OP_JAL    = 7'b1101111; //jal
+    localparam OP_JALR   = 7'b1100111; //jalr
     
     always @(*) begin
         // Default values to prevent latches
@@ -72,6 +78,7 @@ module decoder (
         branch    = 1'b0;
         jump      = 1'b0;
         jalr      = 1'b0;
+        auipc     = 1'b0;
 
         case (opcode)
             // TODO: Decode specific opcodes like OP_IMM, OP_REG, OP_LOAD, OP_STORE, OP_BRANCH
@@ -87,7 +94,8 @@ module decoder (
                     3'b100:       alu_op = 4'b0100;
                     3'b010:       alu_op = 4'b1000;
                     3'b011:       alu_op = 4'b1001;
-                    // TODO (Assignment B4): Add missing OP_IMM funct3 cases (ANDI, ORI, XORI, SLLI, etc.)
+                    3'b001:       alu_op = 4'b0101;
+                    3'b101:       alu_op = funct7[5]? 4'b0111:4'b0110;
                     default:      alu_op = 4'b0000;
                 endcase
             end
@@ -98,7 +106,13 @@ module decoder (
                 wb_sel    = 2'b00;
                 case(funct3)
                     3'b000:       alu_op = funct7[5] ? 4'b0001 : 4'b0000; // SUB vs ADD uses funct7 bit 5!
-                    // TODO (Assignment B4): Add missing OP_REG funct3 cases (AND, OR, XOR, etc.)
+                    3'b111:       alu_op = 4'b0010;
+                    3'b110:       alu_op = 4'b0011;
+                    3'b100:       alu_op = 4'b0100;
+                    3'b001:       alu_op = 4'b0101;
+                    3'b101:       alu_op = funct7[5]? 4'b0111:4'b0110;
+                    3'b011:       alu_op = 4'b1001;
+                    3'b010:       alu_op = 4'b1000;
                     default:      alu_op = 4'b0000;
                 endcase
             end
@@ -126,6 +140,7 @@ module decoder (
                 case(funct3)
                     3'b000:       alu_op = 4'b0001; // BEQ uses subtraction
                     3'b001:       alu_op = 4'b0001; // BNE
+                    3'b100:       alu_op = 4'b1001;
                     // TODO (Assignment B4): Add missing OP_BRANCH funct3 cases (BLT, BGE, etc.)
                     default:      alu_op = 4'b0001;
                 endcase
@@ -134,13 +149,40 @@ module decoder (
             OP_LUI: begin
                 imm = imm_u;
                 reg_write = 1'b1;
-                wb_sel  = 1'b00;
+                wb_sel  = 2'b00;
                 alu_src = 1'b1;
-                alu_op = 4'b0101;
+                // TODO (B4 - Fix 1): Change alu_op from SLL (4'b0101) to ADD (4'b0000)
+                // LUI works by computing ADD(x0, imm_u). Since rs1=x0=0, result = 0 + imm_u = imm_u ✓
+                alu_op = 4'b0000; // <-- WRONG! Change this to 4'b0000
             end
+            OP_AUIPC : begin
+                imm = imm_u;
+                reg_write = 1'b1;
+                wb_sel    = 2'b00;
+                alu_src   = 1'b1;
+                alu_op    = 4'b0000;
+                auipc     = 1'b1;
+            end
+            OP_JAL: begin
+                imm  = imm_j;
+                jump = 1'b1;
+                reg_write = 1'b1;
+                wb_sel = 2'b10;
+            end
+            OP_JALR: begin
+                imm  = imm_i;
+                jalr = 1'b1;
+                reg_write = 1'b1;
+                wb_sel  = 2'b10;
+                alu_src = 1'b0;
+                jump    = 1'b0;
+            end
+            
+
             default: begin
                 // Unknown opcode
             end
+
         endcase
     end
 

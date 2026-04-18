@@ -1,6 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776331240" />
-    <testcase name="test_alu_addition" classname="test_alu" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_alu.py" lineno="9" time="0.0010869503021240234" sim_time_ns="30.0" ratio_time="27600.157929370474" />
-  </testsuite>
-</testsuites>

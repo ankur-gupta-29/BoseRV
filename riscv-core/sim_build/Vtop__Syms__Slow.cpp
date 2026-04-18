@@ -46,6 +46,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_top->varInsert("alu_result", &(TOP.top__DOT__alu_result), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top->varInsert("alu_src", &(TOP.top__DOT__alu_src), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("alu_zero", &(TOP.top__DOT__alu_zero), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_top->varInsert("auipc", &(TOP.top__DOT__auipc), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("branch", &(TOP.top__DOT__branch), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("branch_taken", &(TOP.top__DOT__branch_taken), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("branch_target", &(TOP.top__DOT__branch_target), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
@@ -73,14 +74,18 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_top__alu_inst->varInsert("op", &(TOP.top__DOT__alu_inst__DOT__op), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,3,0);
     __Vscopep_top__alu_inst->varInsert("result", &(TOP.top__DOT__alu_inst__DOT__result), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top__alu_inst->varInsert("zero", &(TOP.top__DOT__alu_inst__DOT__zero), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_top__decoder_inst->varInsert("OP_AUIPC", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_AUIPC))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_BRANCH", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_BRANCH))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_IMM", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_IMM))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
+    __Vscopep_top__decoder_inst->varInsert("OP_JAL", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_JAL))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
+    __Vscopep_top__decoder_inst->varInsert("OP_JALR", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_JALR))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_LOAD", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_LOAD))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_LUI", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_LUI))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_REG", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_REG))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("OP_STORE", const_cast<void*>(static_cast<const void*>(&(TOP.top__DOT__decoder_inst__DOT__OP_STORE))), true, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);
     __Vscopep_top__decoder_inst->varInsert("alu_op", &(TOP.top__DOT__decoder_inst__DOT__alu_op), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,3,0);
     __Vscopep_top__decoder_inst->varInsert("alu_src", &(TOP.top__DOT__decoder_inst__DOT__alu_src), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_top__decoder_inst->varInsert("auipc", &(TOP.top__DOT__decoder_inst__DOT__auipc), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("branch", &(TOP.top__DOT__decoder_inst__DOT__branch), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("funct3", &(TOP.top__DOT__decoder_inst__DOT__funct3), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,2,0);
     __Vscopep_top__decoder_inst->varInsert("funct7", &(TOP.top__DOT__decoder_inst__DOT__funct7), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);

@@ -1,8 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776330985" />
-    <testcase name="test_alu_addition" classname="test_alu" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_alu.py" lineno="9" time="0.001859903335571289" sim_time_ns="20.0" ratio_time="10753.24701961287">
-      <failure error_type="AssertionError" error_msg="ALU produced 11111111111111111111111111110111 instead of -9&#10;assert LogicArray('11111111111111111111111111110111', Range(31, 'downto', 0)) == -9&#10; +  where LogicArray('11111111111111111111111111110111', Range(31, 'downto', 0)) = LogicArrayObject(alu.result).value&#10; +    where LogicArrayObject(alu.result) = HierarchyObject(alu).result" />
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -1,8 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776513989" />
-    <testcase name="test_top_fibonacci" classname="test_top" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_top.py" lineno="8" time="0.0028076171875" sim_time_ns="510.0" ratio_time="181648.69565217392">
-      <failure error_type="AssertionError" error_msg="&#10;  &#10;  === BoseRV Test Results: 14 instruction(s) FAILED ===&#10;    FAIL [SLL] x6: expected 160, got 10&#10;    FAIL [SLT] x7: expected 1, got 0&#10;    FAIL [XOR] x9: expected 10, got 20&#10;    FAIL [SRL] x10: expected 0, got 20&#10;    FAIL [SRA] x11: expected 4294967295, got 0&#10;    FAIL [OR] x12: expected 15, got 20&#10;    FAIL [AND] x13: expected 5, got 20&#10;    FAIL [SLLI] x19: expected 20, got 7&#10;    FAIL [SRLI] x20: expected 7, got 16&#10;    FAIL [SRAI] x21: expected 4294967293, got 1020&#10;    FAIL [LW/SW] x22: expected 4294967293, got 1020&#10;    FAIL [LUI] x23: expected 4096, got 0&#10;    FAIL [AUIPC] x24: expected 4188, got 0&#10;    FAIL [JAL Link] x26: expected 152, got 0&#10;  &#10;assert False" />
-    </testcase>
-  </testsuite>
-</testsuites>

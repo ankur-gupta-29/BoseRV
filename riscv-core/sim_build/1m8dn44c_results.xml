@@ -1,8 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776512150" />
-    <testcase name="test_top_fibonacci" classname="test_top" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_top.py" lineno="8" time="0.0048711299896240234" sim_time_ns="510.0" ratio_time="104698.4993392394">
-      <failure error_type="AssertionError" error_msg="SLL Failed: Expected 160, got 10 in x6&#10;assert 10 == 160" />
-    </testcase>
-  </testsuite>
-</testsuites>

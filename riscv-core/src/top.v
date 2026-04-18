@@ -25,7 +25,8 @@ module top (
     wire [31:0] writeback_data;
     wire branch_taken;
     wire [31:0] branch_target;
-    wire [31:0] jump_target;  
+    wire [31:0] jump_target;
+    wire auipc;
 
     
 
@@ -72,7 +73,7 @@ module top (
     
     // TODO: Instantiate alu
     alu alu_inst(
-        .a(rs1_data),
+        .a(auipc ? pc : rs1_data),
         .b(alu_b_in),
         .op(alu_op),
         .result(alu_result),

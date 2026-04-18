@@ -1,6 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776510967" />
-    <testcase name="test_top_fibonacci" classname="test_top" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_top.py" lineno="8" time="0.002481222152709961" sim_time_ns="210.0" ratio_time="84635.7105794177" />
-  </testsuite>
-</testsuites>

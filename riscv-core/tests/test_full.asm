@@ -34,32 +34,39 @@ LW   x22, 0(x0)      // x22 = -3 (Unsigned: 4294967293)
 
 // 5. U-Type
 LUI   x23, 1         // x23 = 4096
-AUIPC x24, 1         // x24 = 4096 + PC (Instruction index 23 -> PC 92) -> x24 = 4188
+AUIPC x24, 1         // x24 = PC(96) + 4096 = 4192
 
-// 6. Branches
-BEQ  x1, x1, B1_TAR
-ADDI x25, x0, 99
-B1_TAR:
-BNE  x1, x2, B2_TAR
-ADDI x25, x0, 99
-B2_TAR:
-BLT  x3, x1, B3_TAR
-ADDI x25, x0, 99
-B3_TAR:
-BGE  x1, x3, B4_TAR
-ADDI x25, x0, 99
-B4_TAR:
-BLTU x2, x3, B5_TAR
-ADDI x25, x0, 99
-B5_TAR:
-BGEU x3, x2, B6_TAR
-ADDI x25, x0, 99
-B6_TAR:
-ADDI x25, x0, 1      // x25 = 1 (all branches passed)
+// 6. Branches (Proper Fail-Trap Pattern)
+// x28 stays 0 if ALL branches work. Non-zero = error code of failing branch.
+// BEQ: x1(15) == x1(15), should branch
+BEQ  x1, x1, BEQ_OK
+ADDI x28, x0, 1      // x28=1 means BEQ FAILED
+BEQ_OK:
+// BNE: x1(15) != x2(5), should branch
+BNE  x1, x2, BNE_OK
+ADDI x28, x0, 2      // x28=2 means BNE FAILED
+BNE_OK:
+// BLT: x3(-5) < x1(15), should branch (signed)
+BLT  x3, x1, BLT_OK
+ADDI x28, x0, 3      // x28=3 means BLT FAILED
+BLT_OK:
+// BGE: x1(15) >= x2(5), should branch (signed)
+BGE  x1, x2, BGE_OK
+ADDI x28, x0, 4      // x28=4 means BGE FAILED
+BGE_OK:
+// BLTU: x2(5) < x3(0xFFFFFFFB), should branch (unsigned)
+BLTU x2, x3, BLTU_OK
+ADDI x28, x0, 5      // x28=5 means BLTU FAILED
+BLTU_OK:
+// BGEU: x3(0xFFFFFFFB) >= x2(5), should branch (unsigned)
+BGEU x3, x2, BGEU_OK
+ADDI x28, x0, 6      // x28=6 means BGEU FAILED
+BGEU_OK:
+ADDI x25, x0, 1      // x25=1: marker that we reached end of branch section
 
-// 7. Jumps
-JAL  x26, JAL_TAR    // x26 = PC + 4 (Instruction index 37 -> PC 148) -> x26 = 152
-ADDI x27, x0, 99
+// 7. Jumps (JAL at instruction 38, PC=152)
+JAL  x26, JAL_TAR    // x26 = PC+4 = 156
+ADDI x27, x0, 99     // skipped
 JAL_TAR:
 ADDI x27, x0, 1      // x27 = 1
 

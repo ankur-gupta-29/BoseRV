@@ -84,7 +84,7 @@ def assemble_line(line, pc, labels):
     if cmd == "XORI": return assemble_i(0x4, 0x13, parts)
     if cmd == "ORI":  return assemble_i(0x6, 0x13, parts)
     if cmd == "ANDI": return assemble_i(0x7, 0x13, parts)
-    if cmd == "SLLI": return assemble_i(0x0, 0x13, parts)
+    if cmd == "SLLI": return assemble_i(0x1, 0x13, parts)
     if cmd == "SRLI": return assemble_i(0x5, 0x13, parts)
     if cmd == "SRAI": return assemble_i(0x5, 0x13, parts) | (0x20 << 25)
     

@@ -1,8 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1776510819" />
-    <testcase name="test_top_fibonacci" classname="test_top" file="/home/ankur/workspace/BoseRV/riscv-core/sim/test_top.py" lineno="6" time="0.002683401107788086" sim_time_ns="210.0" ratio_time="78258.89293647268">
-      <failure error_type="AssertionError" error_msg="assert 0 == 5&#10; +  where 0 = LogicArray('00000000000000000000000000000000', Range(31, 'downto', 0)).integer&#10; +    where LogicArray('00000000000000000000000000000000', Range(31, 'downto', 0)) = LogicArrayObject(top.regfile_inst.regs[1]).value" />
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -15,84 +15,70 @@ This file serves as a persistent "memory block." If you ever start a new AI chat
 ## 2. Current State (Last Updated: 2026-04-18)
 
 ### ✅ Module 1 — Single-Cycle Datapath: COMPLETE
-All Verilog modules are implemented and passing the Verilog testbench (`make top_sim`):
+All Verilog modules implemented and passing:
 - `src/alu.v` — Full 10-operation ALU
-- `src/decoder.v` — Partially complete (see below)
-- `src/fetch.v` — PC update logic with branch/jump support
+- `src/decoder.v` — **Fully complete** (all RV32I instructions)
+- `src/fetch.v` — PC update logic with branch/jump/JALR/AUIPC support
 - `src/regfile.v` — Register file
-- `src/top.v` — Top-level glue wiring all modules
+- `src/top.v` — Top-level glue, AUIPC MUX wired
 
-### 🔄 Module 2 — Verification with Cocotb: IN PROGRESS
-- Assignment B1 ✅ (Cocotb + Python env setup, `.venv/`)
-- Assignment B2 ✅ (ALU verified with `test_alu.py` → `make py_alu`)
-- Assignment B3 ✅ (Full core verified with `test_top.py` → `make py_top`)
-- Assignment B4 🔄 (TDD to complete all RV32I instructions in `decoder.v`)
+### ✅ Module 2 — Verification with Cocotb: COMPLETE
+- Assignment B1 ✅ — Cocotb + Python env setup
+- Assignment B2 ✅ — ALU verified (`make py_alu`)
+- Assignment B3 ✅ — Full core verified (`make py_top`)
+- Assignment B4 ✅ — All RV32I instructions implemented and tested → **28/28 PASSED**
 
----
-
-## 3. The Critical Issue — What Needs to Be Done
-
-**The exhaustive test suite (`make py_top`) currently reports 19 FAILING instructions:**
-
-| Register | Instruction | Status |
-|----------|-------------|--------|
-| x6  | `SLL`  | ❌ |
-| x7  | `SLT`  | ❌ |
-| x9  | `XOR`  | ❌ |
-| x10 | `SRL`  | ❌ |
-| x11 | `SRA`  | ❌ |
-| x12 | `OR`   | ❌ |
-| x13 | `AND`  | ❌ |
-| x14 | `SLTI` | ❌ |
-| x15 | `SLTIU`| ❌ |
-| x16 | `XORI` | ❌ |
-| x17 | `ORI`  | ❌ |
-| x18 | `ANDI` | ❌ |
-| x19 | `SLLI` | ❌ |
-| x20 | `SRLI` | ❌ |
-| x21 | `SRAI` | ❌ |
-| x22 | `LW/SW`| ❌ |
-| x23 | `LUI`  | ❌ |
-| x24 | `AUIPC`| ❌ |
-| x26 | `JAL Link` | ❌ |
-
-**What's already passing:** `ADDI`, `ADD`, `SUB`, `SLTU`, `BEQ`, `BNE`, `JAL Jump`
-
-**Root Cause:** `src/decoder.v` only has `funct3`/`funct7` case entries for a handful of instructions. The `OP_REG`, `OP_IMM`, and `OP_BRANCH` blocks are missing most cases.
-
-**The Fix:** Open `src/decoder.v` and add the missing `funct3` case statements under `OP_REG` and `OP_IMM`. The ALU operation codes are defined at the top of `src/alu.v`:
-```
-4'b0000 = ADD    4'b0001 = SUB
-4'b0010 = AND    4'b0011 = OR
-4'b0100 = XOR    4'b0101 = SLL
-4'b0110 = SRL    4'b0111 = SRA
-4'b1000 = SLT    4'b1001 = SLTU
-```
+### 🔄 Module 3 — 5-Stage Pipeline: NEXT
+- Assignment C1 ← **YOU ARE HERE** (IF/ID Pipeline Register)
+- Assignment C2 (ID/EX Pipeline Register)
+- Assignment C3 (EX/MEM and MEM/WB Registers)
+- Assignment C4 (Pipeline Control Logic)
 
 ---
 
-## 4. Test Infrastructure (What We Built This Session)
-
-- **`tests/gen_hex.py`** — Full 2-pass Python assembler supporting all RV32I instruction formats including labels for branches and jumps.
-- **`tests/test_full.asm`** — Exhaustive assembly program testing all 31 core instructions.
-- **`sim/test_top.py`** — Cocotb Python testbench that auto-compiles `test_full.asm`, runs the simulation, and reports ALL failing instructions at once instead of stopping at the first failure.
-
----
-
-## 5. Key Design Decisions & Preferences
-- **Verification:** Pure Python using Cocotb + Pytest. No raw C++ Verilator wrappers.
-- **Toolchain:** `make py_top` runs the full test suite. `make top_sim` runs the old Verilog testbench.
-- **Tutor Mode:** The AI acts as a tutor — explains, hints, and reviews but does NOT write the user's Verilog for them.
-- **No CI/CD:** The user keeps this entirely local. No GitHub Actions workflow.
-- **Module 6 scope:** Cache only. TLB and Virtual Memory are strictly Module 9.
-- **Module 4 includes:** Assignment D4 — 2-bit Branch Predictor (BHT).
+## 3. Test Infrastructure
+- **`tests/gen_hex.py`** — Full 2-pass Python assembler (all RV32I formats + label support)
+- **`tests/test_full.asm`** — Exhaustive 31-instruction test program
+- **`sim/test_top.py`** — Cocotb testbench: auto-compiles ASM, runs simulation, reports ALL pass/fail
+- **Run:** `make py_top` → shows `=== BoseRV Test Results: 28/28 PASSED ===`
 
 ---
 
-## 6. Obsidian Graph View
-- The Obsidian dashboard file is at `BoseRV_Dashboard.md` (root of the project).
-- Symlink the full project into Obsidian vault: `ln -s /home/ankur/workspace/BoseRV /home/ankur/Dropbox/PhD_Work/BoseRV_Project`
+## 4. Completed Decoder Instruction List
+All instructions implemented in `src/decoder.v`:
+| Group | Instructions |
+|-------|-------------|
+| R-Type | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND |
+| I-Type ALU | ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI |
+| Memory | LW, SW |
+| Upper Imm | LUI, AUIPC |
+| Branches | BEQ, BNE, BLT, BGE, BLTU, BGEU |
+| Jumps | JAL, JALR |
 
 ---
 
-*Dear AI: You are now fully synced to Session 4. Greet the user and tell them they have 19 failing instructions left to implement in `src/decoder.v`. Ask which instruction they want to tackle first!*
+## 5. Key Design Decisions
+- `auipc` signal added as output port in `decoder.v` and connected in `top.v`
+- `top.v` ALU input A uses MUX: `auipc ? pc : rs1_data`
+- `jump_target` in `top.v`: `jalr ? (rs1_data + imm) : (pc + imm)`
+- **Tutor Mode:** AI guides only, user writes all Verilog
+- **No CI/CD:** Local workflow only (`make py_top`)
+- Module 6 = Cache only, Module 9 = TLB + Virtual Memory
+
+---
+
+## 6. Module 3 Starting Point — What is a Pipeline?
+The single-cycle processor executes one instruction per clock cycle but the clock must be slow enough for the slowest instruction. A 5-stage pipeline splits each instruction into 5 stages (IF→ID→EX→MEM→WB), allowing 5 instructions to be in-flight simultaneously.
+
+**The 5 stages:**
+1. **IF** — Instruction Fetch (read from IMEM)
+2. **ID** — Instruction Decode (regfile read, control signals)
+3. **EX** — Execute (ALU computation)
+4. **MEM** — Memory access (LW/SW)
+5. **WB** — Writeback (result → register file)
+
+**Assignment C1 task:** Add pipeline registers (flip-flops) between IF and ID stages to hold `PC` and `instr` values across clock edges.
+
+---
+
+*Dear AI: You are fully synced. BoseRV's single-cycle core is COMPLETE with 28/28 tests passing. The user is now starting Module 3 (5-Stage Pipeline). Begin with Assignment C1: the IF/ID pipeline register. Greet the user and explain the conceptual difference between combinational (single-cycle) and pipelined execution before they write any Verilog!*

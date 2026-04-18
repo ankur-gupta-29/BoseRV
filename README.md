@@ -48,13 +48,12 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
 - [x] Assignment B1 — Setup Cocotb and Python Environment 
 - [x] Assignment B2 — Write a Python Testbench for the ALU (`test_alu.py`)
 - [x] Assignment B3 — Full Core Verification with memory vectors in Python
-- [ ] Assignment B4 — Complete the RV32I Decoder (TDD all remaining instructions!) *(<-- YOU ARE HERE)*
+- [x] Assignment B4 — Complete the RV32I Decoder (TDD all remaining instructions!)
 
 ---
 
 ## Module 3 — 5-Stage Pipeline
-*(Locked until Module 2 is finished)*
-- [ ] Assignment C1 — IF/ID Pipeline Register
+- [ ] Assignment C1 — IF/ID Pipeline Register *(<-- YOU ARE HERE)*
 - [ ] Assignment C2 — ID/EX Pipeline Register
 - [ ] Assignment C3 — EX/MEM and MEM/WB Registers
 - [ ] Assignment C4 — Pipeline Control Logic

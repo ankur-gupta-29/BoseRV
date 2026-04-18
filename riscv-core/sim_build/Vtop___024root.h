@@ -34,6 +34,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*1:0*/ top__DOT__wb_sel;
         CData/*0:0*/ top__DOT__alu_zero;
         CData/*0:0*/ top__DOT__branch_taken;
+        CData/*0:0*/ top__DOT__auipc;
         CData/*0:0*/ top__DOT__fetch_inst__DOT__clk;
         CData/*0:0*/ top__DOT__fetch_inst__DOT__rst;
         CData/*0:0*/ top__DOT__fetch_inst__DOT__branch_taken;
@@ -50,6 +51,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ top__DOT__decoder_inst__DOT__branch;
         CData/*0:0*/ top__DOT__decoder_inst__DOT__jump;
         CData/*0:0*/ top__DOT__decoder_inst__DOT__jalr;
+        CData/*0:0*/ top__DOT__decoder_inst__DOT__auipc;
         CData/*6:0*/ top__DOT__decoder_inst__DOT__opcode;
         CData/*2:0*/ top__DOT__decoder_inst__DOT__funct3;
         CData/*6:0*/ top__DOT__decoder_inst__DOT__funct7;
@@ -78,10 +80,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ top__DOT__alu_b_in;
         IData/*31:0*/ top__DOT__writeback_data;
         IData/*31:0*/ top__DOT__branch_target;
-        IData/*31:0*/ top__DOT__jump_target;
-        IData/*31:0*/ top__DOT__fetch_inst__DOT__branch_target;
     };
     struct {
+        IData/*31:0*/ top__DOT__jump_target;
+        IData/*31:0*/ top__DOT__fetch_inst__DOT__branch_target;
         IData/*31:0*/ top__DOT__fetch_inst__DOT__jump_target;
         IData/*31:0*/ top__DOT__fetch_inst__DOT__pc;
         IData/*31:0*/ top__DOT__fetch_inst__DOT__instr;
@@ -126,6 +128,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_REG = 0x33U;
     static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_BRANCH = 0x63U;
     static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_LUI = 0x37U;
+    static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_AUIPC = 0x17U;
+    static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_JAL = 0x6fU;
+    static constexpr CData/*6:0*/ top__DOT__decoder_inst__DOT__OP_JALR = 0x67U;
 
     // CONSTRUCTORS
     Vtop___024root(Vtop__Syms* symsp, const char* namep);
