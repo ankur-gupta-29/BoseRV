@@ -225,6 +225,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__branch_target = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14505591511740879728ull);
     vlSelf->top__DOT__jump_target = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12303079154299553504ull);
     vlSelf->top__DOT__auipc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15002735841064786115ull);
+    vlSelf->top__DOT__lui = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3518753602481372166ull);
+    vlSelf->top__DOT__funct3 = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 7321435703144168417ull);
     vlSelf->top__DOT__fetch_inst__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3773510879838338583ull);
     vlSelf->top__DOT__fetch_inst__DOT__rst = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17518742716669503812ull);
     vlSelf->top__DOT__fetch_inst__DOT__branch_taken = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13118203494888417484ull);
@@ -254,6 +256,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__decoder_inst__DOT__jump = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11618407731753084424ull);
     vlSelf->top__DOT__decoder_inst__DOT__jalr = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6122482867727998351ull);
     vlSelf->top__DOT__decoder_inst__DOT__auipc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8796987818446020507ull);
+    vlSelf->top__DOT__decoder_inst__DOT__lui = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13627184383189032765ull);
     vlSelf->top__DOT__decoder_inst__DOT__opcode = VL_SCOPED_RAND_RESET_I(7, __VscopeHash, 5278871174110750403ull);
     vlSelf->top__DOT__decoder_inst__DOT__funct3 = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 15653698007575932710ull);
     vlSelf->top__DOT__decoder_inst__DOT__funct7 = VL_SCOPED_RAND_RESET_I(7, __VscopeHash, 3025944397351283816ull);

@@ -51,11 +51,13 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_top->varInsert("branch_taken", &(TOP.top__DOT__branch_taken), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("branch_target", &(TOP.top__DOT__branch_target), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top->varInsert("clk", &(TOP.top__DOT__clk), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_top->varInsert("funct3", &(TOP.top__DOT__funct3), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,2,0);
     __Vscopep_top->varInsert("imm", &(TOP.top__DOT__imm), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top->varInsert("instr", &(TOP.top__DOT__instr), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top->varInsert("jalr", &(TOP.top__DOT__jalr), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("jump", &(TOP.top__DOT__jump), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("jump_target", &(TOP.top__DOT__jump_target), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
+    __Vscopep_top->varInsert("lui", &(TOP.top__DOT__lui), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("mem_read", &(TOP.top__DOT__mem_read), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top->varInsert("mem_read_data", &(TOP.top__DOT__mem_read_data), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top->varInsert("mem_write", &(TOP.top__DOT__mem_write), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
@@ -98,6 +100,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_top__decoder_inst->varInsert("instr", &(TOP.top__DOT__decoder_inst__DOT__instr), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_top__decoder_inst->varInsert("jalr", &(TOP.top__DOT__decoder_inst__DOT__jalr), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("jump", &(TOP.top__DOT__decoder_inst__DOT__jump), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_top__decoder_inst->varInsert("lui", &(TOP.top__DOT__decoder_inst__DOT__lui), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("mem_read", &(TOP.top__DOT__decoder_inst__DOT__mem_read), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("mem_write", &(TOP.top__DOT__decoder_inst__DOT__mem_write), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_top__decoder_inst->varInsert("opcode", &(TOP.top__DOT__decoder_inst__DOT__opcode), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,6,0);

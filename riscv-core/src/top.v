@@ -27,6 +27,8 @@ module top (
     wire [31:0] branch_target;
     wire [31:0] jump_target;
     wire auipc;
+    wire lui;
+    wire [2:0] funct3 = instr[14:12];
 
     
 
@@ -57,7 +59,9 @@ module top (
         .wb_sel(wb_sel),    
         .branch(branch),    
         .jump(jump),     
-        .jalr(jalr)       
+        .jalr(jalr),
+        .auipc(auipc),
+        .lui(lui)      
     );
     // TODO: Instantiate regfile
     regfile regfile_inst(
@@ -73,7 +77,7 @@ module top (
     
     // TODO: Instantiate alu
     alu alu_inst(
-        .a(auipc ? pc : rs1_data),
+        .a(auipc ? pc : lui ? 32'h0: rs1_data),
         .b(alu_b_in),
         .op(alu_op),
         .result(alu_result),
@@ -95,8 +99,13 @@ module top (
     assign alu_b_in = alu_src ? imm : rs2_data;
     // TODO: Implement Jump Target computation 
     assign branch_target = pc+imm;
-    assign jump_target = jalr ? (rs1_data+imm):branch_target;
+    assign jump_target = jalr ? ((rs1_data+imm) & ~32'h1):branch_target;
     // TODO: Evaluate branch conditions (is branch taken?)
-    assign branch_taken = branch & alu_zero;
+    assign branch_taken = branch & (funct3 == 3'b000 ? alu_zero:
+                                    funct3 == 3'b001 ? !alu_zero:
+                                    funct3 == 3'b100 ? alu_result[0]:
+                                    funct3 == 3'b101 ? !alu_result[0]:
+                                    funct3 == 3'b110 ? alu_result[0]:
+                                                      !alu_result[0]);
 
 endmodule

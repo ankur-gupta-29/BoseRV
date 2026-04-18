@@ -41,6 +41,6 @@ module alu (
 
     // TODO: Determine when the zero flag should be set 
     // (Hint: it's used by the BEQ instruction)
-    assign zero = a == b ? 1'b1:1'b0;
+    assign zero = result == 32'b0;
 
 endmodule

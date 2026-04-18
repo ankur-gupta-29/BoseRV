@@ -36,8 +36,10 @@ module decoder (
     output reg        jump,      // is this JAL/JALR?
     output reg        jalr,      // specifically JALR (target = rs1+imm)
 
-    //AUIPC
-    output reg        auipc
+    //AUIPC LUI
+    output reg        auipc,
+    output reg        lui
+    
 );
 
     // TODO: Extract rs1, rs2, and rd directly from the instruction bits
@@ -48,6 +50,7 @@ module decoder (
     wire [6:0] opcode  = instr[6:0];
     wire [2:0] funct3  = instr[14:12];
     wire [6:0] funct7  = instr[31:25];
+    
 
     // TODO: Generate the 5 immediate types (I, S, B, U, J) by slicing and sign-extending
     wire [31:0] imm_i = {{20{instr[31]}},instr[31:20]};
@@ -79,6 +82,7 @@ module decoder (
         jump      = 1'b0;
         jalr      = 1'b0;
         auipc     = 1'b0;
+        lui       = 1'b0;
 
         case (opcode)
             // TODO: Decode specific opcodes like OP_IMM, OP_REG, OP_LOAD, OP_STORE, OP_BRANCH
@@ -138,10 +142,15 @@ module decoder (
                 reg_write = 1'b0;
                 alu_src   = 1'b0;
                 case(funct3)
-                    3'b000:       alu_op = 4'b0001; // BEQ uses subtraction
-                    3'b001:       alu_op = 4'b0001; // BNE
-                    3'b100:       alu_op = 4'b1001;
-                    // TODO (Assignment B4): Add missing OP_BRANCH funct3 cases (BLT, BGE, etc.)
+                    3'b000:       alu_op = 4'b0001; // BEQ  — SUB, branch if zero ✅
+                    3'b001:       alu_op = 4'b0001; // BNE  — SUB, branch if NOT zero ✅ (top.v handles condition)
+                    3'b100:       alu_op = 4'b1000; // TODO: BLT  — WRONG! needs SLT  (4'b1000), not SLTU
+                    // TODO: 3'b101 BGE  — use SLT  (4'b1000), branch if NOT SLT result
+                    3'b110:       alu_op = 4'b1001 ;
+                    // TODO: 3'b110 BLTU — use SLTU (4'b1001), branch if SLTU result
+                    3'b101:       alu_op = 4'b1000;
+                    // TODO: 3'b111 BGEU — use SLTU (4'b1001), branch if NOT SLTU result
+                    3'b111:       alu_op = 4'b1001;
                     default:      alu_op = 4'b0001;
                 endcase
                 
@@ -151,6 +160,7 @@ module decoder (
                 reg_write = 1'b1;
                 wb_sel  = 2'b00;
                 alu_src = 1'b1;
+                lui     = 1'b1;
                 // TODO (B4 - Fix 1): Change alu_op from SLL (4'b0101) to ADD (4'b0000)
                 // LUI works by computing ADD(x0, imm_u). Since rs1=x0=0, result = 0 + imm_u = imm_u ✓
                 alu_op = 4'b0000; // <-- WRONG! Change this to 4'b0000
@@ -175,7 +185,7 @@ module decoder (
                 reg_write = 1'b1;
                 wb_sel  = 2'b10;
                 alu_src = 1'b0;
-                jump    = 1'b0;
+                jump    = 1'b1;
             end
             
 
