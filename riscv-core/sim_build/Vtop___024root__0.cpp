@@ -299,7 +299,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                      ? 1U
                                                      : 0U))));
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_src = 0U;
-                        vlSelfRef.top__DOT__decoder_inst__DOT__imm = 0U;
                     }
                 }
             }
@@ -310,7 +309,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
                 if ((2U & (IData)(vlSelfRef.top__DOT__decoder_inst__DOT__opcode))) {
                     if ((1U & (IData)(vlSelfRef.top__DOT__decoder_inst__DOT__opcode))) {
                         vlSelfRef.top__DOT__decoder_inst__DOT__reg_write = 0U;
-                        vlSelfRef.top__DOT__decoder_inst__DOT__wb_sel = 0U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_op = 0U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_src = 1U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__imm 
@@ -934,7 +932,6 @@ void Vtop___024root___nba_sequent__TOP__2(Vtop___024root* vlSelf) {
                                                      ? 1U
                                                      : 0U))));
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_src = 0U;
-                        vlSelfRef.top__DOT__decoder_inst__DOT__imm = 0U;
                     }
                 }
             }
@@ -945,7 +942,6 @@ void Vtop___024root___nba_sequent__TOP__2(Vtop___024root* vlSelf) {
                 if ((2U & (IData)(vlSelfRef.top__DOT__decoder_inst__DOT__opcode))) {
                     if ((1U & (IData)(vlSelfRef.top__DOT__decoder_inst__DOT__opcode))) {
                         vlSelfRef.top__DOT__decoder_inst__DOT__reg_write = 0U;
-                        vlSelfRef.top__DOT__decoder_inst__DOT__wb_sel = 0U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_op = 0U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__alu_src = 1U;
                         vlSelfRef.top__DOT__decoder_inst__DOT__imm 
@@ -1275,7 +1271,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__ico(vlSelfRef.__VicoTriggered, "ico"s);
 #endif
-            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 7, "", "Input combinational region did not converge after 100 tries");
+            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 10, "", "Input combinational region did not converge after 100 tries");
         }
         __VicoIterCount = ((IData)(1U) + __VicoIterCount);
     } while (Vtop___024root___eval_phase__ico(vlSelf));
@@ -1285,7 +1281,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__act(vlSelfRef.__VnbaTriggered, "nba"s);
 #endif
-            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 7, "", "NBA region did not converge after 100 tries");
+            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 10, "", "NBA region did not converge after 100 tries");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         vlSelfRef.__VactIterCount = 0U;
@@ -1294,7 +1290,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__act(vlSelfRef.__VactTriggered, "act"s);
 #endif
-                VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 7, "", "Active region did not converge after 100 tries");
+                VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 10, "", "Active region did not converge after 100 tries");
             }
             vlSelfRef.__VactIterCount = ((IData)(1U) 
                                          + vlSelfRef.__VactIterCount);

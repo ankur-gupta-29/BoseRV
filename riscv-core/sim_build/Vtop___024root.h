@@ -28,14 +28,14 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ top__DOT__mem_read;
         CData/*0:0*/ top__DOT__mem_write;
         CData/*0:0*/ top__DOT__reg_write;
+        CData/*1:0*/ top__DOT__wb_sel;
         CData/*0:0*/ top__DOT__branch;
         CData/*0:0*/ top__DOT__jump;
         CData/*0:0*/ top__DOT__jalr;
-        CData/*1:0*/ top__DOT__wb_sel;
-        CData/*0:0*/ top__DOT__alu_zero;
-        CData/*0:0*/ top__DOT__branch_taken;
         CData/*0:0*/ top__DOT__auipc;
         CData/*0:0*/ top__DOT__lui;
+        CData/*0:0*/ top__DOT__alu_zero;
+        CData/*0:0*/ top__DOT__branch_taken;
         CData/*2:0*/ top__DOT__funct3;
         CData/*0:0*/ top__DOT__fetch_inst__DOT__clk;
         CData/*0:0*/ top__DOT__fetch_inst__DOT__rst;
@@ -78,11 +78,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ top__DOT__imm;
         IData/*31:0*/ top__DOT__rs1_data;
         IData/*31:0*/ top__DOT__rs2_data;
+        IData/*31:0*/ top__DOT__alu_b_in;
         IData/*31:0*/ top__DOT__alu_result;
-        IData/*31:0*/ top__DOT__mem_read_data;
     };
     struct {
-        IData/*31:0*/ top__DOT__alu_b_in;
+        IData/*31:0*/ top__DOT__mem_read_data;
         IData/*31:0*/ top__DOT__writeback_data;
         IData/*31:0*/ top__DOT__branch_target;
         IData/*31:0*/ top__DOT__jump_target;

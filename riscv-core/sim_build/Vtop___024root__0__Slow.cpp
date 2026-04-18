@@ -71,7 +71,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__stl(vlSelfRef.__VstlTriggered, "stl"s);
 #endif
-            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 7, "", "Settle region did not converge after 100 tries");
+            VL_FATAL_MT("/home/ankur/workspace/BoseRV/riscv-core/src/top.v", 10, "", "Settle region did not converge after 100 tries");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
     } while (Vtop___024root___eval_phase__stl(vlSelf));
@@ -210,22 +210,22 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__mem_read = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7095475998987836616ull);
     vlSelf->top__DOT__mem_write = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16154316610771121487ull);
     vlSelf->top__DOT__reg_write = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6919762768922686668ull);
+    vlSelf->top__DOT__wb_sel = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 2796855917807905036ull);
     vlSelf->top__DOT__branch = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9163301880374970101ull);
     vlSelf->top__DOT__jump = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17483046977668594442ull);
     vlSelf->top__DOT__jalr = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6278530106186258012ull);
-    vlSelf->top__DOT__wb_sel = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 2796855917807905036ull);
+    vlSelf->top__DOT__auipc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15002735841064786115ull);
+    vlSelf->top__DOT__lui = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3518753602481372166ull);
     vlSelf->top__DOT__rs1_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 595039983895368829ull);
     vlSelf->top__DOT__rs2_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12555395350430748387ull);
+    vlSelf->top__DOT__alu_b_in = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9886311799662046688ull);
     vlSelf->top__DOT__alu_result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1414706314101411564ull);
     vlSelf->top__DOT__alu_zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9140342103571717515ull);
     vlSelf->top__DOT__mem_read_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15051047848365176992ull);
-    vlSelf->top__DOT__alu_b_in = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9886311799662046688ull);
     vlSelf->top__DOT__writeback_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10042464747259415774ull);
     vlSelf->top__DOT__branch_taken = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13525691122646395870ull);
     vlSelf->top__DOT__branch_target = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14505591511740879728ull);
     vlSelf->top__DOT__jump_target = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12303079154299553504ull);
-    vlSelf->top__DOT__auipc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15002735841064786115ull);
-    vlSelf->top__DOT__lui = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3518753602481372166ull);
     vlSelf->top__DOT__funct3 = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 7321435703144168417ull);
     vlSelf->top__DOT__fetch_inst__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3773510879838338583ull);
     vlSelf->top__DOT__fetch_inst__DOT__rst = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17518742716669503812ull);

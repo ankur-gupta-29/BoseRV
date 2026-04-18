@@ -1,76 +1,96 @@
 // ============================================================
 // BoseRV — Instruction Decoder + Control Unit
-// Assignment A2 — SKELETON
 //
-// Decodes a 32-bit RISC-V instruction and generates:
-//   - Register addresses: rs1, rs2, rd
-//   - Sign-extended immediate
-//   - ALU operation code
-//   - All control signals
+// Takes a raw 32-bit RISC-V instruction and produces:
+//   • Register addresses (rs1, rs2, rd)
+//   • Sign-extended immediate in the right format (I/S/B/U/J)
+//   • ALU operation code matching alu.v encoding
+//   • All datapath control signals
+//
+// All outputs are purely combinational — no clock needed.
 // ============================================================
 module decoder (
-    input  [31:0] instr,       // 32-bit raw instruction
+    input  [31:0] instr,       // 32-bit raw instruction from fetch stage
 
-    // Register addresses
-    output [4:0]  rs1,         // source register 1
-    output [4:0]  rs2,         // source register 2
-    output [4:0]  rd,          // destination register
+    // Register addresses — fixed bit positions in every RV32I instruction
+    output [4:0]  rs1,         // source register 1  (bits 19:15)
+    output [4:0]  rs2,         // source register 2  (bits 24:20)
+    output [4:0]  rd,          // destination register (bits 11:7)
 
-    // Immediate (sign-extended to 32 bits)
+    // Immediate — sign-extended to 32 bits, format chosen by opcode
     output reg [31:0] imm,
 
     // ALU control
-    output reg [3:0]  alu_op,  // ALU operation (matches alu.v encoding)
-    output reg        alu_src, // 0=register B, 1=immediate B
+    output reg [3:0]  alu_op,  // which operation the ALU should perform
+    output reg        alu_src, // 0 = B operand comes from rs2, 1 = comes from imm
 
     // Memory control
-    output reg        mem_read,  // load instruction
-    output reg        mem_write, // store instruction
+    output reg        mem_read,  // 1 for load instructions (LW)
+    output reg        mem_write, // 1 for store instructions (SW)
 
     // Writeback control
-    output reg        reg_write, // write result back to regfile
-    output reg [1:0]  wb_sel,    // 0=ALU result, 1=mem read, 2=PC+4
+    output reg        reg_write, // 1 when result should be written back to rd
+    output reg [1:0]  wb_sel,   // selects writeback source: 0=ALU, 1=mem, 2=PC+4
 
     // PC control
-    output reg        branch,    // is this a branch instruction?
-    output reg        jump,      // is this JAL/JALR?
-    output reg        jalr,      // specifically JALR (target = rs1+imm)
+    output reg        branch,   // 1 for B-type instructions (BEQ, BNE, BLT, …)
+    output reg        jump,     // 1 for JAL or JALR
+    output reg        jalr,     // 1 specifically for JALR (so top.v uses rs1+imm target)
 
-    //AUIPC LUI
-    output reg        auipc,
-    output reg        lui
-    
+    // Upper-immediate flags (need special A-operand routing in top.v)
+    output reg        auipc,    // 1 for AUIPC: ALU computes PC + imm_u
+    output reg        lui       // 1 for LUI:   ALU computes 0  + imm_u
 );
 
-    // TODO: Extract rs1, rs2, and rd directly from the instruction bits
-    assign rs1 = instr[19:15]; // change me
-    assign rs2 = instr[24:20]; // change me
-    assign rd  = instr[11:7]; // change me
+    // Register addresses are at the same bit positions in ALL RV32I formats
+    assign rs1 = instr[19:15];
+    assign rs2 = instr[24:20];
+    assign rd  = instr[11:7];
 
-    wire [6:0] opcode  = instr[6:0];
-    wire [2:0] funct3  = instr[14:12];
-    wire [6:0] funct7  = instr[31:25];
-    
+    // Instruction sub-fields used to distinguish operations within an opcode group
+    wire [6:0] opcode = instr[6:0];
+    wire [2:0] funct3 = instr[14:12]; // selects variant within opcode group (e.g. ADD vs SUB)
+    wire [6:0] funct7 = instr[31:25]; // upper bits; bit 5 distinguishes SUB/SRA from ADD/SRL
 
-    // TODO: Generate the 5 immediate types (I, S, B, U, J) by slicing and sign-extending
-    wire [31:0] imm_i = {{20{instr[31]}},instr[31:20]};
-    wire [31:0] imm_s = {{20{instr[31]}},instr[31:25],instr[11:7]};
-    wire [31:0] imm_b = {{19{instr[31]}},instr[31],instr[7],instr[30:25],instr[11:8],1'b0};
-    wire [31:0] imm_u = {instr[31:12],12'b0};
-    wire [31:0] imm_j = {{11{instr[31]}},instr[31],instr[19:12],instr[20],instr[30:21],1'b0};
+    // ----------------------------------------------------------------
+    // Immediate encodings — RV32I has 5 formats; bits are scrambled to
+    // keep rs1/rs2/rd at the same positions across all formats.
+    //
+    // bit 31 is always the sign bit; we replicate it to fill the upper bits.
+    // ----------------------------------------------------------------
 
-    localparam OP_LOAD   = 7'b0000011; //lw
-    localparam OP_STORE  = 7'b0100011; //sw
-    localparam OP_IMM    = 7'b0010011; //addi
-    localparam OP_REG    = 7'b0110011; //add, sub, and, or, xor, sll, srl, sra, slt, sltu
-    localparam OP_BRANCH = 7'b1100011; //beq, bne, blt, bge, bltu, bgeu
-    localparam OP_LUI    = 7'b0110111; //lui
-    localparam OP_AUIPC  = 7'b0010111; //auipc
-    localparam OP_JAL    = 7'b1101111; //jal
-    localparam OP_JALR   = 7'b1100111; //jalr
-    
+    // I-type: loads, ALU-immediate, JALR  (12-bit signed imm)
+    wire [31:0] imm_i = {{20{instr[31]}}, instr[31:20]};
+
+    // S-type: stores  (imm split across bits 31:25 and 11:7 to free up rs2 field)
+    wire [31:0] imm_s = {{20{instr[31]}}, instr[31:25], instr[11:7]};
+
+    // B-type: branches  (13-bit signed, bit 0 always 0 — targets must be 2-byte aligned)
+    // Bit positions are scrambled so rd field can stay in place for other formats.
+    wire [31:0] imm_b = {{19{instr[31]}}, instr[31], instr[7], instr[30:25], instr[11:8], 1'b0};
+
+    // U-type: LUI / AUIPC  (20-bit upper immediate; lower 12 bits zeroed)
+    wire [31:0] imm_u = {instr[31:12], 12'b0};
+
+    // J-type: JAL  (21-bit signed, bit 0 always 0)
+    // Bits are scrambled similarly to B-type.
+    wire [31:0] imm_j = {{11{instr[31]}}, instr[31], instr[19:12], instr[20], instr[30:21], 1'b0};
+
+    // Opcode constants from RV32I spec Table 24.1
+    localparam OP_LOAD   = 7'b0000011; // LW
+    localparam OP_STORE  = 7'b0100011; // SW
+    localparam OP_IMM    = 7'b0010011; // ADDI, SLTI, XORI, ORI, ANDI, SLLI, SRLI, SRAI
+    localparam OP_REG    = 7'b0110011; // ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND
+    localparam OP_BRANCH = 7'b1100011; // BEQ, BNE, BLT, BGE, BLTU, BGEU
+    localparam OP_LUI    = 7'b0110111; // LUI
+    localparam OP_AUIPC  = 7'b0010111; // AUIPC
+    localparam OP_JAL    = 7'b1101111; // JAL
+    localparam OP_JALR   = 7'b1100111; // JALR
+
     always @(*) begin
-        // Default values to prevent latches
+        // Safe defaults: NOP-like — no writes, no branches, ADD as placeholder op.
+        // Without defaults every signal would need to be set in every branch,
+        // and omissions would cause latches in synthesis.
         imm       = 32'h0;
         alu_op    = 4'b0000;
         alu_src   = 1'b0;
@@ -85,112 +105,159 @@ module decoder (
         lui       = 1'b0;
 
         case (opcode)
-            // TODO: Decode specific opcodes like OP_IMM, OP_REG, OP_LOAD, OP_STORE, OP_BRANCH
-            OP_IMM : begin
+
+            // ----------------------------------------------------------
+            // I-type ALU: ADDI SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI
+            // B operand = sign-extended 12-bit immediate (alu_src=1)
+            // ----------------------------------------------------------
+            OP_IMM: begin
                 imm       = imm_i;
                 reg_write = 1'b1;
-                alu_src   = 1'b1;
-                wb_sel    = 2'b00;
-                case(funct3)
-                    3'b000:       alu_op = 4'b0000;
-                    3'b111:       alu_op = 4'b0010;
-                    3'b110:       alu_op = 4'b0011;
-                    3'b100:       alu_op = 4'b0100;
-                    3'b010:       alu_op = 4'b1000;
-                    3'b011:       alu_op = 4'b1001;
-                    3'b001:       alu_op = 4'b0101;
-                    3'b101:       alu_op = funct7[5]? 4'b0111:4'b0110;
-                    default:      alu_op = 4'b0000;
+                alu_src   = 1'b1;   // use immediate as ALU B operand
+                wb_sel    = 2'b00;  // write ALU result to rd
+                case (funct3)
+                    3'b000: alu_op = 4'b0000; // ADDI
+                    3'b111: alu_op = 4'b0010; // ANDI
+                    3'b110: alu_op = 4'b0011; // ORI
+                    3'b100: alu_op = 4'b0100; // XORI
+                    3'b010: alu_op = 4'b1000; // SLTI  (signed compare)
+                    3'b011: alu_op = 4'b1001; // SLTIU (unsigned compare)
+                    3'b001: alu_op = 4'b0101; // SLLI
+                    // SRLI vs SRAI: funct7[5]=0 → logical, funct7[5]=1 → arithmetic
+                    3'b101: alu_op = funct7[5] ? 4'b0111 : 4'b0110;
+                    default: alu_op = 4'b0000;
                 endcase
             end
-            OP_REG : begin
-                imm       = 32'b0;
+
+            // ----------------------------------------------------------
+            // R-type: ADD SUB SLL SLT SLTU XOR SRL SRA OR AND
+            // Both operands from registers (alu_src=0)
+            // ADD vs SUB distinguished by funct7[5]
+            // ----------------------------------------------------------
+            OP_REG: begin
                 reg_write = 1'b1;
-                alu_src   = 1'b0;
+                alu_src   = 1'b0;   // use rs2 as ALU B operand
                 wb_sel    = 2'b00;
-                case(funct3)
-                    3'b000:       alu_op = funct7[5] ? 4'b0001 : 4'b0000; // SUB vs ADD uses funct7 bit 5!
-                    3'b111:       alu_op = 4'b0010;
-                    3'b110:       alu_op = 4'b0011;
-                    3'b100:       alu_op = 4'b0100;
-                    3'b001:       alu_op = 4'b0101;
-                    3'b101:       alu_op = funct7[5]? 4'b0111:4'b0110;
-                    3'b011:       alu_op = 4'b1001;
-                    3'b010:       alu_op = 4'b1000;
-                    default:      alu_op = 4'b0000;
+                case (funct3)
+                    // funct7[5]=0 → ADD, funct7[5]=1 → SUB
+                    3'b000: alu_op = funct7[5] ? 4'b0001 : 4'b0000;
+                    3'b111: alu_op = 4'b0010; // AND
+                    3'b110: alu_op = 4'b0011; // OR
+                    3'b100: alu_op = 4'b0100; // XOR
+                    3'b001: alu_op = 4'b0101; // SLL
+                    // SRL vs SRA: same funct7[5] trick as SRLI/SRAI
+                    3'b101: alu_op = funct7[5] ? 4'b0111 : 4'b0110;
+                    3'b011: alu_op = 4'b1001; // SLTU
+                    3'b010: alu_op = 4'b1000; // SLT
+                    default: alu_op = 4'b0000;
                 endcase
             end
-            OP_LOAD : begin
+
+            // ----------------------------------------------------------
+            // Load: LW
+            // ALU computes address = rs1 + imm_i; result goes to dmem,
+            // dmem output is written back to rd (wb_sel=1).
+            // ----------------------------------------------------------
+            OP_LOAD: begin
                 imm       = imm_i;
                 reg_write = 1'b1;
                 mem_read  = 1'b1;
-                wb_sel    = 2'b01;
-                alu_src   = 1'b1;
-                alu_op    = 4'b0000;
+                wb_sel    = 2'b01;  // write memory read data to rd
+                alu_src   = 1'b1;   // address = rs1 + imm
+                alu_op    = 4'b0000; // ADD
             end
-            OP_STORE : begin
+
+            // ----------------------------------------------------------
+            // Store: SW
+            // ALU computes address = rs1 + imm_s; rs2 written to that address.
+            // No rd write (reg_write=0).
+            // ----------------------------------------------------------
+            OP_STORE: begin
                 imm       = imm_s;
                 reg_write = 1'b0;
                 mem_write = 1'b1;
-                wb_sel    = 2'b00;
-                alu_src   = 1'b1;
-                alu_op    = 4'b0000;
+                alu_src   = 1'b1;   // address = rs1 + imm
+                alu_op    = 4'b0000; // ADD
             end
-            OP_BRANCH : begin
-                imm       = imm_b;
+
+            // ----------------------------------------------------------
+            // Branches: BEQ BNE BLT BGE BLTU BGEU
+            // ALU computes comparison; top.v reads ALU result + funct3
+            // to decide branch_taken. No register write.
+            // ----------------------------------------------------------
+            OP_BRANCH: begin
+                imm       = imm_b;  // PC-relative offset (already *2, bit0 forced 0)
                 branch    = 1'b1;
                 reg_write = 1'b0;
-                alu_src   = 1'b0;
-                case(funct3)
-                    3'b000:       alu_op = 4'b0001; // BEQ  — SUB, branch if zero ✅
-                    3'b001:       alu_op = 4'b0001; // BNE  — SUB, branch if NOT zero ✅ (top.v handles condition)
-                    3'b100:       alu_op = 4'b1000; // TODO: BLT  — WRONG! needs SLT  (4'b1000), not SLTU
-                    // TODO: 3'b101 BGE  — use SLT  (4'b1000), branch if NOT SLT result
-                    3'b110:       alu_op = 4'b1001 ;
-                    // TODO: 3'b110 BLTU — use SLTU (4'b1001), branch if SLTU result
-                    3'b101:       alu_op = 4'b1000;
-                    // TODO: 3'b111 BGEU — use SLTU (4'b1001), branch if NOT SLTU result
-                    3'b111:       alu_op = 4'b1001;
-                    default:      alu_op = 4'b0001;
+                alu_src   = 1'b0;   // compare rs1 vs rs2
+                case (funct3)
+                    3'b000: alu_op = 4'b0001; // BEQ  — SUB; branch if zero
+                    3'b001: alu_op = 4'b0001; // BNE  — SUB; branch if NOT zero
+                    3'b100: alu_op = 4'b1000; // BLT  — SLT;  branch if result==1
+                    3'b101: alu_op = 4'b1000; // BGE  — SLT;  branch if result==0
+                    3'b110: alu_op = 4'b1001; // BLTU — SLTU; branch if result==1
+                    3'b111: alu_op = 4'b1001; // BGEU — SLTU; branch if result==0
+                    default: alu_op = 4'b0001;
                 endcase
-                
             end
+
+            // ----------------------------------------------------------
+            // LUI: Load Upper Immediate
+            // rd = imm_u  (upper 20 bits, lower 12 zeroed by imm_u encoding)
+            // Achieved by: ALU ADD(0, imm_u). top.v forces A=0 when lui=1.
+            // ----------------------------------------------------------
             OP_LUI: begin
-                imm = imm_u;
-                reg_write = 1'b1;
-                wb_sel  = 2'b00;
-                alu_src = 1'b1;
-                lui     = 1'b1;
-                // TODO (B4 - Fix 1): Change alu_op from SLL (4'b0101) to ADD (4'b0000)
-                // LUI works by computing ADD(x0, imm_u). Since rs1=x0=0, result = 0 + imm_u = imm_u ✓
-                alu_op = 4'b0000; // <-- WRONG! Change this to 4'b0000
-            end
-            OP_AUIPC : begin
-                imm = imm_u;
+                imm       = imm_u;
                 reg_write = 1'b1;
                 wb_sel    = 2'b00;
                 alu_src   = 1'b1;
-                alu_op    = 4'b0000;
-                auipc     = 1'b1;
+                lui       = 1'b1;   // signals top.v to route 0 as ALU A input
+                alu_op    = 4'b0000; // ADD(0, imm_u) = imm_u
             end
+
+            // ----------------------------------------------------------
+            // AUIPC: Add Upper Immediate to PC
+            // rd = PC + imm_u
+            // top.v routes PC as ALU A input when auipc=1.
+            // ----------------------------------------------------------
+            OP_AUIPC: begin
+                imm       = imm_u;
+                reg_write = 1'b1;
+                wb_sel    = 2'b00;
+                alu_src   = 1'b1;
+                alu_op    = 4'b0000; // ADD(PC, imm_u)
+                auipc     = 1'b1;   // signals top.v to route PC as ALU A input
+            end
+
+            // ----------------------------------------------------------
+            // JAL: Jump And Link
+            // PC = PC + imm_j  (unconditional jump, PC-relative)
+            // rd = PC + 4      (return address saved, wb_sel=2)
+            // ----------------------------------------------------------
             OP_JAL: begin
-                imm  = imm_j;
-                jump = 1'b1;
+                imm       = imm_j;
+                jump      = 1'b1;
                 reg_write = 1'b1;
-                wb_sel = 2'b10;
+                wb_sel    = 2'b10;  // write PC+4 (return address) to rd
             end
+
+            // ----------------------------------------------------------
+            // JALR: Jump And Link Register
+            // PC = (rs1 + imm_i) & ~1  (absolute jump; LSB cleared per spec)
+            // rd = PC + 4
+            // jalr=1 tells top.v to use jump_target (rs1+imm) not branch_target (PC+imm)
+            // ----------------------------------------------------------
             OP_JALR: begin
-                imm  = imm_i;
-                jalr = 1'b1;
+                imm       = imm_i;
+                jalr      = 1'b1;   // use rs1-relative target, not PC-relative
+                jump      = 1'b1;
                 reg_write = 1'b1;
-                wb_sel  = 2'b10;
-                alu_src = 1'b0;
-                jump    = 1'b1;
+                wb_sel    = 2'b10;  // write PC+4 to rd
+                alu_src   = 1'b0;
             end
-            
 
             default: begin
-                // Unknown opcode
+                // Unknown/unsupported opcode — all defaults apply (NOP)
             end
 
         endcase
