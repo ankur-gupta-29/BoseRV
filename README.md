@@ -47,8 +47,8 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
 ## Module 2 — Advanced Verification with Cocotb
 - [x] Assignment B1 — Setup Cocotb and Python Environment 
 - [x] Assignment B2 — Write a Python Testbench for the ALU (`test_alu.py`)
-- [ ] Assignment B3 — Full Core Verification with memory vectors in Python *(<-- YOU ARE HERE)*
-- [ ] Assignment B4 — Complete the RV32I Decoder (TDD all remaining instructions!)
+- [x] Assignment B3 — Full Core Verification with memory vectors in Python
+- [ ] Assignment B4 — Complete the RV32I Decoder (TDD all remaining instructions!) *(<-- YOU ARE HERE)*
 
 ---
 

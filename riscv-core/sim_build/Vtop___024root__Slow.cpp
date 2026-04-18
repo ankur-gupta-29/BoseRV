@@ -4,6 +4,15 @@
 
 #include "Vtop__pch.h"
 
+// Parameter definitions for Vtop___024root
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_LOAD;
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_STORE;
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_IMM;
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_REG;
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_BRANCH;
+constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_LUI;
+
+
 void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf);
 
 Vtop___024root::Vtop___024root(Vtop__Syms* symsp, const char* namep)

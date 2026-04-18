@@ -82,6 +82,11 @@ module decoder (
                 wb_sel    = 2'b00;
                 case(funct3)
                     3'b000:       alu_op = 4'b0000;
+                    3'b111:       alu_op = 4'b0010;
+                    3'b110:       alu_op = 4'b0011;
+                    3'b100:       alu_op = 4'b0100;
+                    3'b010:       alu_op = 4'b1000;
+                    3'b011:       alu_op = 4'b1001;
                     // TODO (Assignment B4): Add missing OP_IMM funct3 cases (ANDI, ORI, XORI, SLLI, etc.)
                     default:      alu_op = 4'b0000;
                 endcase

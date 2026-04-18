@@ -1,26 +1,42 @@
-// BoseRV Module 1 Test Program
-// Assembled RISC-V instructions in hex (little-endian word format)
-//
-// Instruction | Hex        | Assembly
-// ============|============|================================
-// ADDI x1,x0,5   | 00500093 | x1 = 5
-// ADDI x2,x0,20  | 01400113 | x2 = 20
-// ADD  x3,x1,x2  | 002081b3 | x3 = x1 + x2 = 25
-// ADDI x4,x0,100 | 06400213 | x4 = 100 (used as base address)
-// SW   x3,0(x4)  | 00322023 | mem[100] = x3 = 25
-// LW   x5,0(x4)  | 00022283 | x5 = mem[100] = 25
-// BEQ  x3,x5,+8  | 00518463 | if(x3==x5) PC+=8 (skip next 2)
-// ADDI x6,x0,255 | 0ff00313 | SKIPPED: x6 = 255 (if branch works)
-// ADDI x7,x0,255 | 0ff00393 | SKIPPED: x7 = 255 (if branch works)
-// ADDI x8,x0,170 | 0aa00413 | x8 = 0xAA (branch lands here)
-// (infinite loop or NOP after here)
-00500093
-01400113
-002081b3
-06400213
-00322023
-00022283
-00518663
-0ff00313
-0ff00393
-0aa00413
+00f00093
+00500113
+ffb00193
+00208233
+402082b3
+00211333
+0021a3b3
+0021b433
+0020c4b3
+0020d533
+4021d5b3
+0020e633
+0020f6b3
+0001a713
+0001b793
+0050c813
+0050e893
+0050f913
+00210993
+0010da13
+4011da93
+01502023
+00002b03
+00001bb7
+00001c17
+00108463
+06300c93
+00209463
+06300c93
+0011c463
+06300c93
+0030d463
+06300c93
+00316463
+06300c93
+0021f463
+06300c93
+00100c93
+00800d6f
+06300d93
+00100d93
+06400f93

@@ -30,11 +30,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop VL_NOT_FINAL : public VerilatedModel {
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
-    VL_IN8(&op,3,0);
-    VL_OUT8(&zero,0,0);
-    VL_IN(&a,31,0);
-    VL_IN(&b,31,0);
-    VL_OUT(&result,31,0);
+    VL_IN8(&clk,0,0);
+    VL_IN8(&rst,0,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.
