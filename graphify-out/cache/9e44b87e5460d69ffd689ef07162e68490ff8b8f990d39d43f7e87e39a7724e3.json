@@ -1,0 +1,1 @@
+{"nodes": [{"id": "riscv_core_sim_tb_top_v", "label": "tb_top.v", "file_type": "code", "source_file": "riscv-core/sim/tb_top.v", "source_location": "L1", "confidence_score": 1.0}], "edges": []}
