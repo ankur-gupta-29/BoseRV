@@ -53,9 +53,9 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
 ---
 
 ## Module 3 — 5-Stage Pipeline
-- [ ] Assignment C1 — IF/ID Pipeline Register *(<-- YOU ARE HERE)*
-- [ ] Assignment C2 — ID/EX Pipeline Register
-- [ ] Assignment C3 — EX/MEM and MEM/WB Registers
+- [x] Assignment C1 — IF/ID Pipeline Register
+- [x] Assignment C2 — ID/EX Pipeline Register
+- [ ] Assignment C3 — EX/MEM and MEM/WB Registers *(<-- YOU ARE HERE)*
 - [ ] Assignment C4 — Pipeline Control Logic
 
 ---

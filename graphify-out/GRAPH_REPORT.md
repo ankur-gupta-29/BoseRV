@@ -1,75 +1,84 @@
-# Graph Report - .  (2026-04-19)
+# Graph Report - /home/ankur/workspace/BoseRV  (2026-04-19)
 
 ## Corpus Check
-- 93 files · ~50,000 words
+- 95 files · ~80,293 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 461 nodes · 680 edges · 60 communities detected
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 102 edges (avg confidence: 0.8)
+- 493 nodes · 716 edges · 69 communities detected
+- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 104 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Top Testbench Root Logic|Top Testbench Root Logic]]
-- [[_COMMUNITY_Decoder Checklist & ALU Opcodes|Decoder Checklist & ALU Opcodes]]
-- [[_COMMUNITY_Verilator TB Entry Points|Verilator TB Entry Points]]
-- [[_COMMUNITY_Cocotb Top Root Logic|Cocotb Top Root Logic]]
-- [[_COMMUNITY_Decoder Testbench Root|Decoder Testbench Root]]
-- [[_COMMUNITY_ALU Testbench Root|ALU Testbench Root]]
-- [[_COMMUNITY_Fetch Testbench Root|Fetch Testbench Root]]
-- [[_COMMUNITY_Fetch TB Trace Engine|Fetch TB Trace Engine]]
-- [[_COMMUNITY_Decoder TB Trace Engine|Decoder TB Trace Engine]]
-- [[_COMMUNITY_Top TB Trace Engine|Top TB Trace Engine]]
-- [[_COMMUNITY_ALU TB Trace Engine|ALU TB Trace Engine]]
-- [[_COMMUNITY_Verilator Symbol Tables|Verilator Symbol Tables]]
-- [[_COMMUNITY_Assembler Encoders (gen_hex)|Assembler Encoders (gen_hex)]]
-- [[_COMMUNITY_Assembler Encoders (gen_hex_2)|Assembler Encoders (gen_hex_2)]]
-- [[_COMMUNITY_Full Core Cocotb Tests|Full Core Cocotb Tests]]
-- [[_COMMUNITY_ALU Unit Tests|ALU Unit Tests]]
-- [[_COMMUNITY_ALU VCD Trace|ALU VCD Trace]]
-- [[_COMMUNITY_Top VCD Trace|Top VCD Trace]]
-- [[_COMMUNITY_Fetch VCD Trace|Fetch VCD Trace]]
-- [[_COMMUNITY_Decoder VCD Trace|Decoder VCD Trace]]
-- [[_COMMUNITY_Cocotb Top VCD Trace|Cocotb Top VCD Trace]]
-- [[_COMMUNITY_Top TB Symbols|Top TB Symbols]]
-- [[_COMMUNITY_Fetch TB Symbols|Fetch TB Symbols]]
-- [[_COMMUNITY_Decoder TB Symbols|Decoder TB Symbols]]
-- [[_COMMUNITY_Fetch TB Root Header|Fetch TB Root Header]]
-- [[_COMMUNITY_Decoder TB Root Header|Decoder TB Root Header]]
-- [[_COMMUNITY_ALU TB Root Header|ALU TB Root Header]]
-- [[_COMMUNITY_Top TB Root Header|Top TB Root Header]]
-- [[_COMMUNITY_ALU TB Symbols|ALU TB Symbols]]
-- [[_COMMUNITY_ALU TB Header|ALU TB Header]]
-- [[_COMMUNITY_Cocotb Top Symbols|Cocotb Top Symbols]]
-- [[_COMMUNITY_Cocotb Root Header|Cocotb Root Header]]
-- [[_COMMUNITY_Cocotb Top Header|Cocotb Top Header]]
-- [[_COMMUNITY_Instruction Decoder RTL|Instruction Decoder RTL]]
-- [[_COMMUNITY_Instruction Memory RTL|Instruction Memory RTL]]
-- [[_COMMUNITY_Fetch Stage RTL|Fetch Stage RTL]]
-- [[_COMMUNITY_Top-Level Core RTL|Top-Level Core RTL]]
-- [[_COMMUNITY_Data Memory RTL|Data Memory RTL]]
-- [[_COMMUNITY_Register File RTL|Register File RTL]]
-- [[_COMMUNITY_ALU RTL|ALU RTL]]
-- [[_COMMUNITY_Fetch Verilog TB|Fetch Verilog TB]]
-- [[_COMMUNITY_Top Verilog TB|Top Verilog TB]]
-- [[_COMMUNITY_ALU Verilog TB|ALU Verilog TB]]
-- [[_COMMUNITY_Decoder Verilog TB|Decoder Verilog TB]]
-- [[_COMMUNITY_Top TB PCH Header|Top TB PCH Header]]
-- [[_COMMUNITY_ALU TB PCH Header|ALU TB PCH Header]]
-- [[_COMMUNITY_Decoder TB Header|Decoder TB Header]]
-- [[_COMMUNITY_Top TB Compiled Unit|Top TB Compiled Unit]]
-- [[_COMMUNITY_Fetch TB Compiled Unit|Fetch TB Compiled Unit]]
-- [[_COMMUNITY_ALU TB Compiled Unit|ALU TB Compiled Unit]]
-- [[_COMMUNITY_Decoder TB PCH Header|Decoder TB PCH Header]]
-- [[_COMMUNITY_Top TB Main Header|Top TB Main Header]]
-- [[_COMMUNITY_Fetch TB PCH Header|Fetch TB PCH Header]]
-- [[_COMMUNITY_Decoder TB Compiled Unit|Decoder TB Compiled Unit]]
-- [[_COMMUNITY_Fetch TB Main Header|Fetch TB Main Header]]
-- [[_COMMUNITY_Cocotb Compiled Unit|Cocotb Compiled Unit]]
-- [[_COMMUNITY_Cocotb DPI Bridge|Cocotb DPI Bridge]]
-- [[_COMMUNITY_Cocotb Const Pool|Cocotb Const Pool]]
-- [[_COMMUNITY_Cocotb DPI Header|Cocotb DPI Header]]
-- [[_COMMUNITY_Cocotb PCH Header|Cocotb PCH Header]]
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
+- [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 53|Community 53]]
+- [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
+- [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 58|Community 58]]
+- [[_COMMUNITY_Community 59|Community 59]]
+- [[_COMMUNITY_Community 60|Community 60]]
+- [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
+- [[_COMMUNITY_Community 66|Community 66]]
+- [[_COMMUNITY_Community 67|Community 67]]
+- [[_COMMUNITY_Community 68|Community 68]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `10-Module RISC-V Curriculum` - 10 edges
@@ -84,360 +93,412 @@
 10. `Vtb_fetch___024root___eval_phase__act()` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `BoseRV RISC-V Course Overview (README)` --references--> `BoseRV Project`  [EXTRACTED]
-  README.md → BoseRV_AI_Context.md
-- `CLAUDE.md: graphify knowledge graph rule for BoseRV` --references--> `BoseRV Project`  [EXTRACTED]
-  CLAUDE.md → BoseRV_AI_Context.md
-- `Control Unit Decoder` --conceptually_related_to--> `Instruction Decoder (src/decoder.v)`  [EXTRACTED]
-  BoseRV_Dashboard.md → BoseRV_AI_Context.md
-- `Decoder OP_IMM Block (SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI)` --references--> `Instruction Decoder (src/decoder.v)`  [EXTRACTED]
-  B4_Checklist.md → BoseRV_AI_Context.md
-- `Decoder OP_REG Block (SLL SLT SLTU XOR SRL SRA OR AND)` --references--> `Instruction Decoder (src/decoder.v)`  [EXTRACTED]
-  B4_Checklist.md → BoseRV_AI_Context.md
+- `BoseRV Project` --references--> `BoseRV RISC-V Course Overview (README)`  [EXTRACTED]
+  BoseRV_AI_Context.md → README.md
+- `BoseRV Project` --references--> `CLAUDE.md: graphify knowledge graph rule for BoseRV`  [EXTRACTED]
+  BoseRV_AI_Context.md → CLAUDE.md
+- `Instruction Decoder (src/decoder.v)` --conceptually_related_to--> `Control Unit Decoder`  [EXTRACTED]
+  BoseRV_AI_Context.md → BoseRV_Dashboard.md
+- `Instruction Decoder (src/decoder.v)` --references--> `Decoder OP_IMM Block (SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI)`  [EXTRACTED]
+  BoseRV_AI_Context.md → B4_Checklist.md
+- `Instruction Decoder (src/decoder.v)` --references--> `Decoder OP_REG Block (SLL SLT SLTU XOR SRL SRA OR AND)`  [EXTRACTED]
+  BoseRV_AI_Context.md → B4_Checklist.md
 
 ## Hyperedges (group relationships)
-- **Single-Cycle Datapath: ALU + Decoder + Fetch + Regfile + Top wired together** — boserv_ai_context_alu, boserv_ai_context_decoder, boserv_ai_context_fetch, boserv_ai_context_regfile, boserv_ai_context_top [INFERRED]
-- **Verification stack: Verilator + Cocotb + Pytest execute Python testbenches against Verilog** — implementation_plan_verilator, boserv_ai_context_cocotb_verification, dashboard_pytest, boserv_ai_context_test_top_py [INFERRED]
-- **Linux boot chain: Privileged ISA + Peripherals + Supervisor Mode + OpenSBI required for Linux boot** — implementation_plan_privileged_isa, implementation_plan_peripherals, implementation_plan_supervisor_mode, implementation_plan_opensbi, implementation_plan_linux_boot [INFERRED]
+- **5-Stage Pipeline Register Chain** — module3_todo_if_id_pipeline_register, module3_todo_id_ex_pipeline_register, module3_todo_ex_mem_pipeline_register, module3_todo_mem_wb_pipeline_register, module3_todo_pipe_top [EXTRACTED 1.00]
+- **Fetch-to-Decode Data Flow via IF/ID** — module3_todo_fetch_stage, module3_todo_if_id_pipeline_register, module3_todo_decode_stage [EXTRACTED 1.00]
+- **Branch Flush Control Path in Pipeline** — module3_todo_branch_taken_signal, module3_todo_flush_mechanism, module3_todo_if_id_pipeline_register, module3_todo_id_ex_pipeline_register [EXTRACTED 0.95]
 
 ## Communities
 
-### Community 0 - "Top Testbench Root Logic"
-Cohesion: 0.11
-Nodes (32): Vtb_top___024root___ctor_var_reset(), Vtb_top___024root___dump_triggers__act(), Vtb_top___024root___dump_triggers__stl(), Vtb_top___024root___eval_initial__TOP(), Vtb_top___024root___eval_phase__stl(), Vtb_top___024root___eval_settle(), Vtb_top___024root___eval_static(), Vtb_top___024root___eval_static__TOP() (+24 more)
+### Community 0 - "Community 0"
+Cohesion: 0.1
+Nodes (34): Vtb_fetch___024root___eval_initial__TOP__Vtiming__0(), Vtb_top___024root___ctor_var_reset(), Vtb_top___024root___dump_triggers__act(), Vtb_top___024root___dump_triggers__stl(), Vtb_top___024root___eval_initial__TOP(), Vtb_top___024root___eval_phase__stl(), Vtb_top___024root___eval_settle(), Vtb_top___024root___eval_static() (+26 more)
 
-### Community 1 - "Decoder Checklist & ALU Opcodes"
+### Community 1 - "Community 1"
 Cohesion: 0.1
 Nodes (36): ALU Opcode Reference Table, AUIPC Decoder Entry (opcode 0010111), Decoder OP_IMM Block (SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI), Decoder OP_REG Block (SLL SLT SLTU XOR SRL SRA OR AND), JAL Decoder Entry (opcode 1101111), ALU (src/alu.v), Rationale: AUIPC MUX wires PC to ALU input A instead of rs1, BoseRV Project (+28 more)
 
-### Community 2 - "Verilator TB Entry Points"
+### Community 2 - "Community 2"
 Cohesion: 0.09
 Nodes (23): main(), main(), main(), main(), Vtop___024root___eval_final(), eventsPending(), final(), hierName() (+15 more)
 
-### Community 3 - "Cocotb Top Root Logic"
+### Community 3 - "Community 3"
 Cohesion: 0.13
 Nodes (31): Vtop___024root___dump_triggers__act(), Vtop___024root___dump_triggers__ico(), Vtop___024root___dump_triggers__stl(), Vtop___024root___eval_initial(), Vtop___024root___eval_initial__TOP(), Vtop___024root___eval_phase__stl(), Vtop___024root___eval_settle(), Vtop___024root___eval_static() (+23 more)
 
-### Community 4 - "Decoder Testbench Root"
-Cohesion: 0.12
-Nodes (28): Vtb_decoder___024root___ctor_var_reset(), Vtb_decoder___024root___dump_triggers__act(), Vtb_decoder___024root___dump_triggers__stl(), Vtb_decoder___024root___eval_phase__stl(), Vtb_decoder___024root___eval_settle(), Vtb_decoder___024root___eval_static(), Vtb_decoder___024root___eval_static__TOP(), Vtb_decoder___024root___eval_stl() (+20 more)
-
-### Community 5 - "ALU Testbench Root"
+### Community 4 - "Community 4"
 Cohesion: 0.13
 Nodes (27): Vtb_alu___024root___ctor_var_reset(), Vtb_alu___024root___dump_triggers__act(), Vtb_alu___024root___dump_triggers__stl(), Vtb_alu___024root___eval_phase__stl(), Vtb_alu___024root___eval_settle(), Vtb_alu___024root___eval_static(), Vtb_alu___024root___eval_static__TOP(), Vtb_alu___024root___eval_stl() (+19 more)
 
-### Community 6 - "Fetch Testbench Root"
+### Community 5 - "Community 5"
 Cohesion: 0.13
-Nodes (24): Vtb_fetch___024root___ctor_var_reset(), Vtb_fetch___024root___dump_triggers__act(), Vtb_fetch___024root___eval_initial__TOP(), Vtb_fetch___024root___eval_settle(), Vtb_fetch___024root___eval_static(), Vtb_fetch___024root___eval_static__TOP(), Vtb_fetch___024root____Vm_traceActivitySetAll(), Vtb_fetch___024root___eval() (+16 more)
+Nodes (27): Vtb_decoder___024root___ctor_var_reset(), Vtb_decoder___024root___dump_triggers__act(), Vtb_decoder___024root___dump_triggers__stl(), Vtb_decoder___024root___eval_phase__stl(), Vtb_decoder___024root___eval_settle(), Vtb_decoder___024root___eval_static(), Vtb_decoder___024root___eval_static__TOP(), Vtb_decoder___024root___eval_stl() (+19 more)
 
-### Community 7 - "Fetch TB Trace Engine"
-Cohesion: 0.1
-Nodes (16): Vtb_fetch___024root___eval_final(), final(), hierName(), name(), Vtb_fetch___024root__trace_const_0(), Vtb_fetch___024root__trace_const_0_sub_0(), Vtb_fetch___024root__trace_full_0(), Vtb_fetch___024root__trace_full_0_sub_0() (+8 more)
+### Community 6 - "Community 6"
+Cohesion: 0.13
+Nodes (23): Vtb_fetch___024root___ctor_var_reset(), Vtb_fetch___024root___dump_triggers__act(), Vtb_fetch___024root___eval_initial__TOP(), Vtb_fetch___024root___eval_settle(), Vtb_fetch___024root___eval_static(), Vtb_fetch___024root___eval_static__TOP(), Vtb_fetch___024root____Vm_traceActivitySetAll(), Vtb_fetch___024root___eval() (+15 more)
 
-### Community 8 - "Decoder TB Trace Engine"
-Cohesion: 0.1
-Nodes (16): Vtb_decoder___024root___eval_final(), final(), hierName(), name(), Vtb_decoder___024root__trace_const_0(), Vtb_decoder___024root__trace_const_0_sub_0(), Vtb_decoder___024root__trace_full_0(), Vtb_decoder___024root__trace_full_0_sub_0() (+8 more)
-
-### Community 9 - "Top TB Trace Engine"
+### Community 7 - "Community 7"
 Cohesion: 0.1
 Nodes (16): Vtb_top___024root___eval_final(), final(), hierName(), name(), Vtb_top___024root__trace_const_0(), Vtb_top___024root__trace_const_0_sub_0(), Vtb_top___024root__trace_full_0(), Vtb_top___024root__trace_full_0_sub_0() (+8 more)
 
-### Community 10 - "ALU TB Trace Engine"
+### Community 8 - "Community 8"
+Cohesion: 0.1
+Nodes (16): Vtb_fetch___024root___eval_final(), final(), hierName(), name(), Vtb_fetch___024root__trace_const_0(), Vtb_fetch___024root__trace_const_0_sub_0(), Vtb_fetch___024root__trace_full_0(), Vtb_fetch___024root__trace_full_0_sub_0() (+8 more)
+
+### Community 9 - "Community 9"
+Cohesion: 0.1
+Nodes (16): Vtb_decoder___024root___eval_final(), final(), hierName(), name(), Vtb_decoder___024root__trace_const_0(), Vtb_decoder___024root__trace_const_0_sub_0(), Vtb_decoder___024root__trace_full_0(), Vtb_decoder___024root__trace_full_0_sub_0() (+8 more)
+
+### Community 10 - "Community 10"
 Cohesion: 0.1
 Nodes (14): Vtb_alu___024root___eval_final(), final(), hierName(), name(), Vtb_alu___024root__trace_full_0(), Vtb_alu___024root__trace_full_0_sub_0(), Vtb_alu___024root__trace_init_sub__TOP__0(), Vtb_alu___024root__trace_init_top() (+6 more)
 
-### Community 11 - "Verilator Symbol Tables"
+### Community 11 - "Community 11"
 Cohesion: 0.09
 Nodes (15): Vtb_alu__Syms(), eval_end_step(), _traceDumpClose(), Vtb_decoder__Syms(), eval_end_step(), _traceDumpClose(), Vtb_fetch__Syms(), eval_end_step() (+7 more)
 
-### Community 12 - "Assembler Encoders (gen_hex)"
+### Community 12 - "Community 12"
+Cohesion: 0.13
+Nodes (24): branch_taken Signal from EX/MEM, Data Hazards (deferred to Module 4), ID (Decode) Stage — decoder.v, EX/MEM Pipeline Register, src/ex_mem.v, EX (Execute) Stage — alu.v, IF (Fetch) Stage — fetch.v, Pipeline Flush Mechanism for Branch/Jump (+16 more)
+
+### Community 13 - "Community 13"
 Cohesion: 0.44
 Nodes (9): assemble_b(), assemble_i(), assemble_j(), assemble_l(), assemble_line(), assemble_r(), assemble_s(), assemble_u() (+1 more)
 
-### Community 13 - "Assembler Encoders (gen_hex_2)"
+### Community 14 - "Community 14"
 Cohesion: 0.51
 Nodes (9): assemble_b(), assemble_i(), assemble_j(), assemble_l(), assemble_line(), assemble_r(), assemble_s(), assemble_u() (+1 more)
 
-### Community 14 - "Full Core Cocotb Tests"
+### Community 15 - "Community 15"
 Cohesion: 0.4
 Nodes (4): Read register idx from DUT regfile, always returns unsigned 32-bit int., Run test_full.asm on BoseRV and verify the final architectural state.      Prima, read_reg(), test_full_rv32i()
 
-### Community 15 - "ALU Unit Tests"
+### Community 16 - "Community 16"
 Cohesion: 0.4
 Nodes (3): Test standard addition: 5 + 14 = 19, # TODO: Add more test cases here!, test_alu_addition()
 
-### Community 16 - "ALU VCD Trace"
+### Community 17 - "Community 17"
 Cohesion: 0.67
 Nodes (2): Vtb_alu___024root__trace_chg_0(), Vtb_alu___024root__trace_chg_0_sub_0()
 
-### Community 17 - "Top VCD Trace"
+### Community 18 - "Community 18"
 Cohesion: 0.67
 Nodes (2): Vtb_top___024root__trace_chg_0(), Vtb_top___024root__trace_chg_0_sub_0()
 
-### Community 18 - "Fetch VCD Trace"
+### Community 19 - "Community 19"
 Cohesion: 0.67
 Nodes (2): Vtb_fetch___024root__trace_chg_0(), Vtb_fetch___024root__trace_chg_0_sub_0()
 
-### Community 19 - "Decoder VCD Trace"
+### Community 20 - "Community 20"
 Cohesion: 0.67
 Nodes (2): Vtb_decoder___024root__trace_chg_0(), Vtb_decoder___024root__trace_chg_0_sub_0()
 
-### Community 20 - "Cocotb Top VCD Trace"
+### Community 21 - "Community 21"
 Cohesion: 0.67
 Nodes (2): Vtop___024root__trace_chg_0(), Vtop___024root__trace_chg_0_sub_0()
 
-### Community 21 - "Top TB Symbols"
+### Community 22 - "Community 22"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 22 - "Fetch TB Symbols"
+### Community 23 - "Community 23"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 23 - "Decoder TB Symbols"
+### Community 24 - "Community 24"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 24 - "Fetch TB Root Header"
+### Community 25 - "Community 25"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 25 - "Decoder TB Root Header"
+### Community 26 - "Community 26"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 26 - "ALU TB Root Header"
+### Community 27 - "Community 27"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 27 - "Top TB Root Header"
+### Community 28 - "Community 28"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 28 - "ALU TB Symbols"
+### Community 29 - "Community 29"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 29 - "ALU TB Header"
+### Community 30 - "Community 30"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 30 - "Cocotb Top Symbols"
+### Community 31 - "Community 31"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 31 - "Cocotb Root Header"
+### Community 32 - "Community 32"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 32 - "Cocotb Top Header"
+### Community 33 - "Community 33"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 33 - "Instruction Decoder RTL"
+### Community 34 - "Community 34"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 34 - "Instruction Memory RTL"
+### Community 35 - "Community 35"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 35 - "Fetch Stage RTL"
+### Community 36 - "Community 36"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 36 - "Top-Level Core RTL"
+### Community 37 - "Community 37"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 37 - "Data Memory RTL"
+### Community 38 - "Community 38"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 38 - "Register File RTL"
+### Community 39 - "Community 39"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 39 - "ALU RTL"
+### Community 40 - "Community 40"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 40 - "Fetch Verilog TB"
+### Community 41 - "Community 41"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 41 - "Top Verilog TB"
+### Community 42 - "Community 42"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 42 - "ALU Verilog TB"
+### Community 43 - "Community 43"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 43 - "Decoder Verilog TB"
+### Community 44 - "Community 44"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 44 - "Top TB PCH Header"
+### Community 45 - "Community 45"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 45 - "ALU TB PCH Header"
+### Community 46 - "Community 46"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 46 - "Decoder TB Header"
+### Community 47 - "Community 47"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 47 - "Top TB Compiled Unit"
+### Community 48 - "Community 48"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 48 - "Fetch TB Compiled Unit"
+### Community 49 - "Community 49"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 49 - "ALU TB Compiled Unit"
+### Community 50 - "Community 50"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 50 - "Decoder TB PCH Header"
+### Community 51 - "Community 51"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 51 - "Top TB Main Header"
+### Community 52 - "Community 52"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 52 - "Fetch TB PCH Header"
+### Community 53 - "Community 53"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 53 - "Decoder TB Compiled Unit"
+### Community 54 - "Community 54"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 54 - "Fetch TB Main Header"
+### Community 55 - "Community 55"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 55 - "Cocotb Compiled Unit"
+### Community 56 - "Community 56"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 56 - "Cocotb DPI Bridge"
+### Community 57 - "Community 57"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 57 - "Cocotb Const Pool"
+### Community 58 - "Community 58"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 58 - "Cocotb DPI Header"
+### Community 59 - "Community 59"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 59 - "Cocotb PCH Header"
+### Community 60 - "Community 60"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 61 - "Community 61"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 62 - "Community 62"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 63 - "Community 63"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 64 - "Community 64"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 65 - "Community 65"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 66 - "Community 66"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 67 - "Community 67"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 68 - "Community 68"
 Cohesion: 1.0
 Nodes (0): 
 
 ## Knowledge Gaps
-- **10 isolated node(s):** `Test standard addition: 5 + 14 = 19`, `# TODO: Add more test cases here!`, `Read register idx from DUT regfile, always returns unsigned 32-bit int.`, `Run test_full.asm on BoseRV and verify the final architectural state.      Prima`, `Rationale: Tutor Mode — AI guides only, user writes all Verilog` (+5 more)
+- **19 isolated node(s):** `Test standard addition: 5 + 14 = 19`, `# TODO: Add more test cases here!`, `Read register idx from DUT regfile, always returns unsigned 32-bit int.`, `Run test_full.asm on BoseRV and verify the final architectural state.      Prima`, `Rationale: Tutor Mode — AI guides only, user writes all Verilog` (+14 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Top TB Symbols`** (2 nodes): `Vtb_top__Syms.h`, `name()`
+- **Thin community `Community 22`** (2 nodes): `Vtb_top__Syms.h`, `name()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch TB Symbols`** (2 nodes): `Vtb_fetch__Syms.h`, `name()`
+- **Thin community `Community 23`** (2 nodes): `Vtb_fetch__Syms.h`, `name()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder TB Symbols`** (2 nodes): `Vtb_decoder__Syms.h`, `name()`
+- **Thin community `Community 24`** (2 nodes): `Vtb_decoder__Syms.h`, `name()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch TB Root Header`** (2 nodes): `Vtb_fetch___024root.h`, `Vtb_fetch___024root()`
+- **Thin community `Community 25`** (2 nodes): `Vtb_fetch___024root.h`, `Vtb_fetch___024root()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder TB Root Header`** (2 nodes): `Vtb_decoder___024root.h`, `Vtb_decoder___024root()`
+- **Thin community `Community 26`** (2 nodes): `Vtb_decoder___024root.h`, `Vtb_decoder___024root()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU TB Root Header`** (2 nodes): `Vtb_alu___024root.h`, `Vtb_alu___024root()`
+- **Thin community `Community 27`** (2 nodes): `Vtb_alu___024root.h`, `Vtb_alu___024root()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top TB Root Header`** (2 nodes): `Vtb_top___024root.h`, `Vtb_top___024root()`
+- **Thin community `Community 28`** (2 nodes): `Vtb_top___024root.h`, `Vtb_top___024root()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU TB Symbols`** (2 nodes): `Vtb_alu__Syms.h`, `name()`
+- **Thin community `Community 29`** (2 nodes): `Vtb_alu__Syms.h`, `name()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU TB Header`** (2 nodes): `Vtb_alu.h`, `eval_end_step()`
+- **Thin community `Community 30`** (2 nodes): `Vtb_alu.h`, `eval_end_step()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb Top Symbols`** (2 nodes): `Vtop__Syms.h`, `name()`
+- **Thin community `Community 31`** (2 nodes): `Vtop__Syms.h`, `name()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb Root Header`** (2 nodes): `Vtop___024root.h`, `Vtop___024root()`
+- **Thin community `Community 32`** (2 nodes): `Vtop___024root.h`, `Vtop___024root()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb Top Header`** (2 nodes): `Vtop.h`, `eval_end_step()`
+- **Thin community `Community 33`** (2 nodes): `Vtop.h`, `eval_end_step()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Instruction Decoder RTL`** (1 nodes): `decoder.v`
+- **Thin community `Community 34`** (1 nodes): `decoder.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Instruction Memory RTL`** (1 nodes): `imem.v`
+- **Thin community `Community 35`** (1 nodes): `imem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch Stage RTL`** (1 nodes): `fetch.v`
+- **Thin community `Community 36`** (1 nodes): `fetch.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top-Level Core RTL`** (1 nodes): `top.v`
+- **Thin community `Community 37`** (1 nodes): `ex_mem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Data Memory RTL`** (1 nodes): `dmem.v`
+- **Thin community `Community 38`** (1 nodes): `top.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Register File RTL`** (1 nodes): `regfile.v`
+- **Thin community `Community 39`** (1 nodes): `dmem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU RTL`** (1 nodes): `alu.v`
+- **Thin community `Community 40`** (1 nodes): `id_ex.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch Verilog TB`** (1 nodes): `tb_fetch.v`
+- **Thin community `Community 41`** (1 nodes): `mem_wb.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top Verilog TB`** (1 nodes): `tb_top.v`
+- **Thin community `Community 42`** (1 nodes): `if_id.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU Verilog TB`** (1 nodes): `tb_alu.v`
+- **Thin community `Community 43`** (1 nodes): `regfile.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder Verilog TB`** (1 nodes): `tb_decoder.v`
+- **Thin community `Community 44`** (1 nodes): `alu.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top TB PCH Header`** (1 nodes): `Vtb_top__pch.h`
+- **Thin community `Community 45`** (1 nodes): `tb_mem_wb.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU TB PCH Header`** (1 nodes): `Vtb_alu__pch.h`
+- **Thin community `Community 46`** (1 nodes): `tb_ex_mem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder TB Header`** (1 nodes): `Vtb_decoder.h`
+- **Thin community `Community 47`** (1 nodes): `tb_fetch.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top TB Compiled Unit`** (1 nodes): `Vtb_top__ALL.cpp`
+- **Thin community `Community 48`** (1 nodes): `tb_top.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch TB Compiled Unit`** (1 nodes): `Vtb_fetch__ALL.cpp`
+- **Thin community `Community 49`** (1 nodes): `tb_alu.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ALU TB Compiled Unit`** (1 nodes): `Vtb_alu__ALL.cpp`
+- **Thin community `Community 50`** (1 nodes): `tb_if_id.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder TB PCH Header`** (1 nodes): `Vtb_decoder__pch.h`
+- **Thin community `Community 51`** (1 nodes): `tb_id_ex.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Top TB Main Header`** (1 nodes): `Vtb_top.h`
+- **Thin community `Community 52`** (1 nodes): `tb_decoder.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch TB PCH Header`** (1 nodes): `Vtb_fetch__pch.h`
+- **Thin community `Community 53`** (1 nodes): `Vtb_top__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Decoder TB Compiled Unit`** (1 nodes): `Vtb_decoder__ALL.cpp`
+- **Thin community `Community 54`** (1 nodes): `Vtb_alu__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fetch TB Main Header`** (1 nodes): `Vtb_fetch.h`
+- **Thin community `Community 55`** (1 nodes): `Vtb_decoder.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb Compiled Unit`** (1 nodes): `Vtop__ALL.cpp`
+- **Thin community `Community 56`** (1 nodes): `Vtb_top__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb DPI Bridge`** (1 nodes): `Vtop__Dpi.cpp`
+- **Thin community `Community 57`** (1 nodes): `Vtb_fetch__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb Const Pool`** (1 nodes): `Vtop__ConstPool__0__Slow.cpp`
+- **Thin community `Community 58`** (1 nodes): `Vtb_alu__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb DPI Header`** (1 nodes): `Vtop__Dpi.h`
+- **Thin community `Community 59`** (1 nodes): `Vtb_decoder__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cocotb PCH Header`** (1 nodes): `Vtop__pch.h`
+- **Thin community `Community 60`** (1 nodes): `Vtb_top.h`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 61`** (1 nodes): `Vtb_fetch__pch.h`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 62`** (1 nodes): `Vtb_decoder__ALL.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 63`** (1 nodes): `Vtb_fetch.h`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 64`** (1 nodes): `Vtop__ALL.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 65`** (1 nodes): `Vtop__Dpi.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 66`** (1 nodes): `Vtop__ConstPool__0__Slow.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 67`** (1 nodes): `Vtop__Dpi.h`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 68`** (1 nodes): `Vtop__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **What connects `Test standard addition: 5 + 14 = 19`, `# TODO: Add more test cases here!`, `Read register idx from DUT regfile, always returns unsigned 32-bit int.` to the rest of the system?**
-  _10 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Top Testbench Root Logic` be split into smaller, more focused modules?**
-  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
-- **Should `Decoder Checklist & ALU Opcodes` be split into smaller, more focused modules?**
+  _19 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
-- **Should `Verilator TB Entry Points` be split into smaller, more focused modules?**
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.09 - nodes in this community are weakly interconnected._
-- **Should `Cocotb Top Root Logic` be split into smaller, more focused modules?**
+- **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.13 - nodes in this community are weakly interconnected._
-- **Should `Decoder Testbench Root` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
-- **Should `ALU Testbench Root` be split into smaller, more focused modules?**
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.13 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
   _Cohesion score 0.13 - nodes in this community are weakly interconnected._

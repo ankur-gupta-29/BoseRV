@@ -4,8 +4,12 @@
   "riscv-core/src/decoder.v": 1776541492.1765804,
   "riscv-core/src/imem.v": 1776541636.80531,
   "riscv-core/src/fetch.v": 1776541527.1437778,
+  "riscv-core/src/ex_mem.v": 1776575925.3513174,
   "riscv-core/src/top.v": 1776541616.6792214,
   "riscv-core/src/dmem.v": 1776541650.7683694,
+  "riscv-core/src/id_ex.v": 1776575899.1443021,
+  "riscv-core/src/mem_wb.v": 1776575945.046545,
+  "riscv-core/src/if_id.v": 1776575869.831339,
   "riscv-core/src/regfile.v": 1776541549.9378986,
   "riscv-core/src/alu.v": 1776541383.84087,
   "riscv-core/sim/test_alu.py": 1776331237.1797647,
@@ -91,5 +95,8 @@
   "README.md": 1776533613.3121195,
   "BoseRV_Dashboard.md": 1776510118.5029569,
   "B4_Checklist.md": 1776512554.7193284,
-  "CLAUDE.md": 1776574521.8418262
+  "CLAUDE.md": 1776574521.8418262,
+  "riscv-core/MODULE3_TODO.md": 1776575985.406884,
+  "graphify-out/GRAPH_REPORT.md": 1776576335.0467815,
+  "graphify-out/graph.html": 1776576342.5743816
 }

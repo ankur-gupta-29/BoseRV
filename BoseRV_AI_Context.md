@@ -28,10 +28,10 @@ All Verilog modules implemented and passing:
 - Assignment B3 ✅ — Full core verified (`make py_top`)
 - Assignment B4 ✅ — All RV32I instructions implemented and tested → **28/28 PASSED**
 
-### 🔄 Module 3 — 5-Stage Pipeline: NEXT
-- Assignment C1 ← **YOU ARE HERE** (IF/ID Pipeline Register)
-- Assignment C2 (ID/EX Pipeline Register)
-- Assignment C3 (EX/MEM and MEM/WB Registers)
+### 🔄 Module 3 — 5-Stage Pipeline: IN PROGRESS
+- Assignment C1 ✅ (IF/ID Pipeline Register)
+- Assignment C2 ✅ (ID/EX Pipeline Register)
+- Assignment C3 ← **YOU ARE HERE** (EX/MEM and MEM/WB Registers)
 - Assignment C4 (Pipeline Control Logic)
 
 ---

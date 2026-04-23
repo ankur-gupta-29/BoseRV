@@ -1,5 +1,19 @@
 {
   "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "fp=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); [[ -n \"$fp\" ]] && /home/ankur/.local/bin/graphify update . --ast-only 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Updating knowledge graph...",
+            "async": true
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Glob|Grep",
