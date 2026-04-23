@@ -43,16 +43,16 @@ Rule: **you write all Verilog logic**. Ask teacher for hints if stuck.
 **Goal:** Complete the pipeline register chain.
 
 ### EX/MEM (`ex_mem.v`)
-- [ ] Implement the `always` block — rst zeros, clk latches
-  - [ ] Data: `alu_result`, `rs2_data`, `pc_plus4`, `branch_target`, `jump_target`, `branch_taken`, `alu_zero`, `rd`
-  - [ ] Control: `mem_read`, `mem_write`, `reg_write`, `wb_sel`, `jump`
-- [ ] **Critical:** why must `mem_write_out` be 0 on reset?
+- [x] Implement the `always` block — rst zeros, clk latches
+  - [x] Data: `alu_result`, `rs2_data`, `pc_plus4`, `branch_target`, `jump_target`, `branch_taken`, `alu_zero`, `rd`
+  - [x] Control: `mem_read`, `mem_write`, `reg_write`, `wb_sel`, `jump`
+- [x] **Critical:** why must `mem_write_out` be 0 on reset?
 
 ### MEM/WB (`mem_wb.v`)
-- [ ] Implement the `always` block — rst zeros, clk latches
-  - [ ] Data: `alu_result`, `mem_read_data`, `pc_plus4`, `rd`
-  - [ ] Control: `reg_write`, `wb_sel`
-- [ ] **Concept:** at WB stage, how does `wb_sel` decide what to write to `rd`?
+- [x] Implement the `always` block — rst zeros, clk latches
+  - [x] Data: `alu_result`, `mem_read_data`, `pc_plus4`, `rd`
+  - [x] Control: `reg_write`, `wb_sel`
+- [x] **Concept:** at WB stage, how does `wb_sel` decide what to write to `rd`?
 
 ---
 

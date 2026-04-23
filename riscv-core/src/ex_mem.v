@@ -59,8 +59,34 @@ module ex_mem (
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             // TODO: zero ALL outputs
+            alu_result_out      <= 0;
+            rs2_data_out        <= 0;
+            pc_plus4_out        <= 0;
+            branch_target_out   <= 0;
+            jump_target_out     <= 0;
+            branch_taken_out    <= 0;
+            alu_zero_out        <= 0;
+            rd_out              <= 0;
+            mem_read_out        <= 0;
+            mem_write_out       <= 0;
+            reg_write_out       <= 0;
+            wb_sel_out          <= 0;
+            jump_out            <= 0;
         end else begin
             // TODO: latch all inputs to outputs
+            alu_result_out      <= alu_result_in;
+            rs2_data_out        <= rs2_data_in;
+            pc_plus4_out        <= pc_plus4_in;
+            branch_target_out   <= branch_target_in;
+            jump_target_out     <= jump_target_in;
+            branch_taken_out    <= branch_taken_in;
+            alu_zero_out        <= alu_zero_in;
+            rd_out              <= rd_in;
+            mem_read_out        <= mem_read_in;
+            mem_write_out       <= mem_write_in;
+            reg_write_out       <= reg_write_in;
+            wb_sel_out          <= wb_sel_in;
+            jump_out            <= jump_in;
         end
     end
 

@@ -31,8 +31,8 @@ All Verilog modules implemented and passing:
 ### 🔄 Module 3 — 5-Stage Pipeline: IN PROGRESS
 - Assignment C1 ✅ (IF/ID Pipeline Register)
 - Assignment C2 ✅ (ID/EX Pipeline Register)
-- Assignment C3 ← **YOU ARE HERE** (EX/MEM and MEM/WB Registers)
-- Assignment C4 (Pipeline Control Logic)
+- Assignment C3 ✅ (EX/MEM and MEM/WB Registers)
+- Assignment C4 ← **YOU ARE HERE** (Pipeline Control Logic)
 
 ---
 
