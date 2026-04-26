@@ -17,7 +17,7 @@ VFLAGS = --binary --timing --trace -Wall -Wno-fatal
 CORE_SRC = $(SRC)/imem.v $(SRC)/dmem.v $(SRC)/regfile.v \
            $(SRC)/alu.v  $(SRC)/decoder.v $(SRC)/fetch.v $(SRC)/top.v
 
-.PHONY: all lint alu_sim fetch_sim top_sim if_id_sim id_ex_sim ex_mem_sim mem_wb_sim pipe_regs_sim clean wave help
+.PHONY: all lint alu_sim fetch_sim top_sim if_id_sim id_ex_sim ex_mem_sim mem_wb_sim pipe_regs_sim py_pipe_top clean wave help
 
 help:
 	@echo "BoseRV — RISC-V Core Build System (Verilator)"
@@ -35,6 +35,7 @@ help:
 	@echo "  make pipe_regs_sim - Simulate all four pipeline registers"
 	@echo "  make py_alu        - Simulate ALU using Python (Cocotb)"
 	@echo "  make py_top        - Simulate full core using Python (Cocotb)"
+	@echo "  make py_pipe_top   - Simulate pipelined core using Python (Cocotb)"
 	@echo "  make wave          - Open VCD waveforms in GTKWave"
 	@echo "  make clean         - Clean Verilator obj_dir and waveforms"
 
@@ -84,6 +85,9 @@ py_alu:
 
 py_top:
 	../.venv/bin/pytest -v $(SIM)/test_top.py -s
+
+py_pipe_top:
+	../.venv/bin/pytest -v $(SIM)/test_pipe_top.py -s
 
 # ---- View Waveforms ----
 wave:
