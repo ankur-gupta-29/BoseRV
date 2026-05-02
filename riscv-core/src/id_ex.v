@@ -37,6 +37,7 @@ module id_ex (
     input         jalr_in,
     input         auipc_in,
     input         lui_in,
+    input  [2:0]  funct3_in,
 
     // ── Data outputs to EX stage ───────────────────────────
     output reg [31:0] pc_out,
@@ -58,6 +59,7 @@ module id_ex (
     output reg        jump_out,
     output reg        jalr_out,
     output reg        auipc_out,
+    output reg [2:0]  funct3_out,
     output reg        lui_out
 );
 
@@ -94,6 +96,7 @@ module id_ex (
             jalr_out        <= 0;
             auipc_out       <= 0;
             lui_out         <= 0;
+            funct3_out      <= 0;
         end else begin
             // TODO: latch all inputs to outputs
             pc_out          <= pc_in;
@@ -114,6 +117,7 @@ module id_ex (
             jalr_out        <= jalr_in;
             auipc_out       <= auipc_in;
             lui_out         <= lui_in;
+            funct3_out      <= funct3_in;
         end
     end
 

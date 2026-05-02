@@ -12,7 +12,7 @@ This file serves as a persistent "memory block." If you ever start a new AI chat
 
 ---
 
-## 2. Current State (Last Updated: 2026-04-18)
+## 2. Current State (Last Updated: 2026-05-02)
 
 ### ✅ Module 1 — Single-Cycle Datapath: COMPLETE
 All Verilog modules implemented and passing:
@@ -28,11 +28,21 @@ All Verilog modules implemented and passing:
 - Assignment B3 ✅ — Full core verified (`make py_top`)
 - Assignment B4 ✅ — All RV32I instructions implemented and tested → **28/28 PASSED**
 
-### 🔄 Module 3 — 5-Stage Pipeline: IN PROGRESS
+### ✅ Module 3 — 5-Stage Pipeline: COMPLETE
 - Assignment C1 ✅ (IF/ID Pipeline Register)
 - Assignment C2 ✅ (ID/EX Pipeline Register)
 - Assignment C3 ✅ (EX/MEM and MEM/WB Registers)
-- Assignment C4 ← **YOU ARE HERE** (Pipeline Control Logic)
+- Assignment C4 ✅ (pipe_top.v: full 5-stage pipeline wired)
+  - `funct3` passed through ID/EX register for correct branch evaluation
+  - Fetch connected to `_EX` signals (branch_taken_EX, jump_EX) for fast redirect
+  - WB writes use `reg_write_WB` and `rd_WB` (correct stage)
+  - 4/8 basic checks pass: x0=0, x1=15, x2=5, x3=-5
+  - Remaining failures are RAW data hazards — expected, Module 4 handles them
+
+### ➡️ Module 4 — Hazard Unit: NEXT
+- Data forwarding (EX→EX, MEM→EX paths)
+- Load-use stall detection
+- **YOU ARE HERE ←**
 
 ---
 

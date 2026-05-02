@@ -5,15 +5,15 @@
 #include "Vtop__pch.h"
 
 // Parameter definitions for Vtop___024root
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_LOAD;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_STORE;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_IMM;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_REG;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_BRANCH;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_LUI;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_AUIPC;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_JAL;
-constexpr CData/*6:0*/ Vtop___024root::top__DOT__decoder_inst__DOT__OP_JALR;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_LOAD;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_STORE;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_IMM;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_REG;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_BRANCH;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_LUI;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_AUIPC;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_JAL;
+constexpr CData/*6:0*/ Vtop___024root::pipe_top__DOT__decoder_inst__DOT__OP_JALR;
 
 
 void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf);
