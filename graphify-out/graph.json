@@ -739,126 +739,126 @@
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L1",
-      "id": "test_hazard_rationale_1",
       "community": 7,
-      "norm_label": "boserv \u2014 module 4 hazard unit test (test_hazard.py) ============================"
+      "norm_label": "boserv \u2014 module 4 hazard unit test (test_hazard.py) ============================",
+      "id": "test_hazard_rationale_1"
     },
     {
       "label": "A1: No hazard \u2014 both outputs should be 00 (use register file)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L29",
-      "id": "test_hazard_rationale_29",
       "community": 7,
-      "norm_label": "a1: no hazard \u2014 both outputs should be 00 (use register file)"
+      "norm_label": "a1: no hazard \u2014 both outputs should be 00 (use register file)",
+      "id": "test_hazard_rationale_29"
     },
     {
       "label": "A2: EX-EX hazard on rs1 \u2014 forward_A should be 10",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L42",
-      "id": "test_hazard_rationale_42",
       "community": 7,
-      "norm_label": "a2: ex-ex hazard on rs1 \u2014 forward_a should be 10"
+      "norm_label": "a2: ex-ex hazard on rs1 \u2014 forward_a should be 10",
+      "id": "test_hazard_rationale_42"
     },
     {
       "label": "A3: EX-EX hazard on rs2 \u2014 forward_B should be 10",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L55",
-      "id": "test_hazard_rationale_55",
       "community": 7,
-      "norm_label": "a3: ex-ex hazard on rs2 \u2014 forward_b should be 10"
+      "norm_label": "a3: ex-ex hazard on rs2 \u2014 forward_b should be 10",
+      "id": "test_hazard_rationale_55"
     },
     {
       "label": "A4: MEM-WB hazard on rs1 (no EX-EX conflict) \u2014 forward_A should be 01",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L68",
-      "id": "test_hazard_rationale_68",
       "community": 7,
-      "norm_label": "a4: mem-wb hazard on rs1 (no ex-ex conflict) \u2014 forward_a should be 01"
+      "norm_label": "a4: mem-wb hazard on rs1 (no ex-ex conflict) \u2014 forward_a should be 01",
+      "id": "test_hazard_rationale_68"
     },
     {
       "label": "A5: MEM-WB hazard on rs2 (no EX-EX conflict) \u2014 forward_B should be 01",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L81",
-      "id": "test_hazard_rationale_81",
       "community": 7,
-      "norm_label": "a5: mem-wb hazard on rs2 (no ex-ex conflict) \u2014 forward_b should be 01"
+      "norm_label": "a5: mem-wb hazard on rs2 (no ex-ex conflict) \u2014 forward_b should be 01",
+      "id": "test_hazard_rationale_81"
     },
     {
       "label": "A6: Both EX-EX and MEM-WB match rs1 \u2014 EX-EX (10) must win (higher priority)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L93",
-      "id": "test_hazard_rationale_93",
       "community": 7,
-      "norm_label": "a6: both ex-ex and mem-wb match rs1 \u2014 ex-ex (10) must win (higher priority)"
+      "norm_label": "a6: both ex-ex and mem-wb match rs1 \u2014 ex-ex (10) must win (higher priority)",
+      "id": "test_hazard_rationale_93"
     },
     {
       "label": "A7: rd=x0 must NEVER trigger forwarding (x0 is always 0)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L105",
-      "id": "test_hazard_rationale_105",
       "community": 7,
-      "norm_label": "a7: rd=x0 must never trigger forwarding (x0 is always 0)"
+      "norm_label": "a7: rd=x0 must never trigger forwarding (x0 is always 0)",
+      "id": "test_hazard_rationale_105"
     },
     {
       "label": "A8: reg_write=0 suppresses forwarding even if rd matches",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L118",
-      "id": "test_hazard_rationale_118",
       "community": 7,
-      "norm_label": "a8: reg_write=0 suppresses forwarding even if rd matches"
+      "norm_label": "a8: reg_write=0 suppresses forwarding even if rd matches",
+      "id": "test_hazard_rationale_118"
     },
     {
       "label": "B1: No stall \u2014 non-load instruction in EX stage",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L136",
-      "id": "test_hazard_rationale_136",
       "community": 7,
-      "norm_label": "b1: no stall \u2014 non-load instruction in ex stage"
+      "norm_label": "b1: no stall \u2014 non-load instruction in ex stage",
+      "id": "test_hazard_rationale_136"
     },
     {
       "label": "B2: LW followed by instruction that reads the loaded register (rs1)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L146",
-      "id": "test_hazard_rationale_146",
       "community": 7,
-      "norm_label": "b2: lw followed by instruction that reads the loaded register (rs1)"
+      "norm_label": "b2: lw followed by instruction that reads the loaded register (rs1)",
+      "id": "test_hazard_rationale_146"
     },
     {
       "label": "B3: LW followed by instruction that reads the loaded register (rs2)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L156",
-      "id": "test_hazard_rationale_156",
       "community": 7,
-      "norm_label": "b3: lw followed by instruction that reads the loaded register (rs2)"
+      "norm_label": "b3: lw followed by instruction that reads the loaded register (rs2)",
+      "id": "test_hazard_rationale_156"
     },
     {
       "label": "B4: LW in EX but the next instruction reads DIFFERENT registers \u2014 no stall",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L166",
-      "id": "test_hazard_rationale_166",
       "community": 7,
-      "norm_label": "b4: lw in ex but the next instruction reads different registers \u2014 no stall"
+      "norm_label": "b4: lw in ex but the next instruction reads different registers \u2014 no stall",
+      "id": "test_hazard_rationale_166"
     },
     {
       "label": "B5: LW to x0 never causes a stall (x0 is always 0, no real dependence)",
       "file_type": "rationale",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/sim/test_hazard.py",
       "source_location": "L176",
-      "id": "test_hazard_rationale_176",
       "community": 7,
-      "norm_label": "b5: lw to x0 never causes a stall (x0 is always 0, no real dependence)"
+      "norm_label": "b5: lw to x0 never causes a stall (x0 is always 0, no real dependence)",
+      "id": "test_hazard_rationale_176"
     },
     {
       "label": "tb_id_ex.v",

@@ -37,23 +37,23 @@ Cycle N+2: AND  x6, x1, x7   → needs x1 in EX stage — forward from MEM/WB!
 ```
 
 ### Step 1 — Create `src/forwarding.v`
-- [ ] Declare the module with these ports:
+- [x] Declare the module with these ports:
   - Inputs: `rs1_EX [4:0]`, `rs2_EX [4:0]` — source regs of instruction in EX
   - Inputs: `rd_MEM [4:0]`, `reg_write_MEM` — destination of instruction in MEM
   - Inputs: `rd_WB [4:0]`, `reg_write_WB` — destination of instruction in WB
   - Outputs: `forward_A [1:0]`, `forward_B [1:0]` — MUX selects (00=regfile, 10=EX/MEM, 01=MEM/WB)
 
-- [ ] Implement EX-EX forwarding (highest priority):
+- [x] Implement EX-EX forwarding (highest priority):
   ```
   if reg_write_MEM AND rd_MEM != 0 AND rd_MEM == rs1_EX → forward_A = 2'b10
   if reg_write_MEM AND rd_MEM != 0 AND rd_MEM == rs2_EX → forward_B = 2'b10
   ```
-- [ ] Implement MEM-WB forwarding (lower priority, only if EX-EX didn't match):
+- [x] Implement MEM-WB forwarding (lower priority, only if EX-EX didn't match):
   ```
   if reg_write_WB AND rd_WB != 0 AND rd_WB == rs1_EX AND rd_MEM != rs1_EX → forward_A = 2'b01
   if reg_write_WB AND rd_WB != 0 AND rd_WB == rs2_EX AND rd_MEM != rs2_EX → forward_B = 2'b01
   ```
-- [ ] Default: `forward_A = 2'b00`, `forward_B = 2'b00` (use register file output)
+- [x] Default: `forward_A = 2'b00`, `forward_B = 2'b00` (use register file output)
 
 **Concept check:**
 > Why must EX-EX forwarding have higher priority than MEM-WB forwarding?
