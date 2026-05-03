@@ -1,11 +1,11 @@
-# Graph Report - /home/ankur/workspace/BoseRV  (2026-04-26)
+# Graph Report - /home/ankur/workspace/BoseRV  (2026-05-02)
 
 ## Corpus Check
-- 153 files · ~117,996 words
+- 153 files · ~122,424 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 771 nodes · 1096 edges · 103 communities detected
+- 777 nodes · 1108 edges · 103 communities detected
 - Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 176 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -115,28 +115,28 @@
 - [[_COMMUNITY_Community 102|Community 102]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `final()` - 10 edges
-2. `__Vconfigure()` - 10 edges
-3. `10-Module RISC-V Curriculum` - 10 edges
-4. `eventsPending()` - 9 edges
-5. `nextTimeSlot()` - 9 edges
-6. `threads()` - 9 edges
-7. `Single-Cycle Core (Module 1)` - 9 edges
-8. `Instruction Decoder (src/decoder.v)` - 9 edges
-9. `parse_reg()` - 8 edges
-10. `assemble_line()` - 8 edges
+1. `Vtop___024root___eval_nba()` - 13 edges
+2. `final()` - 10 edges
+3. `__Vconfigure()` - 10 edges
+4. `10-Module RISC-V Curriculum` - 10 edges
+5. `eventsPending()` - 9 edges
+6. `nextTimeSlot()` - 9 edges
+7. `threads()` - 9 edges
+8. `Single-Cycle Core (Module 1)` - 9 edges
+9. `Instruction Decoder (src/decoder.v)` - 9 edges
+10. `parse_reg()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Vtb_id_ex__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
-  /home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_id_ex__Syms__Slow.cpp → riscv-core/sim_build/Vtop___024root__Slow.cpp
-- `Vtb_if_id__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
-  /home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_if_id__Syms__Slow.cpp → riscv-core/sim_build/Vtop___024root__Slow.cpp
-- `Vtb_mem_wb__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
-  /home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_mem_wb__Syms__Slow.cpp → riscv-core/sim_build/Vtop___024root__Slow.cpp
-- `Vtb_ex_mem__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
-  /home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_ex_mem__Syms__Slow.cpp → riscv-core/sim_build/Vtop___024root__Slow.cpp
-- `main()` --calls--> `threads()`  [INFERRED]
-  /home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_id_ex__main.cpp → riscv-core/sim_build/Vtop.cpp
+- `Vtb_alu__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
+  riscv-core/obj_dir/Vtb_alu__Syms__Slow.cpp → /home/ankur/workspace/BoseRV/riscv-core/sim_build/Vtop___024root__Slow.cpp
+- `Vtop___024root___eval_debug_assertions()` --calls--> `eval_step()`  [INFERRED]
+  /home/ankur/workspace/BoseRV/riscv-core/sim_build/Vtop___024root__0.cpp → riscv-core/sim_build/Vtop.cpp
+- `eval_step()` --calls--> `Vtop___024root___eval_static()`  [INFERRED]
+  riscv-core/sim_build/Vtop.cpp → /home/ankur/workspace/BoseRV/riscv-core/sim_build/Vtop___024root__0__Slow.cpp
+- `final()` --calls--> `Vtop___024root___eval_final()`  [INFERRED]
+  riscv-core/sim_build/Vtop.cpp → /home/ankur/workspace/BoseRV/riscv-core/sim_build/Vtop___024root__0__Slow.cpp
+- `Vtb_fetch__Syms()` --calls--> `__Vconfigure()`  [INFERRED]
+  riscv-core/obj_dir/Vtb_fetch__Syms__Slow.cpp → /home/ankur/workspace/BoseRV/riscv-core/sim_build/Vtop___024root__Slow.cpp
 
 ## Hyperedges (group relationships)
 - **5-Stage Pipeline Register Chain** — module3_todo_if_id_pipeline_register, module3_todo_id_ex_pipeline_register, module3_todo_ex_mem_pipeline_register, module3_todo_mem_wb_pipeline_register, module3_todo_pipe_top [EXTRACTED 1.00]
@@ -150,20 +150,20 @@ Cohesion: 0.08
 Nodes (27): main(), main(), main(), main(), main(), main(), main(), main() (+19 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.1
-Nodes (34): Vtb_fetch___024root___eval_initial__TOP__Vtiming__0(), Vtb_top___024root___ctor_var_reset(), Vtb_top___024root___dump_triggers__act(), Vtb_top___024root___dump_triggers__stl(), Vtb_top___024root___eval_initial__TOP(), Vtb_top___024root___eval_phase__stl(), Vtb_top___024root___eval_settle(), Vtb_top___024root___eval_static() (+26 more)
+Cohesion: 0.11
+Nodes (37): Vtop___024root___dump_triggers__act(), Vtop___024root___dump_triggers__ico(), Vtop___024root___dump_triggers__stl(), Vtop___024root___eval_initial(), Vtop___024root___eval_initial__TOP(), Vtop___024root___eval_phase__stl(), Vtop___024root___eval_settle(), Vtop___024root___eval_static() (+29 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.1
-Nodes (36): ALU Opcode Reference Table, AUIPC Decoder Entry (opcode 0010111), Decoder OP_IMM Block (SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI), Decoder OP_REG Block (SLL SLT SLTU XOR SRL SRA OR AND), JAL Decoder Entry (opcode 1101111), ALU (src/alu.v), Rationale: AUIPC MUX wires PC to ALU input A instead of rs1, BoseRV Project (+28 more)
+Nodes (34): Vtb_fetch___024root___eval_initial__TOP__Vtiming__0(), Vtb_top___024root___ctor_var_reset(), Vtb_top___024root___dump_triggers__act(), Vtb_top___024root___dump_triggers__stl(), Vtb_top___024root___eval_initial__TOP(), Vtb_top___024root___eval_phase__stl(), Vtb_top___024root___eval_settle(), Vtb_top___024root___eval_static() (+26 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.07
-Nodes (19): Vtb_alu__Syms(), eval_end_step(), _traceDumpClose(), Vtb_decoder__Syms(), Vtb_ex_mem__Syms(), eval_end_step(), _traceDumpClose(), Vtb_fetch__Syms() (+11 more)
+Cohesion: 0.1
+Nodes (36): ALU Opcode Reference Table, AUIPC Decoder Entry (opcode 0010111), Decoder OP_IMM Block (SLTI SLTIU XORI ORI ANDI SLLI SRLI SRAI), Decoder OP_REG Block (SLL SLT SLTU XOR SRL SRA OR AND), JAL Decoder Entry (opcode 1101111), ALU (src/alu.v), Rationale: AUIPC MUX wires PC to ALU input A instead of rs1, BoseRV Project (+28 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
-Nodes (31): Vtop___024root___dump_triggers__act(), Vtop___024root___dump_triggers__ico(), Vtop___024root___dump_triggers__stl(), Vtop___024root___eval_initial(), Vtop___024root___eval_initial__TOP(), Vtop___024root___eval_phase__stl(), Vtop___024root___eval_settle(), Vtop___024root___eval_static() (+23 more)
+Cohesion: 0.07
+Nodes (19): Vtb_alu__Syms(), eval_end_step(), _traceDumpClose(), Vtb_decoder__Syms(), Vtb_ex_mem__Syms(), eval_end_step(), _traceDumpClose(), Vtb_fetch__Syms() (+11 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.13
@@ -195,11 +195,11 @@ Nodes (16): Vtb_fetch___024root___eval_final(), final(), hierName(), name(), Vtb
 
 ### Community 12 - "Community 12"
 Cohesion: 0.1
-Nodes (16): Vtb_top___024root___eval_final(), final(), hierName(), name(), Vtb_top___024root__trace_const_0(), Vtb_top___024root__trace_const_0_sub_0(), Vtb_top___024root__trace_full_0(), Vtb_top___024root__trace_full_0_sub_0() (+8 more)
+Nodes (16): Vtb_decoder___024root___eval_final(), final(), hierName(), name(), Vtb_decoder___024root__trace_const_0(), Vtb_decoder___024root__trace_const_0_sub_0(), Vtb_decoder___024root__trace_full_0(), Vtb_decoder___024root__trace_full_0_sub_0() (+8 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.1
-Nodes (16): Vtb_decoder___024root___eval_final(), final(), hierName(), name(), Vtb_decoder___024root__trace_const_0(), Vtb_decoder___024root__trace_const_0_sub_0(), Vtb_decoder___024root__trace_full_0(), Vtb_decoder___024root__trace_full_0_sub_0() (+8 more)
+Nodes (16): Vtb_top___024root___eval_final(), final(), hierName(), name(), Vtb_top___024root__trace_const_0(), Vtb_top___024root__trace_const_0_sub_0(), Vtb_top___024root__trace_full_0(), Vtb_top___024root__trace_full_0_sub_0() (+8 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.14
@@ -207,23 +207,23 @@ Nodes (22): Vtb_if_id___024root___ctor_var_reset(), Vtb_if_id___024root___dump_t
 
 ### Community 15 - "Community 15"
 Cohesion: 0.1
-Nodes (14): Vtb_ex_mem___024root___eval_final(), final(), hierName(), name(), Vtb_ex_mem___024root__trace_full_0(), Vtb_ex_mem___024root__trace_full_0_sub_0(), Vtb_ex_mem___024root__trace_init_sub__TOP__0(), Vtb_ex_mem___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_id_ex___024root___eval_final(), final(), hierName(), name(), Vtb_id_ex___024root__trace_full_0(), Vtb_id_ex___024root__trace_full_0_sub_0(), Vtb_id_ex___024root__trace_init_sub__TOP__0(), Vtb_id_ex___024root__trace_init_top() (+6 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.1
-Nodes (14): Vtb_alu___024root___eval_final(), final(), hierName(), name(), Vtb_alu___024root__trace_full_0(), Vtb_alu___024root__trace_full_0_sub_0(), Vtb_alu___024root__trace_init_sub__TOP__0(), Vtb_alu___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_if_id___024root___eval_final(), final(), hierName(), name(), Vtb_if_id___024root__trace_full_0(), Vtb_if_id___024root__trace_full_0_sub_0(), Vtb_if_id___024root__trace_init_sub__TOP__0(), Vtb_if_id___024root__trace_init_top() (+6 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.1
-Nodes (14): Vtb_id_ex___024root___eval_final(), final(), hierName(), name(), Vtb_id_ex___024root__trace_full_0(), Vtb_id_ex___024root__trace_full_0_sub_0(), Vtb_id_ex___024root__trace_init_sub__TOP__0(), Vtb_id_ex___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_ex_mem___024root___eval_final(), final(), hierName(), name(), Vtb_ex_mem___024root__trace_full_0(), Vtb_ex_mem___024root__trace_full_0_sub_0(), Vtb_ex_mem___024root__trace_init_sub__TOP__0(), Vtb_ex_mem___024root__trace_init_top() (+6 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.1
-Nodes (14): Vtb_if_id___024root___eval_final(), final(), hierName(), name(), Vtb_if_id___024root__trace_full_0(), Vtb_if_id___024root__trace_full_0_sub_0(), Vtb_if_id___024root__trace_init_sub__TOP__0(), Vtb_if_id___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_mem_wb___024root___eval_final(), final(), hierName(), name(), Vtb_mem_wb___024root__trace_full_0(), Vtb_mem_wb___024root__trace_full_0_sub_0(), Vtb_mem_wb___024root__trace_init_sub__TOP__0(), Vtb_mem_wb___024root__trace_init_top() (+6 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.1
-Nodes (14): Vtb_mem_wb___024root___eval_final(), final(), hierName(), name(), Vtb_mem_wb___024root__trace_full_0(), Vtb_mem_wb___024root__trace_full_0_sub_0(), Vtb_mem_wb___024root__trace_init_sub__TOP__0(), Vtb_mem_wb___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_alu___024root___eval_final(), final(), hierName(), name(), Vtb_alu___024root__trace_full_0(), Vtb_alu___024root__trace_full_0_sub_0(), Vtb_alu___024root__trace_init_sub__TOP__0(), Vtb_alu___024root__trace_init_top() (+6 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.13
@@ -706,11 +706,11 @@ _Questions this graph is uniquely positioned to answer:_
   _`__Vconfigure()` has 9 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 8 inferred relationships involving `eventsPending()` (e.g. with `main()` and `main()`) actually correct?**
   _`eventsPending()` has 8 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 8 inferred relationships involving `nextTimeSlot()` (e.g. with `main()` and `main()`) actually correct?**
-  _`nextTimeSlot()` has 8 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Read register idx from DUT regfile, always returns unsigned 32-bit int.`, `Run test_full.asm on BoseRV pipelined core and verify the final architectural st`, `Test standard addition: 5 + 14 = 19` to the rest of the system?**
   _21 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._

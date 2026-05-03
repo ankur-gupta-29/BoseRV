@@ -52,16 +52,15 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
 
 ---
 
-## Module 3 — 5-Stage Pipeline
+## Module 3 — 5-Stage Pipeline ✅ COMPLETE
 - [x] Assignment C1 — IF/ID Pipeline Register
 - [x] Assignment C2 — ID/EX Pipeline Register
 - [x] Assignment C3 — EX/MEM and MEM/WB Registers
-- [ ] Assignment C4 — Pipeline Control Logic *(<-- YOU ARE HERE)*
+- [x] Assignment C4 — Pipeline Control Logic (pipe_top.v — 5 stages fully wired)
 
 ---
 
-## Module 4 — Hazard Handling
-*(Locked until Module 3 is finished)*
+## Module 4 — Hazard Handling *(<-- YOU ARE HERE)*
 - [ ] Assignment D1 — Data Forwarding Unit (Bypassing)
 - [ ] Assignment D2 — Hazard Detection Unit (Stalls / Bubbles)
 - [ ] Assignment D3 — Control Hazards (Branch Flushing)

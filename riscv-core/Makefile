@@ -17,7 +17,7 @@ VFLAGS = --binary --timing --trace -Wall -Wno-fatal
 CORE_SRC = $(SRC)/imem.v $(SRC)/dmem.v $(SRC)/regfile.v \
            $(SRC)/alu.v  $(SRC)/decoder.v $(SRC)/fetch.v $(SRC)/top.v
 
-.PHONY: all lint alu_sim fetch_sim top_sim if_id_sim id_ex_sim ex_mem_sim mem_wb_sim pipe_regs_sim py_pipe_top clean wave help
+.PHONY: all lint alu_sim fetch_sim top_sim if_id_sim id_ex_sim ex_mem_sim mem_wb_sim pipe_regs_sim py_pipe_top forwarding_sim hazard_sim py_hazard clean wave help
 
 help:
 	@echo "BoseRV — RISC-V Core Build System (Verilator)"
@@ -88,6 +88,17 @@ py_top:
 
 py_pipe_top:
 	../.venv/bin/pytest -v $(SIM)/test_pipe_top.py -s
+
+forwarding_sim: $(SRC)/forwarding.v $(SIM)/tb_forwarding.v
+	verilator $(VFLAGS) --top-module tb_forwarding $^
+	./obj_dir/Vtb_forwarding
+
+hazard_sim: $(SRC)/hazard.v $(SIM)/tb_hazard.v
+	verilator $(VFLAGS) --top-module tb_hazard $^
+	./obj_dir/Vtb_hazard
+
+py_hazard:
+	../.venv/bin/pytest -v $(SIM)/test_hazard.py -s
 
 # ---- View Waveforms ----
 wave:
