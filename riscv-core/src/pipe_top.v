@@ -47,6 +47,11 @@ module pipe_top (
 
     // funct3 field of current instruction — needed for branch condition decode
     wire [2:0]  funct3_EX;
+
+    // forwarding
+    wire [1:0] forward_A,forward_B;
+    wire [31:0] fwd_rs1,fwd_rs2;
+
     // ── Stage 1: FETCH ────────────────────────────────────────
     // TODO 2: Instantiate fetch module (driven by IF wires)
     
@@ -157,10 +162,15 @@ module pipe_top (
     
     // ── Stage 3: EXECUTE ──────────────────────────────────────
     // TODO 6: Instantiate alu module and branch/jump target logic (driven by EX wires)
-    assign alu_b_EX = alu_src_EX ? imm_EX : rs2_data_EX;
+    
+    assign fwd_rs1 = (forward_A == 2'b10) ? alu_result_MEM :
+                     (forward_A == 2'b01) ? writeback_data : rs1_data_EX;
+    assign fwd_rs2 = (forward_B == 2'b10) ? alu_result_MEM :
+                     (forward_B == 2'b01) ? writeback_data : rs2_data_EX;
+    assign alu_b_EX = alu_src_EX ? imm_EX : fwd_rs2;
 
     alu alu_inst(
-        .a(auipc_EX ? pc_EX : lui_EX ? 32'h0 : rs1_data_EX),
+        .a(auipc_EX ? pc_EX : lui_EX ? 32'h0 : fwd_rs1),
         .b(alu_b_EX),
         .op(alu_op_EX),
         .result(alu_result_EX),
@@ -168,7 +178,7 @@ module pipe_top (
     );
 
     assign branch_target_EX = pc_EX + imm_EX;
-    assign jump_target_EX = jalr_EX ? ((rs1_data_EX + imm_EX) & ~32'h1) : branch_target_EX;
+    assign jump_target_EX = jalr_EX ? ((fwd_rs1 + imm_EX) & ~32'h1) : branch_target_EX;
     assign branch_taken_EX = branch_EX & (
         funct3_EX == 3'b000 ?  alu_zero_EX       :   // BEQ:  branch if rs1 == rs2
         funct3_EX == 3'b001 ? !alu_zero_EX       :   // BNE:  branch if rs1 != rs2
@@ -185,7 +195,7 @@ module pipe_top (
         .clk(clk),
         .rst(rst),
         .alu_result_in(alu_result_EX),
-        .rs2_data_in(rs2_data_EX),
+        .rs2_data_in(fwd_rs2),
         .pc_plus4_in(pc_EX+4),
         .branch_target_in(branch_target_EX),
         .jump_target_in(jump_target_EX),
@@ -255,5 +265,15 @@ module pipe_top (
     // ── Hazard & Flush Logic (For Now) ────────────────────────
     // Note: When branch_taken_MEM is 1, you must flush the pipeline!
     // Connect a `flush` signal to the reset inputs of your IF/ID and ID/EX registers to insert NOPs.
+    forwarding forwarding_inst(
+        .rs1_EX(rs1_EX),
+        .rs2_EX(rs2_EX),
+        .rd_MEM(rd_MEM),
+        .reg_write_MEM(reg_write_MEM),
+        .rd_WB(rd_WB),
+        .reg_write_WB(reg_write_WB),
+        .forward_A(forward_A),
+        .forward_B(forward_B)
 
+    );
 endmodule

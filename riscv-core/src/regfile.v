@@ -35,7 +35,9 @@ module regfile (
     // Asynchronous reads — x0 always returns 0 regardless of what regs[0] holds.
     // Async reads mean the ALU sees the latest register values in the same cycle
     // the instruction is decoded (important for single-cycle correctness).
-    assign rdata1 = (rs1 == 5'b0) ? 32'h0 : regs[rs1];
-    assign rdata2 = (rs2 == 5'b0) ? 32'h0 : regs[rs2];
+    assign rdata1 = (we==1 && rd==rs1 && rd != 0)? wdata :
+                    (rs1 == 5'b0) ? 32'h0 : regs[rs1];
+    assign rdata2 = (we==1 && rd==rs2 && rd != 0)? wdata : 
+                    (rs2 == 5'b0) ? 32'h0 : regs[rs2];
 
 endmodule

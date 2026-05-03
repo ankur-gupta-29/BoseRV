@@ -62,24 +62,24 @@ Cycle N+2: AND  x6, x1, x7   → needs x1 in EX stage — forward from MEM/WB!
 ### Step 2 — Add forwarding MUXes in `pipe_top.v`
 
 In the EX stage section, BEFORE the ALU instantiation:
-- [ ] Add wires `fwd_rs1 [31:0]` and `fwd_rs2 [31:0]`
-- [ ] Implement the 3-way MUX:
+- [x] Add wires `fwd_rs1 [31:0]` and `fwd_rs2 [31:0]`
+- [x] Implement the 3-way MUX:
   ```
   fwd_rs1 = (forward_A==2'b10) ? alu_result_MEM :
             (forward_A==2'b01) ? writeback_data  : rs1_data_EX;
   fwd_rs2 = (forward_B==2'b10) ? alu_result_MEM :
             (forward_B==2'b01) ? writeback_data  : rs2_data_EX;
   ```
-- [ ] Change the ALU `.a()` connection to use `fwd_rs1` (keep AUIPC/LUI MUX)
-- [ ] Change ALU B input (`alu_b_EX`) to use `fwd_rs2` (keep alu_src MUX)
-- [ ] Change `rs2_data_in` of `ex_mem_inst` to use `fwd_rs2` (for SW forwarding)
-- [ ] Change JALR `jump_target` to use `fwd_rs1` (for JALR forwarding)
-- [ ] Instantiate `forwarding forwarding_inst(...)` with the right ports
+- [x] Change the ALU `.a()` connection to use `fwd_rs1` (keep AUIPC/LUI MUX)
+- [x] Change ALU B input (`alu_b_EX`) to use `fwd_rs2` (keep alu_src MUX)
+- [x] Change `rs2_data_in` of `ex_mem_inst` to use `fwd_rs2` (for SW forwarding)
+- [x] Change JALR `jump_target` to use `fwd_rs1` (for JALR forwarding)
+- [x] Instantiate `forwarding forwarding_inst(...)` with the right ports
 
 ### Step 3 — Test D1
-- [ ] Run `make py_pipe_top`
-- [ ] R-type and I-type tests (1–24) should now pass
-- [ ] Memory and branch tests may still fail (load-use hazard — that's D2)
+- [x] Run `make py_pipe_top`
+- [x] R-type and I-type tests (1–31) pass ✓ (also fixed regfile WB→ID forwarding bug)
+- [x] Memory and branch tests fail at test 32 (load-use hazard — that's D2) ✓ expected
 
 ---
 

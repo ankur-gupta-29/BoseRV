@@ -306,6 +306,10 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->pipe_top__DOT__jump_target_EX = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2286227437140730488ull);
     vlSelf->pipe_top__DOT__jump_target_MEM = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1461801464333627204ull);
     vlSelf->pipe_top__DOT__funct3_EX = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 15681055627711579387ull);
+    vlSelf->pipe_top__DOT__forward_A = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 13925333353779905574ull);
+    vlSelf->pipe_top__DOT__forward_B = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 9211424397791974502ull);
+    vlSelf->pipe_top__DOT__fwd_rs1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15129812069696265668ull);
+    vlSelf->pipe_top__DOT__fwd_rs2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6693112287974425292ull);
     vlSelf->pipe_top__DOT__fetch_inst__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7155303325188249863ull);
     vlSelf->pipe_top__DOT__fetch_inst__DOT__rst = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7712374594945359208ull);
     vlSelf->pipe_top__DOT__fetch_inst__DOT__branch_taken = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6925993229625994356ull);
@@ -457,6 +461,14 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->pipe_top__DOT__mem_wb_inst__DOT__rd_out = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 11772776352815177290ull);
     vlSelf->pipe_top__DOT__mem_wb_inst__DOT__reg_write_out = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2876976946518754338ull);
     vlSelf->pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 8170187617947495625ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__rs1_EX = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 12813149005559808234ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__rs2_EX = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 795428084207954604ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__rd_MEM = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 15859757805332869803ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5719110657419673306ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__rd_WB = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 5272975600080821354ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__reg_write_WB = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10252441189792146109ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__forward_A = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 1483406746858462550ull);
+    vlSelf->pipe_top__DOT__forwarding_inst__DOT__forward_B = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 9668111276814183601ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

@@ -44,8 +44,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.pipe_top__DOT__rs1_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out;
-    vlSelfRef.pipe_top__DOT__rs2_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out;
     vlSelfRef.pipe_top__DOT__branch_target_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_out;
     vlSelfRef.pipe_top__DOT__jump_target_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_out;
     vlSelfRef.pipe_top__DOT__branch_taken_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_taken_out;
@@ -53,8 +51,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__mem_read_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_read_out;
     vlSelfRef.pipe_top__DOT__jump_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_out;
     vlSelfRef.pipe_top__DOT__pc_ID = vlSelfRef.pipe_top__DOT__if_id_inst__DOT__pc_out;
-    vlSelfRef.pipe_top__DOT__reg_write_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out;
-    vlSelfRef.pipe_top__DOT__rd_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__rd_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__mem_read_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_out;
     vlSelfRef.pipe_top__DOT__mem_write_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_out;
@@ -62,23 +58,16 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__wb_sel_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__wb_sel_out;
     vlSelfRef.pipe_top__DOT__rs2_data_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_out;
     vlSelfRef.pipe_top__DOT__pc_plus4_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_out;
-    vlSelfRef.pipe_top__DOT__rd_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__mem_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_write_out;
-    vlSelfRef.pipe_top__DOT__reg_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out;
     vlSelfRef.pipe_top__DOT__wb_sel_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__wb_sel_out;
     vlSelfRef.pipe_top__DOT__jump_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jump_out;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__pc = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__pc_reg;
-    vlSelfRef.pipe_top__DOT__wb_sel_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out;
-    vlSelfRef.pipe_top__DOT__alu_result_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out;
-    vlSelfRef.pipe_top__DOT__mem_read_data_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out;
-    vlSelfRef.pipe_top__DOT__pc_plus4_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out;
     vlSelfRef.pipe_top__DOT__jalr_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jalr_out;
     vlSelfRef.pipe_top__DOT__branch_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__branch_out;
     vlSelfRef.pipe_top__DOT__funct3_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__funct3_out;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__addr 
         = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__pc_reg;
     vlSelfRef.pipe_top__DOT__rst = vlSelfRef.rst;
-    vlSelfRef.pipe_top__DOT__alu_result_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_out;
     vlSelfRef.pipe_top__DOT__clk = vlSelfRef.clk;
     vlSelfRef.pipe_top__DOT__alu_op_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_op_out;
     vlSelfRef.pipe_top__DOT__auipc_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__auipc_out;
@@ -86,15 +75,22 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__alu_src_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_out;
     vlSelfRef.pipe_top__DOT__rs2_data_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_out;
     vlSelfRef.pipe_top__DOT__rs1_data_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_out;
+    vlSelfRef.pipe_top__DOT__rs2_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out;
     vlSelfRef.pipe_top__DOT__pc_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_out;
+    vlSelfRef.pipe_top__DOT__rs1_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out;
     vlSelfRef.pipe_top__DOT__imm_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_out;
+    vlSelfRef.pipe_top__DOT__alu_result_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_out;
+    vlSelfRef.pipe_top__DOT__rd_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out;
+    vlSelfRef.pipe_top__DOT__reg_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out;
+    vlSelfRef.pipe_top__DOT__wb_sel_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out;
+    vlSelfRef.pipe_top__DOT__alu_result_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out;
+    vlSelfRef.pipe_top__DOT__mem_read_data_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out;
+    vlSelfRef.pipe_top__DOT__pc_plus4_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out;
+    vlSelfRef.pipe_top__DOT__reg_write_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out;
+    vlSelfRef.pipe_top__DOT__rd_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__instr_ID = vlSelfRef.pipe_top__DOT__if_id_inst__DOT__instr_out;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_in 
         = vlSelfRef.pipe_top__DOT__pc_ID;
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we 
-        = vlSelfRef.pipe_top__DOT__reg_write_WB;
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd 
-        = vlSelfRef.pipe_top__DOT__rd_WB;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_in 
         = vlSelfRef.pipe_top__DOT__rd_EX;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_read_in 
@@ -108,11 +104,7 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__dmem_inst__DOT__wd = vlSelfRef.pipe_top__DOT__rs2_data_MEM;
     vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_in 
         = vlSelfRef.pipe_top__DOT__pc_plus4_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in 
-        = vlSelfRef.pipe_top__DOT__rd_MEM;
     vlSelfRef.pipe_top__DOT__dmem_inst__DOT__we = vlSelfRef.pipe_top__DOT__mem_write_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in 
-        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
     vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_in 
         = vlSelfRef.pipe_top__DOT__wb_sel_MEM;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__jump 
@@ -120,14 +112,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_in 
         = vlSelfRef.pipe_top__DOT__jump_EX;
     vlSelfRef.pipe_top__DOT__pc_IF = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__pc;
-    vlSelfRef.pipe_top__DOT__writeback_data = ((0U 
-                                                == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
-                                                ? vlSelfRef.pipe_top__DOT__alu_result_WB
-                                                : (
-                                                   (1U 
-                                                    == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
-                                                    ? vlSelfRef.pipe_top__DOT__mem_read_data_WB
-                                                    : vlSelfRef.pipe_top__DOT__pc_plus4_WB));
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__instr 
         = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__mem
         [(0x000000ffU & (vlSelfRef.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__addr 
@@ -139,9 +123,6 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelfRef.pipe_top__DOT__rst;
     vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rst 
         = vlSelfRef.pipe_top__DOT__rst;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in 
-        = vlSelfRef.pipe_top__DOT__alu_result_MEM;
-    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr = vlSelfRef.pipe_top__DOT__alu_result_MEM;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__clk = vlSelfRef.pipe_top__DOT__clk;
     vlSelfRef.pipe_top__DOT__if_id_inst__DOT__clk = vlSelfRef.pipe_top__DOT__clk;
     vlSelfRef.pipe_top__DOT__regfile_inst__DOT__clk 
@@ -153,21 +134,41 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__clk 
         = vlSelfRef.pipe_top__DOT__clk;
     vlSelfRef.pipe_top__DOT__alu_inst__DOT__op = vlSelfRef.pipe_top__DOT__alu_op_EX;
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_in 
-        = vlSelfRef.pipe_top__DOT__rs2_data_EX;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX 
+        = vlSelfRef.pipe_top__DOT__rs2_EX;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_in 
         = ((IData)(4U) + vlSelfRef.pipe_top__DOT__pc_EX);
-    vlSelfRef.pipe_top__DOT__alu_inst__DOT__a = ((IData)(vlSelfRef.pipe_top__DOT__auipc_EX)
-                                                  ? vlSelfRef.pipe_top__DOT__pc_EX
-                                                  : 
-                                                 ((IData)(vlSelfRef.pipe_top__DOT__lui_EX)
-                                                   ? 0U
-                                                   : vlSelfRef.pipe_top__DOT__rs1_data_EX));
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX 
+        = vlSelfRef.pipe_top__DOT__rs1_EX;
     vlSelfRef.pipe_top__DOT__branch_target_EX = (vlSelfRef.pipe_top__DOT__imm_EX 
                                                  + vlSelfRef.pipe_top__DOT__pc_EX);
-    vlSelfRef.pipe_top__DOT__alu_b_EX = ((IData)(vlSelfRef.pipe_top__DOT__alu_src_EX)
-                                          ? vlSelfRef.pipe_top__DOT__imm_EX
-                                          : vlSelfRef.pipe_top__DOT__rs2_data_EX);
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in 
+        = vlSelfRef.pipe_top__DOT__alu_result_MEM;
+    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr = vlSelfRef.pipe_top__DOT__alu_result_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in 
+        = vlSelfRef.pipe_top__DOT__rd_MEM;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM 
+        = vlSelfRef.pipe_top__DOT__rd_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in 
+        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM 
+        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
+    vlSelfRef.pipe_top__DOT__writeback_data = ((0U 
+                                                == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
+                                                ? vlSelfRef.pipe_top__DOT__alu_result_WB
+                                                : (
+                                                   (1U 
+                                                    == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
+                                                    ? vlSelfRef.pipe_top__DOT__mem_read_data_WB
+                                                    : vlSelfRef.pipe_top__DOT__pc_plus4_WB));
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we 
+        = vlSelfRef.pipe_top__DOT__reg_write_WB;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB 
+        = vlSelfRef.pipe_top__DOT__reg_write_WB;
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd 
+        = vlSelfRef.pipe_top__DOT__rd_WB;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB 
+        = vlSelfRef.pipe_top__DOT__rd_WB;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__funct3_in 
         = (7U & (vlSelfRef.pipe_top__DOT__instr_ID 
                  >> 0x0000000cU));
@@ -175,23 +176,49 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelfRef.pipe_top__DOT__instr_ID;
     vlSelfRef.pipe_top__DOT__if_id_inst__DOT__pc_in 
         = vlSelfRef.pipe_top__DOT__pc_IF;
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata 
-        = vlSelfRef.pipe_top__DOT__writeback_data;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__instr 
         = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__instr;
-    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__mem
-        [(0x000000ffU & (vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr 
-                         >> 2U))];
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__branch_target 
         = vlSelfRef.pipe_top__DOT__branch_target_EX;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_in 
         = vlSelfRef.pipe_top__DOT__branch_target_EX;
-    vlSelfRef.pipe_top__DOT__jump_target_EX = ((IData)(vlSelfRef.pipe_top__DOT__jalr_EX)
-                                                ? (0xfffffffeU 
-                                                   & (vlSelfRef.pipe_top__DOT__imm_EX 
-                                                      + vlSelfRef.pipe_top__DOT__rs1_data_EX))
-                                                : vlSelfRef.pipe_top__DOT__branch_target_EX);
-    vlSelfRef.pipe_top__DOT__alu_inst__DOT__b = vlSelfRef.pipe_top__DOT__alu_b_EX;
+    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__mem
+        [(0x000000ffU & (vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr 
+                         >> 2U))];
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata 
+        = vlSelfRef.pipe_top__DOT__writeback_data;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 0U;
+    if ((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+          & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+         & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+            == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX)))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 2U;
+    } else if (((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB) 
+                  & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB))) 
+                 & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB) 
+                    == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX))) 
+                & (~ (((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+                       & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+                      & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+                         == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX)))))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 1U;
+    }
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 0U;
+    if ((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+          & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+         & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+            == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX)))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 2U;
+    } else if (((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB) 
+                  & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB))) 
+                 & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB) 
+                    == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX))) 
+                & (~ (((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+                       & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+                      & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+                         == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX)))))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 1U;
+    }
     vlSelfRef.pipe_top__DOT__decoder_inst__DOT__rd 
         = (0x0000001fU & (vlSelfRef.pipe_top__DOT__decoder_inst__DOT__instr 
                           >> 7U));
@@ -248,44 +275,8 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
         = (0x0000007fU & vlSelfRef.pipe_top__DOT__decoder_inst__DOT__instr);
     vlSelfRef.pipe_top__DOT__instr_IF = vlSelfRef.pipe_top__DOT__fetch_inst__DOT__instr;
     vlSelfRef.pipe_top__DOT__mem_read_data = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd;
-    vlSelfRef.pipe_top__DOT__fetch_inst__DOT__jump_target 
-        = vlSelfRef.pipe_top__DOT__jump_target_EX;
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_in 
-        = vlSelfRef.pipe_top__DOT__jump_target_EX;
-    vlSelfRef.pipe_top__DOT__alu_inst__DOT__result 
-        = ((8U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-            ? ((4U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                ? 0U : ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                         ? 0U : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                                  ? ((vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                                      < vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
-                                      ? 1U : 0U) : 
-                                 (VL_LTS_III(32, vlSelfRef.pipe_top__DOT__alu_inst__DOT__a, vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
-                                   ? 1U : 0U)))) : 
-           ((4U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-             ? ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                 ? ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                     ? VL_SHIFTRS_III(32,32,5, vlSelfRef.pipe_top__DOT__alu_inst__DOT__a, 
-                                      (0x0000001fU 
-                                       & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
-                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        >> (0x0000001fU & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))
-                 : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        << (0x0000001fU & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
-                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        ^ vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))
-             : ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                 ? ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        | vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
-                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
-                 : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
-                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        - vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
-                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
-                        + vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))));
+    vlSelfRef.pipe_top__DOT__forward_B = vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B;
+    vlSelfRef.pipe_top__DOT__forward_A = vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A;
     vlSelfRef.pipe_top__DOT__rd_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__rd;
     vlSelfRef.pipe_top__DOT__rs1_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__rs1;
     vlSelfRef.pipe_top__DOT__rs2_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__rs2;
@@ -549,9 +540,16 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelfRef.pipe_top__DOT__instr_IF;
     vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_in 
         = vlSelfRef.pipe_top__DOT__mem_read_data;
-    vlSelfRef.pipe_top__DOT__alu_result_EX = vlSelfRef.pipe_top__DOT__alu_inst__DOT__result;
-    vlSelfRef.pipe_top__DOT__alu_inst__DOT__zero = 
-        (0U == vlSelfRef.pipe_top__DOT__alu_inst__DOT__result);
+    vlSelfRef.pipe_top__DOT__fwd_rs2 = ((2U == (IData)(vlSelfRef.pipe_top__DOT__forward_B))
+                                         ? vlSelfRef.pipe_top__DOT__alu_result_MEM
+                                         : ((1U == (IData)(vlSelfRef.pipe_top__DOT__forward_B))
+                                             ? vlSelfRef.pipe_top__DOT__writeback_data
+                                             : vlSelfRef.pipe_top__DOT__rs2_data_EX));
+    vlSelfRef.pipe_top__DOT__fwd_rs1 = ((2U == (IData)(vlSelfRef.pipe_top__DOT__forward_A))
+                                         ? vlSelfRef.pipe_top__DOT__alu_result_MEM
+                                         : ((1U == (IData)(vlSelfRef.pipe_top__DOT__forward_A))
+                                             ? vlSelfRef.pipe_top__DOT__writeback_data
+                                             : vlSelfRef.pipe_top__DOT__rs1_data_EX));
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_in 
         = vlSelfRef.pipe_top__DOT__rd_ID;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_in 
@@ -574,17 +572,40 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__lui_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__lui;
     vlSelfRef.pipe_top__DOT__alu_op_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__alu_op;
     vlSelfRef.pipe_top__DOT__imm_ID = vlSelfRef.pipe_top__DOT__decoder_inst__DOT__imm;
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_in 
-        = vlSelfRef.pipe_top__DOT__alu_result_EX;
-    vlSelfRef.pipe_top__DOT__alu_zero_EX = vlSelfRef.pipe_top__DOT__alu_inst__DOT__zero;
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_in 
+        = vlSelfRef.pipe_top__DOT__fwd_rs2;
+    vlSelfRef.pipe_top__DOT__alu_b_EX = ((IData)(vlSelfRef.pipe_top__DOT__alu_src_EX)
+                                          ? vlSelfRef.pipe_top__DOT__imm_EX
+                                          : vlSelfRef.pipe_top__DOT__fwd_rs2);
+    vlSelfRef.pipe_top__DOT__jump_target_EX = ((IData)(vlSelfRef.pipe_top__DOT__jalr_EX)
+                                                ? (0xfffffffeU 
+                                                   & (vlSelfRef.pipe_top__DOT__fwd_rs1 
+                                                      + vlSelfRef.pipe_top__DOT__imm_EX))
+                                                : vlSelfRef.pipe_top__DOT__branch_target_EX);
+    vlSelfRef.pipe_top__DOT__alu_inst__DOT__a = ((IData)(vlSelfRef.pipe_top__DOT__auipc_EX)
+                                                  ? vlSelfRef.pipe_top__DOT__pc_EX
+                                                  : 
+                                                 ((IData)(vlSelfRef.pipe_top__DOT__lui_EX)
+                                                   ? 0U
+                                                   : vlSelfRef.pipe_top__DOT__fwd_rs1));
     vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata1 
-        = ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1))
-            ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
-           [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1]);
+        = (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we) 
+            & (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd) 
+                == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1)) 
+               & (0U != (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd))))
+            ? vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata
+            : ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1))
+                ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
+               [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1]));
     vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata2 
-        = ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2))
-            ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
-           [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2]);
+        = (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we) 
+            & (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd) 
+                == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2)) 
+               & (0U != (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd))))
+            ? vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata
+            : ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2))
+                ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
+               [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2]));
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_in 
         = vlSelfRef.pipe_top__DOT__alu_src_ID;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_in 
@@ -609,6 +630,57 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelfRef.pipe_top__DOT__alu_op_ID;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_in 
         = vlSelfRef.pipe_top__DOT__imm_ID;
+    vlSelfRef.pipe_top__DOT__alu_inst__DOT__b = vlSelfRef.pipe_top__DOT__alu_b_EX;
+    vlSelfRef.pipe_top__DOT__fetch_inst__DOT__jump_target 
+        = vlSelfRef.pipe_top__DOT__jump_target_EX;
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_in 
+        = vlSelfRef.pipe_top__DOT__jump_target_EX;
+    vlSelfRef.pipe_top__DOT__rs1_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata1;
+    vlSelfRef.pipe_top__DOT__rs2_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata2;
+    vlSelfRef.pipe_top__DOT__alu_inst__DOT__result 
+        = ((8U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+            ? ((4U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                ? 0U : ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                         ? 0U : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                                  ? ((vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                                      < vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
+                                      ? 1U : 0U) : 
+                                 (VL_LTS_III(32, vlSelfRef.pipe_top__DOT__alu_inst__DOT__a, vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
+                                   ? 1U : 0U)))) : 
+           ((4U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+             ? ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                 ? ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                     ? VL_SHIFTRS_III(32,32,5, vlSelfRef.pipe_top__DOT__alu_inst__DOT__a, 
+                                      (0x0000001fU 
+                                       & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
+                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        >> (0x0000001fU & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))
+                 : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        << (0x0000001fU & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
+                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        ^ vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))
+             : ((2U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                 ? ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        | vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
+                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        & vlSelfRef.pipe_top__DOT__alu_inst__DOT__b))
+                 : ((1U & (IData)(vlSelfRef.pipe_top__DOT__alu_inst__DOT__op))
+                     ? (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        - vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)
+                     : (vlSelfRef.pipe_top__DOT__alu_inst__DOT__a 
+                        + vlSelfRef.pipe_top__DOT__alu_inst__DOT__b)))));
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_in 
+        = vlSelfRef.pipe_top__DOT__rs1_data_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_in 
+        = vlSelfRef.pipe_top__DOT__rs2_data_ID;
+    vlSelfRef.pipe_top__DOT__alu_result_EX = vlSelfRef.pipe_top__DOT__alu_inst__DOT__result;
+    vlSelfRef.pipe_top__DOT__alu_inst__DOT__zero = 
+        (0U == vlSelfRef.pipe_top__DOT__alu_inst__DOT__result);
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_in 
+        = vlSelfRef.pipe_top__DOT__alu_result_EX;
+    vlSelfRef.pipe_top__DOT__alu_zero_EX = vlSelfRef.pipe_top__DOT__alu_inst__DOT__zero;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_zero_in 
         = vlSelfRef.pipe_top__DOT__alu_zero_EX;
     vlSelfRef.pipe_top__DOT__branch_taken_EX = ((IData)(vlSelfRef.pipe_top__DOT__branch_EX) 
@@ -635,16 +707,10 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                         ? vlSelfRef.pipe_top__DOT__alu_result_EX
                                                         : 
                                                        (~ vlSelfRef.pipe_top__DOT__alu_result_EX)))))));
-    vlSelfRef.pipe_top__DOT__rs1_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata1;
-    vlSelfRef.pipe_top__DOT__rs2_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata2;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__branch_taken 
         = vlSelfRef.pipe_top__DOT__branch_taken_EX;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_taken_in 
         = vlSelfRef.pipe_top__DOT__branch_taken_EX;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_in 
-        = vlSelfRef.pipe_top__DOT__rs1_data_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_in 
-        = vlSelfRef.pipe_top__DOT__rs2_data_ID;
 }
 
 void Vtop___024root___eval_ico(Vtop___024root* vlSelf) {
@@ -1196,54 +1262,6 @@ void Vtop___024root___nba_sequent__TOP__4(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if (vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rst) {
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out = 0U;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out = 0U;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out = 0U;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out = 0U;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out = 0U;
-    } else {
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out 
-            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out 
-            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out 
-            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_in;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out 
-            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_in;
-        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out 
-            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_in;
-    }
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out 
-        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rst))) 
-           && (IData)(vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in));
-    vlSelfRef.pipe_top__DOT__rd_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out;
-    vlSelfRef.pipe_top__DOT__reg_write_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out;
-    vlSelfRef.pipe_top__DOT__alu_result_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out;
-    vlSelfRef.pipe_top__DOT__mem_read_data_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out;
-    vlSelfRef.pipe_top__DOT__pc_plus4_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out;
-    vlSelfRef.pipe_top__DOT__wb_sel_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out;
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd 
-        = vlSelfRef.pipe_top__DOT__rd_WB;
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we 
-        = vlSelfRef.pipe_top__DOT__reg_write_WB;
-    vlSelfRef.pipe_top__DOT__writeback_data = ((0U 
-                                                == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
-                                                ? vlSelfRef.pipe_top__DOT__alu_result_WB
-                                                : (
-                                                   (1U 
-                                                    == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
-                                                    ? vlSelfRef.pipe_top__DOT__mem_read_data_WB
-                                                    : vlSelfRef.pipe_top__DOT__pc_plus4_WB));
-    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata 
-        = vlSelfRef.pipe_top__DOT__writeback_data;
-}
-
-void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__5\n"); );
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_zero_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
            && (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_zero_in));
@@ -1254,10 +1272,10 @@ void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_out = 0U;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_out = 0U;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__wb_sel_out = 0U;
-        vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out = 0U;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_out = 0U;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_out = 0U;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_out = 0U;
+        vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out = 0U;
     } else {
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_out 
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_in;
@@ -1265,14 +1283,14 @@ void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_in;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__wb_sel_out 
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__wb_sel_in;
-        vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out 
-            = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_in;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_out 
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_in;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_out 
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_in;
         vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_out 
             = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_in;
+        vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out 
+            = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_in;
     }
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_read_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
@@ -1280,12 +1298,12 @@ void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
            && (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_in));
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out 
-        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
-           && (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_in));
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_write_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
            && (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_write_in));
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out 
+        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rst))) 
+           && (IData)(vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_in));
     vlSelfRef.pipe_top__DOT__alu_zero_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_zero_out;
     vlSelfRef.pipe_top__DOT__branch_taken_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_taken_out;
     vlSelfRef.pipe_top__DOT__jump_target_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_target_out;
@@ -1293,48 +1311,47 @@ void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__mem_read_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_read_out;
     vlSelfRef.pipe_top__DOT__jump_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_out;
     vlSelfRef.pipe_top__DOT__wb_sel_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__wb_sel_out;
-    vlSelfRef.pipe_top__DOT__reg_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out;
     vlSelfRef.pipe_top__DOT__mem_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__mem_write_out;
-    vlSelfRef.pipe_top__DOT__rd_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__pc_plus4_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_out;
     vlSelfRef.pipe_top__DOT__rs2_data_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_out;
     vlSelfRef.pipe_top__DOT__alu_result_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__alu_result_out;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_in 
-        = vlSelfRef.pipe_top__DOT__wb_sel_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in 
-        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
+    vlSelfRef.pipe_top__DOT__reg_write_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_out;
+    vlSelfRef.pipe_top__DOT__rd_MEM = vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rd_out;
     vlSelfRef.pipe_top__DOT__dmem_inst__DOT__we = vlSelfRef.pipe_top__DOT__mem_write_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in 
-        = vlSelfRef.pipe_top__DOT__rd_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_in 
-        = vlSelfRef.pipe_top__DOT__pc_plus4_MEM;
     vlSelfRef.pipe_top__DOT__dmem_inst__DOT__wd = vlSelfRef.pipe_top__DOT__rs2_data_MEM;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in 
-        = vlSelfRef.pipe_top__DOT__alu_result_MEM;
     vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr = vlSelfRef.pipe_top__DOT__alu_result_MEM;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM 
+        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM 
+        = vlSelfRef.pipe_top__DOT__rd_MEM;
 }
 
-void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__6\n"); );
+void Vtop___024root___nba_sequent__TOP__5(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__5\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_out 
+        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
+           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_in));
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_out 
+        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
+           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_in));
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_out 
+        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
+           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_in));
     if (vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst) {
-        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out = 0U;
-        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__wb_sel_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__funct3_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_op_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_out = 0U;
+        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_out = 0U;
+        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out = 0U;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_out = 0U;
     } else {
-        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out 
-            = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_in;
-        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out 
-            = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_in;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_out 
             = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_in;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__wb_sel_out 
@@ -1347,20 +1364,15 @@ void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
             = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_in;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_out 
             = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_in;
+        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out 
+            = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_in;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_out 
             = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_in;
+        vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out 
+            = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_in;
         vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_out 
             = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_in;
     }
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_out 
-        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
-           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_in));
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_out 
-        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
-           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_in));
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_out 
-        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
-           && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_in));
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jump_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
            && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jump_in));
@@ -1379,8 +1391,6 @@ void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_out 
         = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rst))) 
            && (IData)(vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_in));
-    vlSelfRef.pipe_top__DOT__rs2_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out;
-    vlSelfRef.pipe_top__DOT__rs1_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out;
     vlSelfRef.pipe_top__DOT__reg_write_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_out;
     vlSelfRef.pipe_top__DOT__mem_write_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_out;
     vlSelfRef.pipe_top__DOT__mem_read_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_out;
@@ -1396,7 +1406,9 @@ void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__alu_src_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_out;
     vlSelfRef.pipe_top__DOT__rs2_data_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_out;
     vlSelfRef.pipe_top__DOT__rs1_data_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_out;
+    vlSelfRef.pipe_top__DOT__rs2_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_out;
     vlSelfRef.pipe_top__DOT__pc_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_out;
+    vlSelfRef.pipe_top__DOT__rs1_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_out;
     vlSelfRef.pipe_top__DOT__imm_EX = vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_out;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__reg_write_in 
         = vlSelfRef.pipe_top__DOT__reg_write_EX;
@@ -1413,30 +1425,220 @@ void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__jump_in 
         = vlSelfRef.pipe_top__DOT__jump_EX;
     vlSelfRef.pipe_top__DOT__alu_inst__DOT__op = vlSelfRef.pipe_top__DOT__alu_op_EX;
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_in 
-        = vlSelfRef.pipe_top__DOT__rs2_data_EX;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX 
+        = vlSelfRef.pipe_top__DOT__rs2_EX;
     vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__pc_plus4_in 
         = ((IData)(4U) + vlSelfRef.pipe_top__DOT__pc_EX);
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX 
+        = vlSelfRef.pipe_top__DOT__rs1_EX;
+    vlSelfRef.pipe_top__DOT__branch_target_EX = (vlSelfRef.pipe_top__DOT__imm_EX 
+                                                 + vlSelfRef.pipe_top__DOT__pc_EX);
+    vlSelfRef.pipe_top__DOT__fetch_inst__DOT__branch_target 
+        = vlSelfRef.pipe_top__DOT__branch_target_EX;
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_in 
+        = vlSelfRef.pipe_top__DOT__branch_target_EX;
+}
+
+void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__6\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if (vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rst) {
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out = 0U;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out = 0U;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out = 0U;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out = 0U;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out = 0U;
+    } else {
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out 
+            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out 
+            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_in;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out 
+            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_in;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out 
+            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_in;
+        vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out 
+            = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in;
+    }
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out 
+        = ((1U & (~ (IData)(vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rst))) 
+           && (IData)(vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in));
+    vlSelfRef.pipe_top__DOT__alu_result_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out;
+    vlSelfRef.pipe_top__DOT__mem_read_data_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_out;
+    vlSelfRef.pipe_top__DOT__pc_plus4_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_out;
+    vlSelfRef.pipe_top__DOT__wb_sel_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out;
+    vlSelfRef.pipe_top__DOT__rd_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_out;
+    vlSelfRef.pipe_top__DOT__reg_write_WB = vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_out;
+    vlSelfRef.pipe_top__DOT__writeback_data = ((0U 
+                                                == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
+                                                ? vlSelfRef.pipe_top__DOT__alu_result_WB
+                                                : (
+                                                   (1U 
+                                                    == (IData)(vlSelfRef.pipe_top__DOT__wb_sel_WB))
+                                                    ? vlSelfRef.pipe_top__DOT__mem_read_data_WB
+                                                    : vlSelfRef.pipe_top__DOT__pc_plus4_WB));
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd 
+        = vlSelfRef.pipe_top__DOT__rd_WB;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB 
+        = vlSelfRef.pipe_top__DOT__rd_WB;
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we 
+        = vlSelfRef.pipe_top__DOT__reg_write_WB;
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB 
+        = vlSelfRef.pipe_top__DOT__reg_write_WB;
+    vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata 
+        = vlSelfRef.pipe_top__DOT__writeback_data;
+}
+
+void Vtop___024root___nba_sequent__TOP__7(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__7\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.pipe_top__DOT__if_id_inst__DOT__pc_in 
+        = vlSelfRef.pipe_top__DOT__pc_IF;
+    vlSelfRef.pipe_top__DOT__if_id_inst__DOT__instr_in 
+        = vlSelfRef.pipe_top__DOT__instr_IF;
+}
+
+void Vtop___024root___nba_comb__TOP__0(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_comb__TOP__0\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__mem
+        [(0x000000ffU & (vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr 
+                         >> 2U))];
+    vlSelfRef.pipe_top__DOT__mem_read_data = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_in 
+        = vlSelfRef.pipe_top__DOT__mem_read_data;
+}
+
+void Vtop___024root___nba_sequent__TOP__8(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__8\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_in 
+        = vlSelfRef.pipe_top__DOT__reg_write_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_in 
+        = vlSelfRef.pipe_top__DOT__mem_write_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_in 
+        = vlSelfRef.pipe_top__DOT__mem_read_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_in 
+        = vlSelfRef.pipe_top__DOT__rd_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__wb_sel_in 
+        = vlSelfRef.pipe_top__DOT__wb_sel_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jump_in 
+        = vlSelfRef.pipe_top__DOT__jump_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__branch_in 
+        = vlSelfRef.pipe_top__DOT__branch_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jalr_in 
+        = vlSelfRef.pipe_top__DOT__jalr_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__funct3_in 
+        = (7U & (vlSelfRef.pipe_top__DOT__instr_ID 
+                 >> 0x0000000cU));
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_op_in 
+        = vlSelfRef.pipe_top__DOT__alu_op_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__auipc_in 
+        = vlSelfRef.pipe_top__DOT__auipc_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__lui_in 
+        = vlSelfRef.pipe_top__DOT__lui_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_in 
+        = vlSelfRef.pipe_top__DOT__alu_src_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_in 
+        = vlSelfRef.pipe_top__DOT__rs2_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_in 
+        = vlSelfRef.pipe_top__DOT__pc_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_in 
+        = vlSelfRef.pipe_top__DOT__rs1_ID;
+    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_in 
+        = vlSelfRef.pipe_top__DOT__imm_ID;
+}
+
+void Vtop___024root___nba_sequent__TOP__9(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__9\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in 
+        = vlSelfRef.pipe_top__DOT__alu_result_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__pc_plus4_in 
+        = vlSelfRef.pipe_top__DOT__pc_plus4_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__wb_sel_in 
+        = vlSelfRef.pipe_top__DOT__wb_sel_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__rd_in 
+        = vlSelfRef.pipe_top__DOT__rd_MEM;
+    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__reg_write_in 
+        = vlSelfRef.pipe_top__DOT__reg_write_MEM;
+}
+
+void Vtop___024root___nba_comb__TOP__1(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_comb__TOP__1\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 0U;
+    if ((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+          & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+         & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+            == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX)))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 2U;
+    } else if (((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB) 
+                  & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB))) 
+                 & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB) 
+                    == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX))) 
+                & (~ (((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+                       & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+                      & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+                         == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs2_EX)))))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B = 1U;
+    }
+    vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 0U;
+    if ((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+          & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+         & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+            == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX)))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 2U;
+    } else if (((((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB) 
+                  & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB))) 
+                 & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_WB) 
+                    == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX))) 
+                & (~ (((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM) 
+                       & (0U != (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM))) 
+                      & ((IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rd_MEM) 
+                         == (IData)(vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__rs1_EX)))))) {
+        vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A = 1U;
+    }
+    vlSelfRef.pipe_top__DOT__forward_B = vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_B;
+    vlSelfRef.pipe_top__DOT__forward_A = vlSelfRef.pipe_top__DOT__forwarding_inst__DOT__forward_A;
+    vlSelfRef.pipe_top__DOT__fwd_rs2 = ((2U == (IData)(vlSelfRef.pipe_top__DOT__forward_B))
+                                         ? vlSelfRef.pipe_top__DOT__alu_result_MEM
+                                         : ((1U == (IData)(vlSelfRef.pipe_top__DOT__forward_B))
+                                             ? vlSelfRef.pipe_top__DOT__writeback_data
+                                             : vlSelfRef.pipe_top__DOT__rs2_data_EX));
+    vlSelfRef.pipe_top__DOT__fwd_rs1 = ((2U == (IData)(vlSelfRef.pipe_top__DOT__forward_A))
+                                         ? vlSelfRef.pipe_top__DOT__alu_result_MEM
+                                         : ((1U == (IData)(vlSelfRef.pipe_top__DOT__forward_A))
+                                             ? vlSelfRef.pipe_top__DOT__writeback_data
+                                             : vlSelfRef.pipe_top__DOT__rs1_data_EX));
+    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__rs2_data_in 
+        = vlSelfRef.pipe_top__DOT__fwd_rs2;
+    vlSelfRef.pipe_top__DOT__alu_b_EX = ((IData)(vlSelfRef.pipe_top__DOT__alu_src_EX)
+                                          ? vlSelfRef.pipe_top__DOT__imm_EX
+                                          : vlSelfRef.pipe_top__DOT__fwd_rs2);
+    vlSelfRef.pipe_top__DOT__jump_target_EX = ((IData)(vlSelfRef.pipe_top__DOT__jalr_EX)
+                                                ? (0xfffffffeU 
+                                                   & (vlSelfRef.pipe_top__DOT__fwd_rs1 
+                                                      + vlSelfRef.pipe_top__DOT__imm_EX))
+                                                : vlSelfRef.pipe_top__DOT__branch_target_EX);
     vlSelfRef.pipe_top__DOT__alu_inst__DOT__a = ((IData)(vlSelfRef.pipe_top__DOT__auipc_EX)
                                                   ? vlSelfRef.pipe_top__DOT__pc_EX
                                                   : 
                                                  ((IData)(vlSelfRef.pipe_top__DOT__lui_EX)
                                                    ? 0U
-                                                   : vlSelfRef.pipe_top__DOT__rs1_data_EX));
-    vlSelfRef.pipe_top__DOT__branch_target_EX = (vlSelfRef.pipe_top__DOT__imm_EX 
-                                                 + vlSelfRef.pipe_top__DOT__pc_EX);
-    vlSelfRef.pipe_top__DOT__alu_b_EX = ((IData)(vlSelfRef.pipe_top__DOT__alu_src_EX)
-                                          ? vlSelfRef.pipe_top__DOT__imm_EX
-                                          : vlSelfRef.pipe_top__DOT__rs2_data_EX);
-    vlSelfRef.pipe_top__DOT__fetch_inst__DOT__branch_target 
-        = vlSelfRef.pipe_top__DOT__branch_target_EX;
-    vlSelfRef.pipe_top__DOT__ex_mem_inst__DOT__branch_target_in 
-        = vlSelfRef.pipe_top__DOT__branch_target_EX;
-    vlSelfRef.pipe_top__DOT__jump_target_EX = ((IData)(vlSelfRef.pipe_top__DOT__jalr_EX)
-                                                ? (0xfffffffeU 
-                                                   & (vlSelfRef.pipe_top__DOT__imm_EX 
-                                                      + vlSelfRef.pipe_top__DOT__rs1_data_EX))
-                                                : vlSelfRef.pipe_top__DOT__branch_target_EX);
+                                                   : vlSelfRef.pipe_top__DOT__fwd_rs1));
     vlSelfRef.pipe_top__DOT__alu_inst__DOT__b = vlSelfRef.pipe_top__DOT__alu_b_EX;
     vlSelfRef.pipe_top__DOT__fetch_inst__DOT__jump_target 
         = vlSelfRef.pipe_top__DOT__jump_target_EX;
@@ -1514,91 +1716,35 @@ void Vtop___024root___nba_sequent__TOP__6(Vtop___024root* vlSelf) {
         = vlSelfRef.pipe_top__DOT__branch_taken_EX;
 }
 
-void Vtop___024root___nba_sequent__TOP__7(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__7\n"); );
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.pipe_top__DOT__if_id_inst__DOT__pc_in 
-        = vlSelfRef.pipe_top__DOT__pc_IF;
-    vlSelfRef.pipe_top__DOT__if_id_inst__DOT__instr_in 
-        = vlSelfRef.pipe_top__DOT__instr_IF;
-}
-
-void Vtop___024root___nba_comb__TOP__0(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_comb__TOP__0\n"); );
+void Vtop___024root___nba_comb__TOP__2(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_comb__TOP__2\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata1 
-        = ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1))
-            ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
-           [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1]);
+        = (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we) 
+            & (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd) 
+                == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1)) 
+               & (0U != (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd))))
+            ? vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata
+            : ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1))
+                ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
+               [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs1]));
     vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata2 
-        = ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2))
-            ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
-           [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2]);
+        = (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__we) 
+            & (((IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd) 
+                == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2)) 
+               & (0U != (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rd))))
+            ? vlSelfRef.pipe_top__DOT__regfile_inst__DOT__wdata
+            : ((0U == (IData)(vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2))
+                ? 0U : vlSelfRef.pipe_top__DOT__regfile_inst__DOT__regs
+               [vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rs2]));
     vlSelfRef.pipe_top__DOT__rs1_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata1;
     vlSelfRef.pipe_top__DOT__rs2_data_ID = vlSelfRef.pipe_top__DOT__regfile_inst__DOT__rdata2;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_data_in 
         = vlSelfRef.pipe_top__DOT__rs1_data_ID;
     vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_data_in 
         = vlSelfRef.pipe_top__DOT__rs2_data_ID;
-}
-
-void Vtop___024root___nba_comb__TOP__1(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_comb__TOP__1\n"); );
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__mem
-        [(0x000000ffU & (vlSelfRef.pipe_top__DOT__dmem_inst__DOT__addr 
-                         >> 2U))];
-    vlSelfRef.pipe_top__DOT__mem_read_data = vlSelfRef.pipe_top__DOT__dmem_inst__DOT__rd;
-    vlSelfRef.pipe_top__DOT__mem_wb_inst__DOT__mem_read_data_in 
-        = vlSelfRef.pipe_top__DOT__mem_read_data;
-}
-
-void Vtop___024root___nba_sequent__TOP__8(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__8\n"); );
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs2_in 
-        = vlSelfRef.pipe_top__DOT__rs2_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rs1_in 
-        = vlSelfRef.pipe_top__DOT__rs1_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__reg_write_in 
-        = vlSelfRef.pipe_top__DOT__reg_write_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_write_in 
-        = vlSelfRef.pipe_top__DOT__mem_write_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__mem_read_in 
-        = vlSelfRef.pipe_top__DOT__mem_read_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__rd_in 
-        = vlSelfRef.pipe_top__DOT__rd_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__wb_sel_in 
-        = vlSelfRef.pipe_top__DOT__wb_sel_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jump_in 
-        = vlSelfRef.pipe_top__DOT__jump_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__branch_in 
-        = vlSelfRef.pipe_top__DOT__branch_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__jalr_in 
-        = vlSelfRef.pipe_top__DOT__jalr_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__funct3_in 
-        = (7U & (vlSelfRef.pipe_top__DOT__instr_ID 
-                 >> 0x0000000cU));
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_op_in 
-        = vlSelfRef.pipe_top__DOT__alu_op_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__auipc_in 
-        = vlSelfRef.pipe_top__DOT__auipc_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__lui_in 
-        = vlSelfRef.pipe_top__DOT__lui_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__alu_src_in 
-        = vlSelfRef.pipe_top__DOT__alu_src_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__pc_in 
-        = vlSelfRef.pipe_top__DOT__pc_ID;
-    vlSelfRef.pipe_top__DOT__id_ex_inst__DOT__imm_in 
-        = vlSelfRef.pipe_top__DOT__imm_ID;
 }
 
 void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
@@ -1621,32 +1767,40 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
          [0U])) {
         Vtop___024root___nba_sequent__TOP__3(vlSelf);
     }
-    if ((0x0000000000000c00ULL & vlSelfRef.__VnbaTriggered
+    if ((0x0000000000000180ULL & vlSelfRef.__VnbaTriggered
          [0U])) {
         Vtop___024root___nba_sequent__TOP__4(vlSelf);
     }
-    if ((0x0000000000000180ULL & vlSelfRef.__VnbaTriggered
+    if ((0x0000000000000060ULL & vlSelfRef.__VnbaTriggered
          [0U])) {
         Vtop___024root___nba_sequent__TOP__5(vlSelf);
     }
-    if ((0x0000000000000060ULL & vlSelfRef.__VnbaTriggered
+    if ((0x0000000000000c00ULL & vlSelfRef.__VnbaTriggered
          [0U])) {
         Vtop___024root___nba_sequent__TOP__6(vlSelf);
     }
     if ((3ULL & vlSelfRef.__VnbaTriggered[0U])) {
         Vtop___024root___nba_sequent__TOP__7(vlSelf);
     }
-    if ((0x000000000000001cULL & vlSelfRef.__VnbaTriggered
-         [0U])) {
-        Vtop___024root___nba_comb__TOP__0(vlSelf);
-    }
     if ((0x0000000000000380ULL & vlSelfRef.__VnbaTriggered
          [0U])) {
-        Vtop___024root___nba_comb__TOP__1(vlSelf);
+        Vtop___024root___nba_comb__TOP__0(vlSelf);
     }
     if ((0x000000000000000cULL & vlSelfRef.__VnbaTriggered
          [0U])) {
         Vtop___024root___nba_sequent__TOP__8(vlSelf);
+    }
+    if ((0x0000000000000180ULL & vlSelfRef.__VnbaTriggered
+         [0U])) {
+        Vtop___024root___nba_sequent__TOP__9(vlSelf);
+    }
+    if ((0x0000000000000de0ULL & vlSelfRef.__VnbaTriggered
+         [0U])) {
+        Vtop___024root___nba_comb__TOP__1(vlSelf);
+    }
+    if ((0x0000000000000c1cULL & vlSelfRef.__VnbaTriggered
+         [0U])) {
+        Vtop___024root___nba_comb__TOP__2(vlSelf);
     }
 }
 

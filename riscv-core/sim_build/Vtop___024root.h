@@ -62,6 +62,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ pipe_top__DOT__branch_taken_EX;
         CData/*0:0*/ pipe_top__DOT__branch_taken_MEM;
         CData/*2:0*/ pipe_top__DOT__funct3_EX;
+        CData/*1:0*/ pipe_top__DOT__forward_A;
+        CData/*1:0*/ pipe_top__DOT__forward_B;
         CData/*0:0*/ pipe_top__DOT__fetch_inst__DOT__clk;
         CData/*0:0*/ pipe_top__DOT__fetch_inst__DOT__rst;
         CData/*0:0*/ pipe_top__DOT__fetch_inst__DOT__branch_taken;
@@ -78,10 +80,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__reg_write;
         CData/*1:0*/ pipe_top__DOT__decoder_inst__DOT__wb_sel;
         CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__branch;
-        CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__jump;
-        CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__jalr;
     };
     struct {
+        CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__jump;
+        CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__jalr;
         CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__auipc;
         CData/*0:0*/ pipe_top__DOT__decoder_inst__DOT__lui;
         CData/*6:0*/ pipe_top__DOT__decoder_inst__DOT__opcode;
@@ -144,10 +146,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ pipe_top__DOT__ex_mem_inst__DOT__reg_write_out;
         CData/*1:0*/ pipe_top__DOT__ex_mem_inst__DOT__wb_sel_out;
         CData/*0:0*/ pipe_top__DOT__ex_mem_inst__DOT__jump_out;
-        CData/*0:0*/ pipe_top__DOT__dmem_inst__DOT__clk;
-        CData/*0:0*/ pipe_top__DOT__dmem_inst__DOT__we;
     };
     struct {
+        CData/*0:0*/ pipe_top__DOT__dmem_inst__DOT__clk;
+        CData/*0:0*/ pipe_top__DOT__dmem_inst__DOT__we;
         CData/*0:0*/ pipe_top__DOT__mem_wb_inst__DOT__clk;
         CData/*0:0*/ pipe_top__DOT__mem_wb_inst__DOT__rst;
         CData/*4:0*/ pipe_top__DOT__mem_wb_inst__DOT__rd_in;
@@ -156,6 +158,14 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*4:0*/ pipe_top__DOT__mem_wb_inst__DOT__rd_out;
         CData/*0:0*/ pipe_top__DOT__mem_wb_inst__DOT__reg_write_out;
         CData/*1:0*/ pipe_top__DOT__mem_wb_inst__DOT__wb_sel_out;
+        CData/*4:0*/ pipe_top__DOT__forwarding_inst__DOT__rs1_EX;
+        CData/*4:0*/ pipe_top__DOT__forwarding_inst__DOT__rs2_EX;
+        CData/*4:0*/ pipe_top__DOT__forwarding_inst__DOT__rd_MEM;
+        CData/*0:0*/ pipe_top__DOT__forwarding_inst__DOT__reg_write_MEM;
+        CData/*4:0*/ pipe_top__DOT__forwarding_inst__DOT__rd_WB;
+        CData/*0:0*/ pipe_top__DOT__forwarding_inst__DOT__reg_write_WB;
+        CData/*1:0*/ pipe_top__DOT__forwarding_inst__DOT__forward_A;
+        CData/*1:0*/ pipe_top__DOT__forwarding_inst__DOT__forward_B;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VicoFirstIteration;
         CData/*0:0*/ __Vtrigprevexpr___TOP__pipe_top__DOT__fetch_inst__DOT__clk__0;
@@ -195,11 +205,15 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ pipe_top__DOT__branch_target_MEM;
         IData/*31:0*/ pipe_top__DOT__jump_target_EX;
         IData/*31:0*/ pipe_top__DOT__jump_target_MEM;
+        IData/*31:0*/ pipe_top__DOT__fwd_rs1;
+        IData/*31:0*/ pipe_top__DOT__fwd_rs2;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__branch_target;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__jump_target;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__pc;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__instr;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__pc_reg;
+    };
+    struct {
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__addr;
         IData/*31:0*/ pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__instr;
         IData/*31:0*/ pipe_top__DOT__if_id_inst__DOT__pc_in;
@@ -212,8 +226,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ pipe_top__DOT__decoder_inst__DOT__imm_s;
         IData/*31:0*/ pipe_top__DOT__decoder_inst__DOT__imm_b;
         IData/*31:0*/ pipe_top__DOT__decoder_inst__DOT__imm_u;
-    };
-    struct {
         IData/*31:0*/ pipe_top__DOT__decoder_inst__DOT__imm_j;
         IData/*31:0*/ pipe_top__DOT__regfile_inst__DOT__wdata;
         IData/*31:0*/ pipe_top__DOT__regfile_inst__DOT__rdata1;
