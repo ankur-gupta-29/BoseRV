@@ -14,6 +14,8 @@ module if_id (
     // Inputs from Fetch stage
     input  [31:0] pc_in,      // current PC (used by AUIPC, JAL/JALR return addr)
     input  [31:0] instr_in,   // raw 32-bit instruction from imem
+    input         stall,
+    input         flush,
 
     // Outputs to Decode stage
     output reg [31:0] pc_out,
@@ -31,13 +33,19 @@ module if_id (
 
     always @(posedge clk or posedge rst) begin
         // TODO: fill me in
-        if(rst) begin
-            pc_out    <=0;
-            instr_out <=0;
+        if(rst || flush) begin
+            pc_out    <= 0;
+            instr_out <= 0;
+        end
+        else if (stall) begin
+             pc_out <= pc_out ;
+             instr_out <=  instr_out;
+
         end
         else begin
-             pc_out <= pc_in;
-             instr_out <= instr_in;
+             pc_out     <= pc_in;
+             instr_out  <= instr_in;
+            
         end
     end
 

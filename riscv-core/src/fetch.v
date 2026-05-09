@@ -9,6 +9,7 @@ module fetch (
     input         rst,
     input         branch_taken,  // 1 when branch condition is true (from top.v)
     input         jump,          // 1 for JAL or JALR (from decoder)
+    input         stall,
     input  [31:0] branch_target, // PC + imm  — used by branches and JAL
     input  [31:0] jump_target,   // (rs1 + imm) & ~1 — used by JALR only
     output [31:0] pc,            // current PC value (visible to top.v for PC+4, AUIPC, etc.)
@@ -27,6 +28,8 @@ module fetch (
             pc_reg <= branch_target;  // PC-relative branch (PC + imm_b)
         else if (jump)
             pc_reg <= jump_target;    // absolute jump target (JAL uses branch_target via top.v; JALR uses jump_target)
+        else if (stall)
+            pc_reg <= pc_reg;
         else
             pc_reg <= pc_reg + 4;     // sequential execution: advance one word
     end

@@ -39,6 +39,9 @@ module id_ex (
     input         lui_in,
     input  [2:0]  funct3_in,
 
+    input         stall,
+    input         flush,
+
     // ── Data outputs to EX stage ───────────────────────────
     output reg [31:0] pc_out,
     output reg [31:0] rs1_data_out,
@@ -97,6 +100,20 @@ module id_ex (
             auipc_out       <= 0;
             lui_out         <= 0;
             funct3_out      <= 0;
+        end else if (flush || stall) begin
+            alu_op_out      <= 0;
+            alu_src_out     <= 0;
+            mem_read_out    <= 0;
+            mem_write_out   <= 0;
+            reg_write_out   <= 0;
+            wb_sel_out     <= 0;
+            branch_out      <= 0;
+            jump_out       <= 0;
+            jalr_out        <= 0;
+            auipc_out       <= 0;
+            funct3_out      <= 0;
+            lui_out         <= 0; 
+            
         end else begin
             // TODO: latch all inputs to outputs
             pc_out          <= pc_in;

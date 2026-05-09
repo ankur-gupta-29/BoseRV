@@ -98,10 +98,10 @@ ADD  x4, x1, x2     ← needs x1 at start of EX stage — memory hasn't responde
 Even if we forward, the data isn't available in time. We must stall 1 cycle.
 
 ### Step 1 — Create `src/hazard.v`
-- [ ] Declare the module with ports:
+- [x] Declare the module with ports:
   - Inputs: `mem_read_EX`, `rd_EX [4:0]`, `rs1_ID [4:0]`, `rs2_ID [4:0]`
   - Output: `stall` (1-bit)
-- [ ] Implement load-use detection:
+- [x] Implement load-use detection:
   ```
   stall = mem_read_EX AND rd_EX != 0 AND (rd_EX == rs1_ID OR rd_EX == rs2_ID)
   ```
@@ -109,43 +109,43 @@ Even if we forward, the data isn't available in time. We must stall 1 cycle.
 ### Step 2 — Add stall and flush support to pipeline registers
 
 **Modify `src/if_id.v`:**
-- [ ] Add `input flush` and `input stall` ports
-- [ ] When `flush=1`: zero all outputs (same as rst) — control hazard NOP
-- [ ] When `stall=1`: hold current values (don't latch new inputs)
-- [ ] When neither: normal latch operation
-- [ ] Priority order: `rst > flush > stall > normal`
+- [x] Add `input flush` and `input stall` ports
+- [x] When `flush=1`: zero all outputs (same as rst) — control hazard NOP
+- [x] When `stall=1`: hold current values (don't latch new inputs)
+- [x] When neither: normal latch operation
+- [x] Priority order: `rst > flush > stall > normal`
 
 **Modify `src/id_ex.v`:**
-- [ ] Add `input flush` port
-- [ ] When `flush=1` OR `stall=1` (bubble signal): zero all control outputs
-- [ ] When neither: normal latch operation
+- [x] Add `input flush` port
+- [x] When `flush=1` OR `stall=1` (bubble signal): zero all control outputs
+- [x] When neither: normal latch operation
 
 **Concept check:**
 > During a load-use stall, why does IF/ID *hold* its values but ID/EX gets *cleared*?
 
 ### Step 3 — Wire stall/flush in `pipe_top.v`
-- [ ] Instantiate `hazard hazard_inst(...)` and `forwarding forwarding_inst(...)`
-- [ ] Declare `wire stall`, `wire flush`
-- [ ] Assign: `flush = branch_taken_EX | jump_EX`
-- [ ] When `stall=1`: prevent PC from advancing (modify fetch or add enable to PC)
-- [ ] Connect `stall` and `flush` to `if_id_inst`
-- [ ] Connect `stall` (as bubble) and `flush` to `id_ex_inst`
-- [ ] Add a `stall` enable input to `fetch.v` (or handle in pipe_top directly)
+- [x] Instantiate `hazard hazard_inst(...)` and `forwarding forwarding_inst(...)`
+- [x] Declare `wire stall`, `wire flush`
+- [x] Assign: `flush = branch_taken_EX | jump_EX`
+- [x] When `stall=1`: prevent PC from advancing (modify fetch or add enable to PC)
+- [x] Connect `stall` and `flush` to `if_id_inst`
+- [x] Connect `stall` (as bubble) and `flush` to `id_ex_inst`
+- [x] Add a `stall` enable input to `fetch.v` (or handle in pipe_top directly)
 
 ### Step 4 — Test D2
-- [ ] Run `make py_pipe_top`
-- [ ] All 56 tests should now pass: `x28=0, x31=1337`
-- [ ] Run `make py_pipe_top` again to confirm it's stable
+- [x] Run `make py_pipe_top`
+- [x] All 56 tests should now pass: `x28=0, x31=1337`
+- [x] Run `make py_pipe_top` again to confirm it's stable
 
 ---
 
 ## Assignment D3 — Control Hazard Flush (Verification)
 
 This is mostly already handled via the `flush` signal from D2, but verify:
-- [ ] Branch-taken flushes correctly: BEQ/BNE/BLT/BGE/BLTU/BGEU all pass
-- [ ] JAL flushes correctly (jump_EX signal)
-- [ ] JALR flushes correctly (jump_EX signal, jalr_EX path)
-- [ ] Backward branch loop (test 49) runs exactly 4 times
+- [x] Branch-taken flushes correctly: BEQ/BNE/BLT/BGE/BLTU/BGEU all pass
+- [x] JAL flushes correctly (jump_EX signal)
+- [x] JALR flushes correctly (jump_EX signal, jalr_EX path)
+- [x] Backward branch loop (test 49) runs exactly 4 times
 
 ---
 
@@ -161,10 +161,10 @@ This is mostly already handled via the `flush` signal from D2, but verify:
 ## Completion Gate
 
 Before calling Module 4 done:
-- [ ] `make py_pipe_top` passes all 56 tests: `x28=0, x31=1337`
-- [ ] No X-propagation in simulation
-- [ ] You can explain: EX-EX vs MEM-EX forwarding priority
-- [ ] You can explain: why LW→USE requires a stall even with forwarding
+- [x] `make py_pipe_top` passes all 56 tests: `x28=0, x31=1337`
+- [x] No X-propagation in simulation
+- [x] You can explain: EX-EX vs MEM-EX forwarding priority
+- [x] You can explain: why LW→USE requires a stall even with forwarding
 
 ---
 

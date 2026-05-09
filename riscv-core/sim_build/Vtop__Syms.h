@@ -41,6 +41,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop__Syms final : public VerilatedSyms {
     VerilatedScope* __Vscopep_pipe_top__fetch_inst;
     VerilatedScope* __Vscopep_pipe_top__fetch_inst__u_imem;
     VerilatedScope* __Vscopep_pipe_top__forwarding_inst;
+    VerilatedScope* __Vscopep_pipe_top__hazard_inst;
     VerilatedScope* __Vscopep_pipe_top__id_ex_inst;
     VerilatedScope* __Vscopep_pipe_top__if_id_inst;
     VerilatedScope* __Vscopep_pipe_top__mem_wb_inst;

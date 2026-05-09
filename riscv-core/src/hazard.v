@@ -41,6 +41,6 @@ module hazard (
     //
     // This can be a single combinational assign statement.
 
-    assign stall = 1'b0; // TODO: replace with real hazard detection
+    assign stall = ((mem_read_EX == 1) && (rd_EX != 0) && (rd_EX == rs1_ID || rd_EX == rs2_ID)); // TODO: replace with real hazard detection
 
 endmodule

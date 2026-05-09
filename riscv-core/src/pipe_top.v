@@ -51,6 +51,9 @@ module pipe_top (
     // forwarding
     wire [1:0] forward_A,forward_B;
     wire [31:0] fwd_rs1,fwd_rs2;
+    // hazard
+    wire stall,flush;
+
 
     // ── Stage 1: FETCH ────────────────────────────────────────
     // TODO 2: Instantiate fetch module (driven by IF wires)
@@ -63,7 +66,8 @@ module pipe_top (
         .branch_target(branch_target_EX),
         .jump_target(jump_target_EX),
         .pc(pc_IF),
-        .instr(instr_IF)
+        .instr(instr_IF),
+        .stall(stall)
     );
     
 
@@ -77,7 +81,9 @@ module pipe_top (
         .pc_in(pc_IF),
         .pc_out(pc_ID),
         .instr_in(instr_IF),
-        .instr_out(instr_ID)
+        .instr_out(instr_ID),
+        .stall(stall),
+        .flush(flush)
     );
     
 
@@ -156,7 +162,9 @@ module pipe_top (
         .jalr_out(jalr_EX),
         .auipc_out(auipc_EX),
         .funct3_out(funct3_EX),
-        .lui_out(lui_EX)
+        .lui_out(lui_EX),
+        .stall(stall),
+        .flush(flush)
 
     );
     
@@ -276,4 +284,14 @@ module pipe_top (
         .forward_B(forward_B)
 
     );
+    
+    hazard hazard_inst(
+        .mem_read_EX(mem_read_EX),
+        .rd_EX(rd_EX),
+        .rs1_ID(rs1_ID),
+        .rs2_ID(rs2_ID),
+        .stall(stall)
+    );
+
+    assign flush = (branch_taken_EX | jump_EX);
 endmodule

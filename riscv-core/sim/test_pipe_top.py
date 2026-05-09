@@ -186,6 +186,7 @@ def test_pipe_top_runner():
             str(src_dir / "ex_mem.v"),
             str(src_dir / "mem_wb.v"),
             str(src_dir / "forwarding.v"),
+            str(src_dir / "hazard.v"),
             str(src_dir / "pipe_top.v"),
         ],
         toplevel="pipe_top",

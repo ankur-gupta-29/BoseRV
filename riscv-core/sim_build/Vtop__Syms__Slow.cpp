@@ -29,6 +29,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top__fetch_inst = new VerilatedScope{this, "pipe_top.fetch_inst", "fetch_inst", "fetch", -12, VerilatedScope::SCOPE_MODULE};
     __Vscopep_pipe_top__fetch_inst__u_imem = new VerilatedScope{this, "pipe_top.fetch_inst.u_imem", "u_imem", "imem", -12, VerilatedScope::SCOPE_MODULE};
     __Vscopep_pipe_top__forwarding_inst = new VerilatedScope{this, "pipe_top.forwarding_inst", "forwarding_inst", "forwarding", -12, VerilatedScope::SCOPE_MODULE};
+    __Vscopep_pipe_top__hazard_inst = new VerilatedScope{this, "pipe_top.hazard_inst", "hazard_inst", "hazard", -12, VerilatedScope::SCOPE_MODULE};
     __Vscopep_pipe_top__id_ex_inst = new VerilatedScope{this, "pipe_top.id_ex_inst", "id_ex_inst", "id_ex", -12, VerilatedScope::SCOPE_MODULE};
     __Vscopep_pipe_top__if_id_inst = new VerilatedScope{this, "pipe_top.if_id_inst", "if_id_inst", "if_id", -12, VerilatedScope::SCOPE_MODULE};
     __Vscopep_pipe_top__mem_wb_inst = new VerilatedScope{this, "pipe_top.mem_wb_inst", "mem_wb_inst", "mem_wb", -12, VerilatedScope::SCOPE_MODULE};
@@ -41,6 +42,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__ex_mem_inst);
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__fetch_inst);
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__forwarding_inst);
+    __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__hazard_inst);
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__id_ex_inst);
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__if_id_inst);
     __Vhier.add(__Vscopep_pipe_top, __Vscopep_pipe_top__mem_wb_inst);
@@ -70,6 +72,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top->varInsert("branch_target_EX", &(TOP.pipe_top__DOT__branch_target_EX), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top->varInsert("branch_target_MEM", &(TOP.pipe_top__DOT__branch_target_MEM), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top->varInsert("clk", &(TOP.pipe_top__DOT__clk), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top->varInsert("flush", &(TOP.pipe_top__DOT__flush), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top->varInsert("forward_A", &(TOP.pipe_top__DOT__forward_A), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top->varInsert("forward_B", &(TOP.pipe_top__DOT__forward_B), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top->varInsert("funct3_EX", &(TOP.pipe_top__DOT__funct3_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,2,0);
@@ -119,6 +122,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top->varInsert("rs2_data_ID", &(TOP.pipe_top__DOT__rs2_data_ID), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top->varInsert("rs2_data_MEM", &(TOP.pipe_top__DOT__rs2_data_MEM), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top->varInsert("rst", &(TOP.pipe_top__DOT__rst), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top->varInsert("stall", &(TOP.pipe_top__DOT__stall), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top->varInsert("wb_sel_EX", &(TOP.pipe_top__DOT__wb_sel_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top->varInsert("wb_sel_ID", &(TOP.pipe_top__DOT__wb_sel_ID), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top->varInsert("wb_sel_MEM", &(TOP.pipe_top__DOT__wb_sel_MEM), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
@@ -205,6 +209,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top__fetch_inst->varInsert("pc", &(TOP.pipe_top__DOT__fetch_inst__DOT__pc), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__fetch_inst->varInsert("pc_reg", &(TOP.pipe_top__DOT__fetch_inst__DOT__pc_reg), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__fetch_inst->varInsert("rst", &(TOP.pipe_top__DOT__fetch_inst__DOT__rst), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__fetch_inst->varInsert("stall", &(TOP.pipe_top__DOT__fetch_inst__DOT__stall), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__fetch_inst__u_imem->varInsert("addr", &(TOP.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__addr), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__fetch_inst__u_imem->varInsert("instr", &(TOP.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__instr), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__fetch_inst__u_imem->varInsert("mem", &(TOP.pipe_top__DOT__fetch_inst__DOT__u_imem__DOT__mem), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 1, 1 ,0,255 ,31,0);
@@ -216,6 +221,11 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top__forwarding_inst->varInsert("reg_write_WB", &(TOP.pipe_top__DOT__forwarding_inst__DOT__reg_write_WB), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__forwarding_inst->varInsert("rs1_EX", &(TOP.pipe_top__DOT__forwarding_inst__DOT__rs1_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
     __Vscopep_pipe_top__forwarding_inst->varInsert("rs2_EX", &(TOP.pipe_top__DOT__forwarding_inst__DOT__rs2_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
+    __Vscopep_pipe_top__hazard_inst->varInsert("mem_read_EX", &(TOP.pipe_top__DOT__hazard_inst__DOT__mem_read_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__hazard_inst->varInsert("rd_EX", &(TOP.pipe_top__DOT__hazard_inst__DOT__rd_EX), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
+    __Vscopep_pipe_top__hazard_inst->varInsert("rs1_ID", &(TOP.pipe_top__DOT__hazard_inst__DOT__rs1_ID), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
+    __Vscopep_pipe_top__hazard_inst->varInsert("rs2_ID", &(TOP.pipe_top__DOT__hazard_inst__DOT__rs2_ID), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
+    __Vscopep_pipe_top__hazard_inst->varInsert("stall", &(TOP.pipe_top__DOT__hazard_inst__DOT__stall), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("alu_op_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__alu_op_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,3,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("alu_op_out", &(TOP.pipe_top__DOT__id_ex_inst__DOT__alu_op_out), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,3,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("alu_src_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__alu_src_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
@@ -225,6 +235,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top__id_ex_inst->varInsert("branch_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__branch_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("branch_out", &(TOP.pipe_top__DOT__id_ex_inst__DOT__branch_out), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("clk", &(TOP.pipe_top__DOT__id_ex_inst__DOT__clk), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__id_ex_inst->varInsert("flush", &(TOP.pipe_top__DOT__id_ex_inst__DOT__flush), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("funct3_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__funct3_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,2,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("funct3_out", &(TOP.pipe_top__DOT__id_ex_inst__DOT__funct3_out), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,2,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("imm_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__imm_in), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
@@ -254,14 +265,17 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_pipe_top__id_ex_inst->varInsert("rs2_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__rs2_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("rs2_out", &(TOP.pipe_top__DOT__id_ex_inst__DOT__rs2_out), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,4,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("rst", &(TOP.pipe_top__DOT__id_ex_inst__DOT__rst), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__id_ex_inst->varInsert("stall", &(TOP.pipe_top__DOT__id_ex_inst__DOT__stall), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("wb_sel_in", &(TOP.pipe_top__DOT__id_ex_inst__DOT__wb_sel_in), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top__id_ex_inst->varInsert("wb_sel_out", &(TOP.pipe_top__DOT__id_ex_inst__DOT__wb_sel_out), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,1,0);
     __Vscopep_pipe_top__if_id_inst->varInsert("clk", &(TOP.pipe_top__DOT__if_id_inst__DOT__clk), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__if_id_inst->varInsert("flush", &(TOP.pipe_top__DOT__if_id_inst__DOT__flush), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__if_id_inst->varInsert("instr_in", &(TOP.pipe_top__DOT__if_id_inst__DOT__instr_in), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__if_id_inst->varInsert("instr_out", &(TOP.pipe_top__DOT__if_id_inst__DOT__instr_out), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__if_id_inst->varInsert("pc_in", &(TOP.pipe_top__DOT__if_id_inst__DOT__pc_in), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__if_id_inst->varInsert("pc_out", &(TOP.pipe_top__DOT__if_id_inst__DOT__pc_out), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__if_id_inst->varInsert("rst", &(TOP.pipe_top__DOT__if_id_inst__DOT__rst), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
+    __Vscopep_pipe_top__if_id_inst->varInsert("stall", &(TOP.pipe_top__DOT__if_id_inst__DOT__stall), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
     __Vscopep_pipe_top__mem_wb_inst->varInsert("alu_result_in", &(TOP.pipe_top__DOT__mem_wb_inst__DOT__alu_result_in), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__mem_wb_inst->varInsert("alu_result_out", &(TOP.pipe_top__DOT__mem_wb_inst__DOT__alu_result_out), false, VLVT_UINT32, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,31,0);
     __Vscopep_pipe_top__mem_wb_inst->varInsert("clk", &(TOP.pipe_top__DOT__mem_wb_inst__DOT__clk), false, VLVT_UINT8, VLVD_NODIR|VLVF_PUB_RW, 0, 0);
@@ -297,6 +311,7 @@ Vtop__Syms::~Vtop__Syms() {
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__ex_mem_inst);
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__fetch_inst);
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__forwarding_inst);
+    __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__hazard_inst);
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__id_ex_inst);
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__if_id_inst);
     __Vhier.remove(__Vscopep_pipe_top, __Vscopep_pipe_top__mem_wb_inst);
@@ -314,6 +329,7 @@ Vtop__Syms::~Vtop__Syms() {
     VL_DO_CLEAR(delete __Vscopep_pipe_top__fetch_inst, __Vscopep_pipe_top__fetch_inst = nullptr);
     VL_DO_CLEAR(delete __Vscopep_pipe_top__fetch_inst__u_imem, __Vscopep_pipe_top__fetch_inst__u_imem = nullptr);
     VL_DO_CLEAR(delete __Vscopep_pipe_top__forwarding_inst, __Vscopep_pipe_top__forwarding_inst = nullptr);
+    VL_DO_CLEAR(delete __Vscopep_pipe_top__hazard_inst, __Vscopep_pipe_top__hazard_inst = nullptr);
     VL_DO_CLEAR(delete __Vscopep_pipe_top__id_ex_inst, __Vscopep_pipe_top__id_ex_inst = nullptr);
     VL_DO_CLEAR(delete __Vscopep_pipe_top__if_id_inst, __Vscopep_pipe_top__if_id_inst = nullptr);
     VL_DO_CLEAR(delete __Vscopep_pipe_top__mem_wb_inst, __Vscopep_pipe_top__mem_wb_inst = nullptr);
