@@ -60,11 +60,11 @@ Welcome to your custom RISC-V course! You will be building a processor from scra
 
 ---
 
-## Module 4 — Hazard Handling *(<-- YOU ARE HERE)*
-- [ ] Assignment D1 — Data Forwarding Unit (Bypassing)
-- [ ] Assignment D2 — Hazard Detection Unit (Stalls / Bubbles)
-- [ ] Assignment D3 — Control Hazards (Branch Flushing)
-- [ ] Assignment D4 — 2-bit Branch Predictor (BHT)
+## Module 4 — Hazard Handling ✅ COMPLETE
+- [x] Assignment D1 — Data Forwarding Unit (Bypassing)
+- [x] Assignment D2 — Hazard Detection Unit (Stalls / Bubbles)
+- [x] Assignment D3 — Control Hazards (Branch Flushing)
+- [ ] Assignment D4 — 2-bit Branch Predictor (BHT) *(optional bonus)*
 
 ---
 
