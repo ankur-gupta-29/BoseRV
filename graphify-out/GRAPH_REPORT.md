@@ -1,11 +1,11 @@
 # Graph Report - /home/ankur/workspace/BoseRV  (2026-05-04)
 
 ## Corpus Check
-- 156 files · ~128,083 words
+- 156 files · ~128,842 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 809 nodes · 1137 edges · 106 communities detected
+- 811 nodes · 1141 edges · 106 communities detected
 - Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 176 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -118,7 +118,7 @@
 - [[_COMMUNITY_Community 105|Community 105]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Vtop___024root___eval_nba()` - 13 edges
+1. `Vtop___024root___eval_nba()` - 15 edges
 2. `final()` - 10 edges
 3. `__Vconfigure()` - 10 edges
 4. `10-Module RISC-V Curriculum` - 10 edges
@@ -153,8 +153,8 @@ Cohesion: 0.08
 Nodes (27): main(), main(), main(), main(), main(), main(), main(), main() (+19 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.11
-Nodes (37): Vtop___024root___dump_triggers__act(), Vtop___024root___dump_triggers__ico(), Vtop___024root___dump_triggers__stl(), Vtop___024root___eval_initial(), Vtop___024root___eval_initial__TOP(), Vtop___024root___eval_phase__stl(), Vtop___024root___eval_settle(), Vtop___024root___eval_static() (+29 more)
+Cohesion: 0.1
+Nodes (39): Vtop___024root___dump_triggers__act(), Vtop___024root___dump_triggers__ico(), Vtop___024root___dump_triggers__stl(), Vtop___024root___eval_initial(), Vtop___024root___eval_initial__TOP(), Vtop___024root___eval_phase__stl(), Vtop___024root___eval_settle(), Vtop___024root___eval_static() (+31 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.1
@@ -182,7 +182,7 @@ Nodes (27): BoseRV — Module 4 Hazard Unit Test (test_hazard.py) ==============
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
-Nodes (23): Vtb_mem_wb___024root___ctor_var_reset(), Vtb_mem_wb___024root___dump_triggers__act(), Vtb_mem_wb___024root___eval_settle(), Vtb_mem_wb___024root___eval_static(), Vtb_mem_wb___024root___eval_static__TOP(), Vtb_mem_wb___024root____Vm_traceActivitySetAll(), Vtb_mem_wb___024root___eval(), Vtb_mem_wb___024root___eval_debug_assertions() (+15 more)
+Nodes (23): Vtb_id_ex___024root___ctor_var_reset(), Vtb_id_ex___024root___dump_triggers__act(), Vtb_id_ex___024root___eval_settle(), Vtb_id_ex___024root___eval_static(), Vtb_id_ex___024root___eval_static__TOP(), Vtb_id_ex___024root____Vm_traceActivitySetAll(), Vtb_id_ex___024root___eval(), Vtb_id_ex___024root___eval_debug_assertions() (+15 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.13
@@ -190,7 +190,7 @@ Nodes (23): Vtb_ex_mem___024root___ctor_var_reset(), Vtb_ex_mem___024root___dump
 
 ### Community 10 - "Community 10"
 Cohesion: 0.13
-Nodes (23): Vtb_id_ex___024root___ctor_var_reset(), Vtb_id_ex___024root___dump_triggers__act(), Vtb_id_ex___024root___eval_settle(), Vtb_id_ex___024root___eval_static(), Vtb_id_ex___024root___eval_static__TOP(), Vtb_id_ex___024root____Vm_traceActivitySetAll(), Vtb_id_ex___024root___eval(), Vtb_id_ex___024root___eval_debug_assertions() (+15 more)
+Nodes (23): Vtb_mem_wb___024root___ctor_var_reset(), Vtb_mem_wb___024root___dump_triggers__act(), Vtb_mem_wb___024root___eval_settle(), Vtb_mem_wb___024root___eval_static(), Vtb_mem_wb___024root___eval_static__TOP(), Vtb_mem_wb___024root____Vm_traceActivitySetAll(), Vtb_mem_wb___024root___eval(), Vtb_mem_wb___024root___eval_debug_assertions() (+15 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.13
@@ -214,7 +214,7 @@ Nodes (22): Vtb_if_id___024root___ctor_var_reset(), Vtb_if_id___024root___dump_t
 
 ### Community 16 - "Community 16"
 Cohesion: 0.1
-Nodes (14): Vtb_ex_mem___024root___eval_final(), final(), hierName(), name(), Vtb_ex_mem___024root__trace_full_0(), Vtb_ex_mem___024root__trace_full_0_sub_0(), Vtb_ex_mem___024root__trace_init_sub__TOP__0(), Vtb_ex_mem___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_mem_wb___024root___eval_final(), final(), hierName(), name(), Vtb_mem_wb___024root__trace_full_0(), Vtb_mem_wb___024root__trace_full_0_sub_0(), Vtb_mem_wb___024root__trace_init_sub__TOP__0(), Vtb_mem_wb___024root__trace_init_top() (+6 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.1
@@ -226,7 +226,7 @@ Nodes (14): Vtb_if_id___024root___eval_final(), final(), hierName(), name(), Vtb
 
 ### Community 19 - "Community 19"
 Cohesion: 0.1
-Nodes (14): Vtb_mem_wb___024root___eval_final(), final(), hierName(), name(), Vtb_mem_wb___024root__trace_full_0(), Vtb_mem_wb___024root__trace_full_0_sub_0(), Vtb_mem_wb___024root__trace_init_sub__TOP__0(), Vtb_mem_wb___024root__trace_init_top() (+6 more)
+Nodes (14): Vtb_ex_mem___024root___eval_final(), final(), hierName(), name(), Vtb_ex_mem___024root__trace_full_0(), Vtb_ex_mem___024root__trace_full_0_sub_0(), Vtb_ex_mem___024root__trace_init_sub__TOP__0(), Vtb_ex_mem___024root__trace_init_top() (+6 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.1
@@ -730,6 +730,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
