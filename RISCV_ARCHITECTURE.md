@@ -127,7 +127,7 @@ flowchart LR
         AMUX_A --> ALU3
         FWDB --> AMUX --> ALU3
         ALU3 -->|zero| BRLOGIC
-        ALU3 -->|result[0]| BRLOGIC
+        ALU3 -->|"result[0]"| BRLOGIC
     end
 
     %% ══════════════ EX/MEM ══════════════
