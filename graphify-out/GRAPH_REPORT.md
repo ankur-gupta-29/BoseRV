@@ -1,7 +1,7 @@
 # Graph Report - /home/ankur/workspace/BoseRV  (2026-05-10)
 
 ## Corpus Check
-- 159 files · ~141,237 words
+- 159 files · ~143,552 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
