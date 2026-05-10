@@ -258,13 +258,23 @@
       "norm_label": "imem.v"
     },
     {
+      "label": "multiplier.v",
+      "file_type": "code",
+      "source_file": "/home/ankur/workspace/BoseRV/riscv-core/src/multiplier.v",
+      "source_location": "L1",
+      "confidence_score": 1.0,
+      "id": "home_ankur_workspace_boserv_riscv_core_src_multiplier_v",
+      "community": 62,
+      "norm_label": "multiplier.v"
+    },
+    {
       "label": "forwarding.v",
       "file_type": "code",
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/src/forwarding.v",
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_forwarding_v",
-      "community": 62,
+      "community": 63,
       "norm_label": "forwarding.v"
     },
     {
@@ -274,7 +284,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_fetch_v",
-      "community": 63,
+      "community": 64,
       "norm_label": "fetch.v"
     },
     {
@@ -284,7 +294,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_pipe_top_v",
-      "community": 64,
+      "community": 65,
       "norm_label": "pipe_top.v"
     },
     {
@@ -294,7 +304,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_ex_mem_v",
-      "community": 65,
+      "community": 66,
       "norm_label": "ex_mem.v"
     },
     {
@@ -304,7 +314,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_src_top_v",
-      "community": 66,
+      "community": 67,
       "norm_label": "top.v"
     },
     {
@@ -314,7 +324,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_src_dmem_v",
-      "community": 67,
+      "community": 68,
       "norm_label": "dmem.v"
     },
     {
@@ -324,7 +334,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_id_ex_v",
-      "community": 68,
+      "community": 69,
       "norm_label": "id_ex.v"
     },
     {
@@ -334,7 +344,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_mem_wb_v",
-      "community": 69,
+      "community": 70,
       "norm_label": "mem_wb.v"
     },
     {
@@ -344,7 +354,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_if_id_v",
-      "community": 70,
+      "community": 71,
       "norm_label": "if_id.v"
     },
     {
@@ -354,8 +364,18 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_hazard_v",
-      "community": 71,
+      "community": 72,
       "norm_label": "hazard.v"
+    },
+    {
+      "label": "divider.v",
+      "file_type": "code",
+      "source_file": "/home/ankur/workspace/BoseRV/riscv-core/src/divider.v",
+      "source_location": "L1",
+      "confidence_score": 1.0,
+      "id": "home_ankur_workspace_boserv_riscv_core_src_divider_v",
+      "community": 73,
+      "norm_label": "divider.v"
     },
     {
       "label": "regfile.v",
@@ -364,7 +384,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_src_regfile_v",
-      "community": 72,
+      "community": 74,
       "norm_label": "regfile.v"
     },
     {
@@ -374,8 +394,18 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_src_alu_v",
-      "community": 73,
+      "community": 75,
       "norm_label": "alu.v"
+    },
+    {
+      "label": "bht.v",
+      "file_type": "code",
+      "source_file": "/home/ankur/workspace/BoseRV/riscv-core/src/bht.v",
+      "source_location": "L1",
+      "confidence_score": 1.0,
+      "id": "home_ankur_workspace_boserv_riscv_core_src_bht_v",
+      "community": 76,
+      "norm_label": "bht.v"
     },
     {
       "label": "test_pipe_top.py",
@@ -483,7 +513,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_sim_tb_mem_wb_v",
-      "community": 74,
+      "community": 77,
       "norm_label": "tb_mem_wb.v"
     },
     {
@@ -493,7 +523,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_sim_tb_ex_mem_v",
-      "community": 75,
+      "community": 78,
       "norm_label": "tb_ex_mem.v"
     },
     {
@@ -503,7 +533,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_sim_tb_fetch_v",
-      "community": 76,
+      "community": 79,
       "norm_label": "tb_fetch.v"
     },
     {
@@ -513,7 +543,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_sim_tb_top_v",
-      "community": 77,
+      "community": 80,
       "norm_label": "tb_top.v"
     },
     {
@@ -577,7 +607,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_sim_tb_alu_v",
-      "community": 78,
+      "community": 81,
       "norm_label": "tb_alu.v"
     },
     {
@@ -587,7 +617,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_sim_tb_if_id_v",
-      "community": 79,
+      "community": 82,
       "norm_label": "tb_if_id.v"
     },
     {
@@ -867,7 +897,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "home_ankur_workspace_boserv_riscv_core_sim_tb_id_ex_v",
-      "community": 80,
+      "community": 83,
       "norm_label": "tb_id_ex.v"
     },
     {
@@ -877,7 +907,7 @@
       "source_location": "L1",
       "confidence_score": 1.0,
       "id": "riscv_core_sim_tb_decoder_v",
-      "community": 81,
+      "community": 84,
       "norm_label": "tb_decoder.v"
     },
     {
@@ -1606,7 +1636,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_top__pch.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_top_pch_h",
-      "community": 82,
+      "community": 85,
       "norm_label": "vtb_top__pch.h"
     },
     {
@@ -1633,7 +1663,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_mem_wb__pch.h",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_mem_wb_pch_h",
-      "community": 83,
+      "community": 86,
       "norm_label": "vtb_mem_wb__pch.h"
     },
     {
@@ -1993,7 +2023,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_if_id__ALL.cpp",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_if_id_all_cpp",
-      "community": 84,
+      "community": 87,
       "norm_label": "vtb_if_id__all.cpp"
     },
     {
@@ -2002,7 +2032,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_alu__pch.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_alu_pch_h",
-      "community": 85,
+      "community": 88,
       "norm_label": "vtb_alu__pch.h"
     },
     {
@@ -2011,7 +2041,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_id_ex__ALL.cpp",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_id_ex_all_cpp",
-      "community": 86,
+      "community": 89,
       "norm_label": "vtb_id_ex__all.cpp"
     },
     {
@@ -2200,7 +2230,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_decoder.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_decoder_h",
-      "community": 87,
+      "community": 90,
       "norm_label": "vtb_decoder.h"
     },
     {
@@ -2299,7 +2329,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_if_id__pch.h",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_if_id_pch_h",
-      "community": 88,
+      "community": 91,
       "norm_label": "vtb_if_id__pch.h"
     },
     {
@@ -2335,7 +2365,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_ex_mem__pch.h",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_ex_mem_pch_h",
-      "community": 89,
+      "community": 92,
       "norm_label": "vtb_ex_mem__pch.h"
     },
     {
@@ -2857,7 +2887,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_top__ALL.cpp",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_top_all_cpp",
-      "community": 90,
+      "community": 93,
       "norm_label": "vtb_top__all.cpp"
     },
     {
@@ -3244,7 +3274,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_fetch__ALL.cpp",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_fetch_all_cpp",
-      "community": 91,
+      "community": 94,
       "norm_label": "vtb_fetch__all.cpp"
     },
     {
@@ -3415,7 +3445,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_alu__ALL.cpp",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_alu_all_cpp",
-      "community": 92,
+      "community": 95,
       "norm_label": "vtb_alu__all.cpp"
     },
     {
@@ -3649,7 +3679,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_ex_mem__ALL.cpp",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_ex_mem_all_cpp",
-      "community": 93,
+      "community": 96,
       "norm_label": "vtb_ex_mem__all.cpp"
     },
     {
@@ -4225,7 +4255,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_mem_wb__ALL.cpp",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_mem_wb_all_cpp",
-      "community": 94,
+      "community": 97,
       "norm_label": "vtb_mem_wb__all.cpp"
     },
     {
@@ -4234,7 +4264,7 @@
       "source_file": "/home/ankur/workspace/BoseRV/riscv-core/obj_dir/Vtb_id_ex__pch.h",
       "source_location": "L1",
       "id": "home_ankur_workspace_boserv_riscv_core_obj_dir_vtb_id_ex_pch_h",
-      "community": 95,
+      "community": 98,
       "norm_label": "vtb_id_ex__pch.h"
     },
     {
@@ -4243,7 +4273,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_decoder__pch.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_decoder_pch_h",
-      "community": 96,
+      "community": 99,
       "norm_label": "vtb_decoder__pch.h"
     },
     {
@@ -4324,7 +4354,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_top.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_top_h",
-      "community": 97,
+      "community": 100,
       "norm_label": "vtb_top.h"
     },
     {
@@ -4621,7 +4651,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_fetch__pch.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_fetch_pch_h",
-      "community": 98,
+      "community": 101,
       "norm_label": "vtb_fetch__pch.h"
     },
     {
@@ -4657,7 +4687,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_decoder__ALL.cpp",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_decoder_all_cpp",
-      "community": 99,
+      "community": 102,
       "norm_label": "vtb_decoder__all.cpp"
     },
     {
@@ -5980,7 +6010,7 @@
       "source_file": "riscv-core/obj_dir/Vtb_fetch.h",
       "source_location": "L1",
       "id": "riscv_core_obj_dir_vtb_fetch_h",
-      "community": 100,
+      "community": 103,
       "norm_label": "vtb_fetch.h"
     },
     {
@@ -6493,7 +6523,7 @@
       "source_file": "riscv-core/sim_build/Vtop__ALL.cpp",
       "source_location": "L1",
       "id": "riscv_core_sim_build_vtop_all_cpp",
-      "community": 101,
+      "community": 104,
       "norm_label": "vtop__all.cpp"
     },
     {
@@ -6520,7 +6550,7 @@
       "source_file": "riscv-core/sim_build/Vtop__Dpi.cpp",
       "source_location": "L1",
       "id": "riscv_core_sim_build_vtop_dpi_cpp",
-      "community": 102,
+      "community": 105,
       "norm_label": "vtop__dpi.cpp"
     },
     {
@@ -6700,7 +6730,7 @@
       "source_file": "riscv-core/sim_build/Vtop__ConstPool__0__Slow.cpp",
       "source_location": "L1",
       "id": "riscv_core_sim_build_vtop_constpool_0_slow_cpp",
-      "community": 103,
+      "community": 106,
       "norm_label": "vtop__constpool__0__slow.cpp"
     },
     {
@@ -6817,7 +6847,7 @@
       "source_file": "riscv-core/sim_build/Vtop__Dpi.h",
       "source_location": "L1",
       "id": "riscv_core_sim_build_vtop_dpi_h",
-      "community": 104,
+      "community": 107,
       "norm_label": "vtop__dpi.h"
     },
     {
@@ -6826,7 +6856,7 @@
       "source_file": "riscv-core/sim_build/Vtop__pch.h",
       "source_location": "L1",
       "id": "riscv_core_sim_build_vtop_pch_h",
-      "community": 105,
+      "community": 108,
       "norm_label": "vtop__pch.h"
     },
     {

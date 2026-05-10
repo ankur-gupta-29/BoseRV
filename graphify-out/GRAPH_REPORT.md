@@ -1,11 +1,11 @@
-# Graph Report - /home/ankur/workspace/BoseRV  (2026-05-09)
+# Graph Report - /home/ankur/workspace/BoseRV  (2026-05-10)
 
 ## Corpus Check
-- 156 files · ~140,403 words
+- 159 files · ~141,237 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 811 nodes · 1141 edges · 106 communities detected
+- 814 nodes · 1141 edges · 109 communities detected
 - Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 176 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -116,6 +116,9 @@
 - [[_COMMUNITY_Community 103|Community 103]]
 - [[_COMMUNITY_Community 104|Community 104]]
 - [[_COMMUNITY_Community 105|Community 105]]
+- [[_COMMUNITY_Community 106|Community 106]]
+- [[_COMMUNITY_Community 107|Community 107]]
+- [[_COMMUNITY_Community 108|Community 108]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Vtop___024root___eval_nba()` - 15 edges
@@ -572,6 +575,18 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 106 - "Community 106"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 107 - "Community 107"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 108 - "Community 108"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
 - **35 isolated node(s):** `Read register idx from DUT regfile, always returns unsigned 32-bit int.`, `Run test_full.asm on BoseRV pipelined core and verify the final architectural st`, `Test standard addition: 5 + 14 = 19`, `# TODO: Add more test cases here!`, `Read register idx from DUT regfile, always returns unsigned 32-bit int.` (+30 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -627,93 +642,99 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 61`** (1 nodes): `imem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 62`** (1 nodes): `forwarding.v`
+- **Thin community `Community 62`** (1 nodes): `multiplier.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 63`** (1 nodes): `fetch.v`
+- **Thin community `Community 63`** (1 nodes): `forwarding.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 64`** (1 nodes): `pipe_top.v`
+- **Thin community `Community 64`** (1 nodes): `fetch.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 65`** (1 nodes): `ex_mem.v`
+- **Thin community `Community 65`** (1 nodes): `pipe_top.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 66`** (1 nodes): `top.v`
+- **Thin community `Community 66`** (1 nodes): `ex_mem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 67`** (1 nodes): `dmem.v`
+- **Thin community `Community 67`** (1 nodes): `top.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 68`** (1 nodes): `id_ex.v`
+- **Thin community `Community 68`** (1 nodes): `dmem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 69`** (1 nodes): `mem_wb.v`
+- **Thin community `Community 69`** (1 nodes): `id_ex.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 70`** (1 nodes): `if_id.v`
+- **Thin community `Community 70`** (1 nodes): `mem_wb.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 71`** (1 nodes): `hazard.v`
+- **Thin community `Community 71`** (1 nodes): `if_id.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 72`** (1 nodes): `regfile.v`
+- **Thin community `Community 72`** (1 nodes): `hazard.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 73`** (1 nodes): `alu.v`
+- **Thin community `Community 73`** (1 nodes): `divider.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 74`** (1 nodes): `tb_mem_wb.v`
+- **Thin community `Community 74`** (1 nodes): `regfile.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 75`** (1 nodes): `tb_ex_mem.v`
+- **Thin community `Community 75`** (1 nodes): `alu.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 76`** (1 nodes): `tb_fetch.v`
+- **Thin community `Community 76`** (1 nodes): `bht.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 77`** (1 nodes): `tb_top.v`
+- **Thin community `Community 77`** (1 nodes): `tb_mem_wb.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 78`** (1 nodes): `tb_alu.v`
+- **Thin community `Community 78`** (1 nodes): `tb_ex_mem.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 79`** (1 nodes): `tb_if_id.v`
+- **Thin community `Community 79`** (1 nodes): `tb_fetch.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 80`** (1 nodes): `tb_id_ex.v`
+- **Thin community `Community 80`** (1 nodes): `tb_top.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 81`** (1 nodes): `tb_decoder.v`
+- **Thin community `Community 81`** (1 nodes): `tb_alu.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 82`** (1 nodes): `Vtb_top__pch.h`
+- **Thin community `Community 82`** (1 nodes): `tb_if_id.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 83`** (1 nodes): `Vtb_mem_wb__pch.h`
+- **Thin community `Community 83`** (1 nodes): `tb_id_ex.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 84`** (1 nodes): `Vtb_if_id__ALL.cpp`
+- **Thin community `Community 84`** (1 nodes): `tb_decoder.v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 85`** (1 nodes): `Vtb_alu__pch.h`
+- **Thin community `Community 85`** (1 nodes): `Vtb_top__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 86`** (1 nodes): `Vtb_id_ex__ALL.cpp`
+- **Thin community `Community 86`** (1 nodes): `Vtb_mem_wb__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 87`** (1 nodes): `Vtb_decoder.h`
+- **Thin community `Community 87`** (1 nodes): `Vtb_if_id__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 88`** (1 nodes): `Vtb_if_id__pch.h`
+- **Thin community `Community 88`** (1 nodes): `Vtb_alu__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 89`** (1 nodes): `Vtb_ex_mem__pch.h`
+- **Thin community `Community 89`** (1 nodes): `Vtb_id_ex__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 90`** (1 nodes): `Vtb_top__ALL.cpp`
+- **Thin community `Community 90`** (1 nodes): `Vtb_decoder.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 91`** (1 nodes): `Vtb_fetch__ALL.cpp`
+- **Thin community `Community 91`** (1 nodes): `Vtb_if_id__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 92`** (1 nodes): `Vtb_alu__ALL.cpp`
+- **Thin community `Community 92`** (1 nodes): `Vtb_ex_mem__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 93`** (1 nodes): `Vtb_ex_mem__ALL.cpp`
+- **Thin community `Community 93`** (1 nodes): `Vtb_top__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 94`** (1 nodes): `Vtb_mem_wb__ALL.cpp`
+- **Thin community `Community 94`** (1 nodes): `Vtb_fetch__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 95`** (1 nodes): `Vtb_id_ex__pch.h`
+- **Thin community `Community 95`** (1 nodes): `Vtb_alu__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 96`** (1 nodes): `Vtb_decoder__pch.h`
+- **Thin community `Community 96`** (1 nodes): `Vtb_ex_mem__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 97`** (1 nodes): `Vtb_top.h`
+- **Thin community `Community 97`** (1 nodes): `Vtb_mem_wb__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 98`** (1 nodes): `Vtb_fetch__pch.h`
+- **Thin community `Community 98`** (1 nodes): `Vtb_id_ex__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 99`** (1 nodes): `Vtb_decoder__ALL.cpp`
+- **Thin community `Community 99`** (1 nodes): `Vtb_decoder__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 100`** (1 nodes): `Vtb_fetch.h`
+- **Thin community `Community 100`** (1 nodes): `Vtb_top.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 101`** (1 nodes): `Vtop__ALL.cpp`
+- **Thin community `Community 101`** (1 nodes): `Vtb_fetch__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 102`** (1 nodes): `Vtop__Dpi.cpp`
+- **Thin community `Community 102`** (1 nodes): `Vtb_decoder__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 103`** (1 nodes): `Vtop__ConstPool__0__Slow.cpp`
+- **Thin community `Community 103`** (1 nodes): `Vtb_fetch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 104`** (1 nodes): `Vtop__Dpi.h`
+- **Thin community `Community 104`** (1 nodes): `Vtop__ALL.cpp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 105`** (1 nodes): `Vtop__pch.h`
+- **Thin community `Community 105`** (1 nodes): `Vtop__Dpi.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 106`** (1 nodes): `Vtop__ConstPool__0__Slow.cpp`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 107`** (1 nodes): `Vtop__Dpi.h`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 108`** (1 nodes): `Vtop__pch.h`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
